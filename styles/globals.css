@@ -1,0 +1,400 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* import {} from '' */
+
+@font-face {
+    font-family: 'Montserrat';
+    src: url('../fonts/Montserrat-Bold.ttf') format('truetype');
+    font-weight: bold;
+    font-style: normal;
+  }
+  
+  @font-face {
+    font-family: 'Montserrat';
+    src: url('../fonts/Montserrat-Medium.ttf') format('truetype');
+    font-weight: normal;
+    font-style: normal;
+  }
+  
+  @font-face {
+    font-family: 'Montserrat';
+    src: url('../fonts/Montserrat-Light.ttf') format('truetype');
+    font-weight: normal;
+    font-style: italic;
+  }
+  
+  @font-face {
+    font-family: 'Montserrat';
+    src: url('../fonts/Montserrat-SemiBoldItalic.ttf') format('truetype');
+    font-weight: bold;
+    font-style: italic;
+  }
+
+
+  .fade-in {
+    opacity: 0;
+    animation: fadeIn 2s ease-in forwards;
+  }
+  
+  @keyframes fadeIn {
+    from {
+      opacity: 0;
+    }
+    to {
+      opacity: 1;
+    }
+  }
+  
+
+  .my-font {
+        font-family: 'Montserrat', sans-serif;
+        font-weight: 300;
+        text-shadow: 2px 2px 2px rgba(0, 0, 0, 0.5);
+  }
+
+  .my-font-bold {
+    font-family: 'Montserrat', sans-serif;
+    font-weight: bold;
+    text-shadow: 5px 5px 5px rgba(0, 0, 0, 0.5);
+}
+
+.my-font-semibold {
+    font-family: 'Montserrat', sans-serif;
+    font-weight: 600;
+    text-shadow: 3px 3px 3px rgba(0, 0, 0, 0.5);
+}
+
+.my-font-bold-noshadow {
+    font-family: 'Montserrat', sans-serif;
+    font-weight: bold;
+    /* text-shadow: 3px 3px 3px rgba(0, 0, 0, 0.5); */
+}
+.homeBG {
+    background: linear-gradient(178.81deg, #107840 100%, #1F5025 32.65%, #107840 62.9%, #28602E 85.85%, #107840 100.14%);
+}
+
+.my-class {
+    border-color: green !important;
+    background-color: #1F5025;
+    border-radius: 10px;
+    padding: 0px;
+    padding-left: 0px;
+    margin-top: 0px;
+    padding-top: 0px;
+    height: 50px;
+    cursor: pointer;
+}
+
+.my-caret-class {
+    background: #1F5025 !important;
+    padding: 0px;
+    margin: 0px;
+    margin-left: 0px;
+}
+
+.my-overlay-class {
+    background: green !important;
+}
+
+.logo-animate {
+    animation: mymove 2s infinite;;
+}
+
+@keyframes mymove {
+    0%   {top: 0px;}
+    /* 25%  {top: 500px;}
+    75%  {top: 50px} */
+    25% {top: 400px;}
+    50% {top : 250px }
+    75% {top: 450px}
+    100%{top: 400px}
+    /* 100%{ top: 350px} */
+  }
+
+
+.spin-animate-slow {
+    animation: spin 60s linear infinite;
+}
+
+@keyframes spin {
+    from {
+        transform: rotate(0deg);
+    }
+
+    to {
+        transform: rotate(360deg);
+    }
+}
+
+.bounce-slow {
+    animation: bounce 5s infinite;
+}
+
+.bounce-medium {
+    animation: bounce 2s infinite;
+}
+
+.aeroplane-animate {
+    animation: example 10s linear infinite;
+}
+
+@keyframes example {
+    0% {
+        left: 200px;
+        top: 0px;
+        scale: 1;
+    }
+
+    100% {
+        left: -1000px;
+        top: 300px;
+        rotate: 25deg;
+        scale: 1.5;
+    }
+}
+
+.person-animate {
+    animation: MotionHorizontal 2s linear infinite;
+}
+
+@keyframes MotionHorizontal {
+    0% {}
+
+    100% {
+        scale: 1.2;
+    }
+}
+
+.person1-animate {
+    animation: rotateHorizontal 3s linear infinite;
+}
+
+@keyframes rotateHorizontal {
+    0% {}
+
+    50% {
+        left: 100px
+    }
+}
+
+.person2-animate {
+    animation: rotateHorizontal2 3s linear infinite;
+}
+
+@keyframes rotateHorizontal2 {
+    0% {}
+
+    50% {
+        left: 950px
+    }
+}
+
+.moving-star {
+    animation: move 3s linear infinite;
+}
+
+@keyframes move {
+    0% {}
+
+    50% {
+        rotate: 180deg
+    }
+}
+
+
+
+
+/* .waviy {
+    position: relative;
+    -webkit-box-reflect: below -20px linear-gradient(transparent, rgba(0,0,0,.2));
+    font-size: 60px;
+  }
+  .waviy span {
+    font-family: 'Alfa Slab One', cursive;
+    position: relative;
+    display: inline-block;
+    color: #fff;
+    text-transform: uppercase;
+    animation: waviy 1s infinite;
+    animation-delay: calc(.1s * var(--i));
+    
+  }
+  @keyframes waviy {
+    0%,40%,100% {
+      transform: translateY(0)
+    }
+    20% {
+      transform: translateY(-20px)
+    }
+  } */
+
+
+.smallParent {
+    width: 100%;
+    height: 100%;
+    position: relative;
+    z-index: 0;
+}
+
+.smallParent div {
+    width: 60px;
+    height: 60px;
+    border-radius: 60%;
+    background-color: transparent;
+    border: 4px solid white;
+    position: absolute;
+}
+
+.smallParent div:nth-child(1) {
+    left: 30%;
+    top: 10%;
+    /* bottom: 10%; */
+    animation: square 10s reverse infinite;
+}
+
+.smallParent div:nth-child(2) {
+    right: 2%;
+    bottom: -10%;
+    animation: square 10s linear infinite;
+}
+
+.smallParent div:nth-child(3) {
+    left: 12%;
+    top: 0%;
+    animation: square 7s linear infinite;
+}
+
+.smallParent div:nth-child(4) {
+    right: 30%;
+    top: 10%;
+    animation: square 4s reverse infinite;
+}
+
+.smallParent div:nth-child(5) {
+    right: 40%;
+    top: 20%;
+    animation: square 7s linear infinite;
+}
+
+.smallParent div:nth-child(6) {
+    right: 50%;
+    top: 30%;
+    animation: square 2s reverse infinite;
+}
+
+.smallParent div:nth-child(7) {
+    right: 60%;
+    top: 40%;
+    animation: square 5s linear infinite;
+}
+
+.smallParent div:nth-child(8) {
+    left: 30%;
+    top: 10%;
+    /* bottom: 10%; */
+    animation: square 10s reverse infinite;
+}
+
+.smallParent div:nth-child(9) {
+    right: 2%;
+    bottom: -10%;
+    animation: square 9s alternate-reverse infinite;
+}
+
+.smallParent div:nth-child(10) {
+    left: 12%;
+    top: 0%;
+    animation: square 6s alternate-reverse infinite;
+}
+
+.smallParent div:nth-child(11) {
+    right: 30%;
+    top: 10%;
+    animation: square 11s alternate-reverse infinite;
+}
+
+.smallParent div:nth-child(12) {
+    right: 40%;
+    top: 20%;
+    animation: square 10s reverse infinite;
+}
+
+.smallParent div:nth-child(13) {
+    right: 50%;
+    top: 30%;
+    animation: square 9s alternate-reverse infinite;
+}
+
+.smallParent div:nth-child(14) {
+    right: 60%;
+    top: 40%;
+    animation: square 8s reverse infinite;
+}
+
+.smallParent div:nth-child(15) {
+    left: 30%;
+    top: 10%;
+    /* bottom: 10%; */
+    animation: square 11s reverse infinite;
+}
+
+.smallParent div:nth-child(16) {
+    right: 2%;
+    bottom: -10%;
+    animation: square 12s alternate-reverse infinite;
+}
+
+.smallParent div:nth-child(17) {
+    left: 12%;
+    top: 0%;
+    animation: square 9s alternate-reverse infinite;
+}
+
+.smallParent div:nth-child(18) {
+    right: 30%;
+    top: 10%;
+    animation: square 8s alternate-reverse infinite;
+}
+
+.smallParent div:nth-child(19) {
+    right: 40%;
+    top: 20%;
+    animation: square 4s alternate-reverse infinite;
+}
+
+.smallParent div:nth-child(20) {
+    right: 50%;
+    top: 30%;
+    animation: square 5s alternate-reverse infinite;
+}
+
+
+@keyframes square {
+    0% {
+        transform: scale(1) translateY(0) rotate(45deg);
+    }
+
+    25% {
+        transform: scale(0.5) translateY(0) rotate(0);
+        /* left: 5px;
+        top: -50%; */
+    }
+
+    50% {
+        transform: scale(1) translateY(0) rotate(0);
+    }
+
+    75% {
+        transform: scale(0.75) translateY(0) rotate(0);
+        /* left: 70%;
+        top: 50%; */
+    }
+
+    100% {
+        transform: scale(1) translateY(-700px) rotate(45deg);
+        left: 50%;
+        top: -50%;
+    }
+}
