@@ -21,6 +21,7 @@ function MyApp({ Component, pageProps }) {
         {/* <meta name="og_site_name" property="og:site_name" content="https://grogrip.com" /> */}
         {/* <meta property="og:type" content="website" /> */}
         <link rel="canonical" href="https://grogrip.com" />
+        <meta name="google-site-verification" content="P1rLSRxY5hQ4--9Ktuz6cXNRY9bkDRqtloyNq1wein0" />
       </Head>
       <Provider store={store}>
         <Component {...pageProps} />
