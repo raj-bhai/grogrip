@@ -13,13 +13,6 @@ function MyApp({ Component, pageProps }) {
   return (
     <>
       <Head>
-        {/* <title>GroGrip - Grow Your Youtube</title> */}
-        {/* <meta name="description" content="One place for your all SEO, SMO, CONTENT" /> */}
-        {/* <meta property="og:title" content="GroGrip - Grow Your Youtube " /> */}
-        {/* <meta property="og:description" content="GroGrip - Grow Your Youtube " /> */}
-        {/* <meta property="og:url" content="https://grogrip.com/home" /> */}
-        {/* <meta name="og_site_name" property="og:site_name" content="https://grogrip.com" /> */}
-        {/* <meta property="og:type" content="website" /> */}
         <link rel="canonical" href="https://grogrip.com" />
         <meta name="google-site-verification" content="P1rLSRxY5hQ4--9Ktuz6cXNRY9bkDRqtloyNq1wein0" />
       </Head>

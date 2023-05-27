@@ -2,7 +2,7 @@ import { NextSeo, LocalBusinessJsonLd } from "next-seo";
 import favicon from "../../public/favicon.ico";
 const SEO = (props) => {
    const { title, imageUrl, altText, dynamicURL, keywords, pageDescription, pageUrl, pageTitle, ogImage } = props;
-   const canonicalUrl = dynamicURL ? `https://www.grogrip.come${dynamicURL}` : "https://www.grogrip.come/home";
+   const canonicalUrl = dynamicURL ? `https://www.grogrip.com${dynamicURL}` : "https://www.grogrip.com/home";
 
    const titleTemplate = "%s | Grogrip";
 
