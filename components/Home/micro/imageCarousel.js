@@ -14,16 +14,16 @@ export default () => (
         className="flex flex-col items-center"
     >
         <div>
-            <img alt="" src="https://res.cloudinary.com/drgvislmm/image/upload/v1669407843/videos/Sports/maxresdefault_3_fdyj71.jpg" />
+            <img alt="grogrip_media" src="https://res.cloudinary.com/drgvislmm/image/upload/v1669407843/videos/Sports/maxresdefault_3_fdyj71.jpg" />
         </div>
         <div>
-            <img alt="" src="https://res.cloudinary.com/drgvislmm/image/upload/v1669407843/videos/Sports/maxresdefault_3_fdyj71.jpg" />
+            <img alt="grogrip_media" src="https://res.cloudinary.com/drgvislmm/image/upload/v1669407843/videos/Sports/maxresdefault_3_fdyj71.jpg" />
         </div>
         <div>
-            <img alt="" src="https://res.cloudinary.com/drgvislmm/image/upload/v1669407843/videos/Sports/maxresdefault_3_fdyj71.jpg" />
+            <img alt="grogrip_media" src="https://res.cloudinary.com/drgvislmm/image/upload/v1669407843/videos/Sports/maxresdefault_3_fdyj71.jpg" />
         </div>
         <div>
-            <img alt="" src="https://res.cloudinary.com/drgvislmm/image/upload/v1669407843/videos/Sports/maxresdefault_3_fdyj71.jpg" />
+            <img alt="grogrip_media" src="https://res.cloudinary.com/drgvislmm/image/upload/v1669407843/videos/Sports/maxresdefault_3_fdyj71.jpg" />
         </div>
     </Carousel>
 );

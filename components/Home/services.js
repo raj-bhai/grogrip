@@ -92,7 +92,7 @@ const VideoEdit = (props) => {
             <img
                 src="/images/user/person1.png"
                 className="sm:w-[165px] sm:h-[228px] ml-[-20px] "
-                alt="star" />
+                alt="grogrip_star" />
         </div>
     )
 }
@@ -108,6 +108,7 @@ const Services = (props) => {
                             <img
                                 src={x.gif}
                                 className={`absolute ${x.className}`}
+                                alt='grogrip'
                             />
                             <div className={`border absolute w-[130px] flex justify-center  rounded-lg  items-center h-[40px]  ${x.textStyle} `} >
                                 <h1 className={`text-white my-font-semibold lg:text-[20px] `} >{x.name}</h1>
@@ -119,6 +120,7 @@ const Services = (props) => {
             <img
                 src='https://res.cloudinary.com/drgvislmm/image/upload/v1683572993/WebsiteImages/services_cfelfd.gif'
                 className=' lg:h-[550px] lg:hover:scale-[1.005] h-0 lg:rounded-lg invisible lg:visible  '
+                alt='grogrip_services'
             />
         </div>
 

@@ -77,7 +77,7 @@ const Header = (props) => {
                 <img
                     src="/images/Logo/logo-main2.png"
                     className=' absolute rounded-lg resize-y sm:w-[30%] sm:left-[0px] left-[-50px] '
-                    alt="grogrip "
+                    alt="grogrip"
                     style={{ clipPath: 'polygon(0 0, 100% 0, 100% 50%, 0 100%, 0 0, 0 0)' }}
                 />
             </div>
@@ -134,7 +134,7 @@ const Header = (props) => {
                 <img
                     src={`/images/icons/instagram1.webp`}
                     className=' sm:w-[35px] sm:h-[35px] w-[25px] h-[25px] '
-                    alt="project1"
+                    alt="grogrip"
                     onClick={() => {
                         window?.open("https://www.instagram.com/grogrip_media/")
                     }}

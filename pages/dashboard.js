@@ -250,7 +250,7 @@ const Dashboard = () => {
             <div className="h-[100%] w-[100%] bg-[#17202A] border-[1px] flex items-center justify-center  mt-[50px] pb-[50px] z-0  fixed overflow-y-auto"
                 style={(typeof window !== 'undefined') ? { width: window.innerWidth - 370 } : null}
             >
-                <img src={'https://www.abhaf.org/assets/images/dark-loader.gif'} style={{ width: 50, height: 50 }}></img>
+                <img alt="loader" src={'https://www.abhaf.org/assets/images/dark-loader.gif'} style={{ width: 50, height: 50 }}></img>
             </div>
         )
     }

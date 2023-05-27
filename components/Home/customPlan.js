@@ -63,6 +63,7 @@ const CustomPlan = (props) => {
                     <img
                         src="https://res.cloudinary.com/drgvislmm/image/upload/v1683466408/enggggg_j1ypzs.gif"
                         className="  "
+                        alt="grogrip_plan"
                     />
                 </div>
                 <div className="lg:absolute lg:right-[150px]" >
