@@ -13,7 +13,7 @@ function MyApp({ Component, pageProps }) {
   return (
     <>
       <Head>
-        <link rel="canonical" href="https://grogrip.com" />
+        <link rel="canonical" href="https://www.grogrip.com/home" />
         <meta name="google-site-verification" content="P1rLSRxY5hQ4--9Ktuz6cXNRY9bkDRqtloyNq1wein0" />
       </Head>
       <Provider store={store}>
