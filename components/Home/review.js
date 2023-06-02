@@ -74,7 +74,7 @@ const Review = (props) => {
                                 <div key={index} className="sm:w-[80%] sm:h-[300px] sm:pb-[0px] sm:border-[0.2px] border-[1px] border-[#FFFEF7] rounded-[10px] sm:flex relative  ">
                                     <div className="sm:w-[300px] h-[100%] border-r-[0px]  p-[25px]">
                                         <div className=" w-[100%] h-[100%] bg-[#fff] rounded-[10px] flex items-center justify-center ">
-                                            <img src={`/images/user/person9.png`} className=" sm:w-[90%] w-[200px] sm:h-[90%] h-[200px]  " alt="project1" />
+                                            <img src={`/images/user/person9.png`} className=" sm:w-[90%] w-[200px] sm:h-[90%] h-[200px]  " alt="grogrip_review" />
                                         </div>
                                     </div>
                                     <div className=" sm:p-[25px] p-[10px] sm:w-[600px] border-[0px]">

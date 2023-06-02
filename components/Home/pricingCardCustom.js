@@ -275,7 +275,7 @@ const PricingCard = (props) => {
                     <div className="sm:w-[60px] sm:h-[60px] w-[40px] h-[40px] bg-[#fff] rounded-[5px]  " >
                         <img
                             src="/images/user/pricing1.png"
-                            alt="person7" />
+                            alt="grogrip_pricing" />
                     </div>
                     <div className="ml-[20px] " >
                         <h1 className=" text-[#fff] sm:text-[13px] text-[14px] leading-tight my-font " >{props.for}</h1>

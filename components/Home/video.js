@@ -49,7 +49,7 @@ const Video = (props) => {
                 {!showVideo &&
                     <img
                         src={props.thumbnail}
-                        alt="new"
+                        alt="grogrip_video"
                         className={`absolute top-[0px] w-[100%] h-[100%] rounded-lg ${imageLoaded ? ' visible' : ' invisible'}` + imageOpacity}
                         onLoad={() => {
                             //console.log("true")
@@ -68,7 +68,9 @@ const Video = (props) => {
                 }
                 {/* {
                     (!videoLoad || !imageLoaded) && */}
-                <img src={'https://www.abhaf.org/assets/images/dark-loader.gif'} style={{ position: 'absolute', width: 50, height: 50, }}></img>
+                <img src={'https://www.abhaf.org/assets/images/dark-loader.gif'}
+                alt="grogrip"
+                 style={{ position: 'absolute', width: 50, height: 50, }}></img>
                 {/* } */}
             </div>
         </>
