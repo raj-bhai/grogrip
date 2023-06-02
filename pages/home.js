@@ -570,7 +570,7 @@ const Home = () => {
                             for="Short Videos (4-5 mins)"
                             type="Basic"
                             index={0}
-                            amount={30}
+                            amount={29}
                             seletedIndex={pricingIndex}
                             desc="700-800 words"
                             onFocus={() => {
