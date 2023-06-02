@@ -570,7 +570,7 @@ const Home = () => {
                             for="Short Videos (4-5 mins)"
                             type="Basic"
                             index={0}
-                            amount={35}
+                            amount={30}
                             seletedIndex={pricingIndex}
                             desc="700-800 words"
                             onFocus={() => {
@@ -581,10 +581,10 @@ const Home = () => {
                             }}
                         />
                         <PricingCard
-                            for="Long Videos (8-9 mins)"
+                            for="Long Videos (8-10 mins)"
                             type="Pro"
                             index={1}
-                            amount={55}
+                            amount={45}
                             seletedIndex={pricingIndex}
                             desc="1400-1500 words"
                             onFocus={() => {
@@ -598,7 +598,7 @@ const Home = () => {
                             for="extra-long videos (18-20 mins)"
                             type="Premium"
                             index={2}
-                            amount={100}
+                            amount={75}
                             seletedIndex={pricingIndex}
                             desc="2800-3000 word"
                             onFocus={() => {
