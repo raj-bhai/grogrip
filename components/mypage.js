@@ -16,7 +16,7 @@ const Mypage = () => {
           <div className="h-32 w-32 border-2"></div>
         </div>
         <div className='w-full h-[120px] justify-between bg-yellow-500'>
-          <h1>Main Check Yahaan</h1>
+          <h1>Main Check Check Yahaan</h1>
         </div>
       </div>
     </>
