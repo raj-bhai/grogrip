@@ -154,18 +154,11 @@ const PricingCard = (props) => {
     const ScriptPricing = (count) => {
 
         const words = Number(count)
-        // const pricePerword = 12 / 2200
         const wordsPerminute = 170
-        // const resultPrice = pricePerword * words
 
         const duration = Math.round(words / wordsPerminute)
 
         const pricePerMinute = 7
-
-        // console.log("DUration :", duration)
-
-        // 5 min , 8 min, 12 min
-        //700-800, 1200-1300 , 2300-2400
 
         if (words < 700 && words <= 800) {
             setVoiceCount(5)
