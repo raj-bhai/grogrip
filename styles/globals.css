@@ -398,3 +398,12 @@
         top: -50%;
     }
 }
+
+.scroll-animation {
+    opacity: 0;
+    transition: opacity 0.4s ease-in-out;
+  }
+  
+  .fade-in {
+    opacity: 1;
+  }

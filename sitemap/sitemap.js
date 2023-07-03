@@ -23,6 +23,8 @@ const he = require('he');
 async function generateSitemap() {
   const staticRoutes = [
     '/',
+    '/about',
+    '/contact'
   ];
 
 //   const dynamicParams = await getDynamicRouteParams();
