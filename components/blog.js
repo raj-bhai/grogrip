@@ -167,7 +167,7 @@ const Blogs = () => {
                     {
                         blogs.map((blog, index) => {
                             return (
-                                <div className=" relative w-[350px] bg-white rounded-xl pb-[50px] " >
+                                <div className=" relative w-[350px] bg-white rounded-xl pb-[50px] pt-[10px] " >
                                     <Image
                                         height={500}
                                         width={600}
