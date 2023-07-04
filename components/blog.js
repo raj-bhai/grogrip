@@ -13,6 +13,10 @@ const Blogs = () => {
     const [headerStyle, setHeaderStyle] = useState(' bg-gradient-to-r from-[#107840] via-[#107840] via-[#1F5025] via -[#28602E] to-[#107840]');
 
     useEffect(() => {
+        setDomLoaded(true)
+    }, [])
+    
+    useEffect(() => {
         const sections = document.querySelectorAll('.scroll-animation');
 
         const fadeIn = (entries, observer) => {
