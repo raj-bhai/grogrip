@@ -1,13 +1,16 @@
-import React, { useEffect } from "react";
+import React, { useEffect, useState } from "react";
 import Image from "next/image";
 import blog1 from "../public/grogrip.svg";
 import blog2 from "../public/grogrip2.svg";
 import blog3 from "../public/grogrip3.svg";
 import { useRouter } from "next/router";
+import Header from "./Home/header";
 
 const Blogs = () => {
     const router = useRouter()
     const backgroundGradient = "bg-gradient-to-r from-[#107840] via-[#107840] via-[#1F5025] via -[#28602E] to-[#107840]";
+    const [selectedHeader, setSelectedHeader] = useState(1)
+    const [headerStyle, setHeaderStyle] = useState(' bg-gradient-to-r from-[#107840] via-[#107840] via-[#1F5025] via -[#28602E] to-[#107840]');
 
     useEffect(() => {
         const sections = document.querySelectorAll('.scroll-animation');
@@ -95,7 +98,36 @@ const Blogs = () => {
 
     return (
         <section className={`py-12 ${backgroundGradient}`}>
-            <div className="container mx-auto px-2">
+            <Header
+                className={headerStyle}
+                selectedHeader={selectedHeader}
+                onClickHome={() => {
+                    null
+                    // document.getElementById('home')?.scrollIntoView();
+                    // setSelectedHeader(1)
+                }}
+                onClickService={() => {
+                    null
+                    // document.getElementById('getStarted')?.scrollIntoView();
+                    // setSelectedHeader(2)
+                }}
+                onClickPricing={() => {
+                    null
+                    // document.getElementById('pricing')?.scrollIntoView();
+                    // setSelectedHeader(3)
+                }}
+                onClickContact={() => {
+                    null
+                    // document.getElementById('contact')?.scrollIntoView();
+                    // setSelectedHeader(4)
+                }}
+                onClickAbout={() => {
+                    null
+                    // document.getElementById('footer')?.scrollIntoView();
+                    // setSelectedHeader(5)
+                }}
+            />
+            <div className="container mx-auto px-4">
                 {/* <div className=" grid grid-cols-1 sm:grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 scroll-animation">
                     {blogs.map((blog, index) => (
                         <div key={index} className=" bg-white relative rounded-lg shadow pt-2 pb-[50px]">
@@ -127,7 +159,7 @@ const Blogs = () => {
                         </div>
                     ))}
                 </div> */}
-                <div className="w-[100%] flex flex-wrap gap-8 justify-center " >
+                <div className="w-[100%] flex flex-wrap gap-8 justify-center mt-[100px] " >
                     {
                         blogs.map((blog, index) => {
                             return (

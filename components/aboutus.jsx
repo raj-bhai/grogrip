@@ -1,4 +1,4 @@
-import React, { useEffect } from "react";
+import React, { useEffect, useState } from "react";
 import Image from "next/image";
 import { useRouter } from "next/router";
 import grogrip from "../public/grogrip.svg";
@@ -6,10 +6,14 @@ import grogrip2 from "../public/grogrip2.svg";
 import grogrip3 from "../public/grogrip3.svg";
 import grogrip4 from "../public/grogrip4.svg";
 import grogrip5 from "../public/grogrip5.svg";
+import Header from "./Home/header";
 
 const AboutUs = () => {
    const router = useRouter();
    const backgroundGradient = "bg-gradient-to-r from-[#107840] via-[#107840] via-[#1F5025] via -[#28602E] to-[#107840]";
+   const [selectedHeader, setSelectedHeader] = useState(1)
+   const [headerStyle, setHeaderStyle] = useState(' bg-gradient-to-r from-[#107840] via-[#107840] via-[#1F5025] via -[#28602E] to-[#107840]');
+
    useEffect(() => {
       const sections = document.querySelectorAll('.scroll-animation');
 
@@ -40,6 +44,35 @@ const AboutUs = () => {
 
    return (
       <>
+         <Header
+            className={headerStyle}
+            selectedHeader={selectedHeader}
+            onClickHome={() => {
+               null
+               // document.getElementById('home')?.scrollIntoView();
+               // setSelectedHeader(1)
+            }}
+            onClickService={() => {
+               null
+               // document.getElementById('getStarted')?.scrollIntoView();
+               // setSelectedHeader(2)
+            }}
+            onClickPricing={() => {
+               null
+               // document.getElementById('pricing')?.scrollIntoView();
+               // setSelectedHeader(3)
+            }}
+            onClickContact={() => {
+               null
+               // document.getElementById('contact')?.scrollIntoView();
+               // setSelectedHeader(4)
+            }}
+            onClickAbout={() => {
+               null
+               // document.getElementById('footer')?.scrollIntoView();
+               // setSelectedHeader(5)
+            }}
+         />
          <section className={`w-full h-full transition ease-in-out delay-150 py-12 ${backgroundGradient}`}>
             {/* <div className="lg:flex lg:items-center lg:justify-between lg:mx-16 scroll-animation">
                <div className="textCont lg:text-left lg:w-3/4 text-center px-4">
