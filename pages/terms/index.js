@@ -7,7 +7,7 @@ function Terms() {
         <div className="flex flex-col  items-center h-screen" style={{ height: "100vh" }} >
             <Head>
                 <title>Terms and Condition</title>
-                <meta name="description" content="Criativcity Terms and Condition" />
+                <meta name="description" content="Grogrip Terms and Condition" />
                 {/* Other meta tags */}
             </Head>
             <div className="max-w-full w-full flex flex-col items-center px-8 py-8 ">

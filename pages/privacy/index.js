@@ -7,68 +7,98 @@ function PrivacyPolicy() {
         <div className="flex flex-col  items-center h-screen" style={{ height: "100vh" }} >
             <Head>
                 <title>Privacy Policy</title>
-                <meta name="description" content="Criativcity Privacy policy" />
+                <meta name="description" content="Grogrip Privacy policy" />
                 {/* Other meta tags */}
             </Head>
-            <div className="max-w-3xl w-full px-4 py-8 ">
+            <div className="max-w-full w-full flex flex-col items-center px-8 py-8 ">
                 <h1 className="text-3xl font-bold mb-4">Privacy Policy</h1>
-                <p className="mb-2">
-                    Please read this privacy policy (the &quot;Policy&quot;) carefully
-                    to understand how Elixzor technologies Pvt Ltd., B-208, PRABHAKAR CHS LTD, JANGID ESTATE,
-                    NEAR VIJAY PARK, MIRA ROAD EAST, THANE, India (&quot;Elixzor&quot;, &quot;we&quot;) uses personal information.
-                </p>
-                <p className="mb-2">
-                    By accessing or using www.Criativcity.com, you acknowledge that you have read
-                    and understood this Policy. This Policy may change from time to time;
-                    any changes we make to this Policy will be posted on this Site,
-                    we will also take any other steps, to the extent required by applicable law, including
-                    notifying you about material changes. Changes to this Policy are effective as of the stated &quot;Last Updated&quot;
-                    date. We recommend that you check the Policy periodically for any updates or changes. Information We Collect – You
-                    directly provide us with most of the information we collect: when you register to the Site, use it, complete
-                    forms, or register to any of our programs. We also collect information about your communications with Criativcity
-                    as well as any of your posts on our blogs or forums and your communication with other users of Criativcity.
-                </p>
-                <p className="mb-2">
-                    In addition, we automatically collect information while you access, browse, view or otherwise use the Site and receive
-                    information from third party vendors or other available sources. Our Legal Basis for Using Your Personal
-                    Information - Where relevant under applicable laws, all processing of your personal information will be justified by
-                    a &quot;lawful ground&quot; for processing as detailed below. How Do We Use the Information Collected? – We use
-                    personal information to provide you with quality service and security, to operate the Site, understand how people use
-                    the Site, and to perform our obligations to you; to ensure our integrity and security; to prevent fraud; to contact you
-                    and send you direct marketing communications; to promote and advertise the Site, our services; to comply with lawful
-                    requests by public authorities and to comply with applicable laws and regulations. How Long Do We Keep Personal
-                    Information – We will keep personal information only for as long as is required to fulfil the purpose for which it was
-                    collected.
-                </p>
-                <p className="mb-2">
-                    However, in some cases we will retain personal information for longer periods of time. Children - This Site is offered
-                    and available to users who are at least 18 years of age and of legal age to form a binding contract. Minors under 18 and
-                    at least 13 years of age, are only permitted to use the Site through an account owned by a parent or legal guardian with
-                    their appropriate permission. Minors under 13 are not permitted to use the Site or the Fiverr services. We do not
-                    knowingly collect personal information from children under 13. Sharing Personal Information with Third Parties – We
-                    share personal information with third parties in order to operate the Site, provide our services to you, fulfil
-                    obligations imposed on us by applicable laws and regulations, and prevent fraud, infringements and illegal activities.
-                    Where We Store Personal Information - Some of the personal information you provide to us will be stored or processed on
-                    our behalf by third party suppliers and data processors and may be located in other jurisdictions, such as the United
-                    States and India. Cookies - We use cookies and similar technologies (such as web beacons, pixels, tags, and scripts)
-                    to improve and personalize your experience, provide our services, analyze website performance and for marketing
-                    purposes. Do Not Track (DNT) – Our Site does not respond to Do Not Track (DNT) signals. External Links - the Site
-                    contains links to third party sites and if you link to a third party site from the Site, any data you provide to that
-                    site and any use of that data by the third party are not under the control of Criativcity and are not subject to this
-                    Policy.
-                </p>
-                <p className="mb-2">
-                    Security – We implement technical and organizational measures to maintain the security of the Site and your personal
-                    information and in preventing unauthorized access, loss, misuse, alteration, destruction or damage to it through industry
-                    standard technologies and internal procedures. Updating Personal Information – We take steps to ensure that the personal
-                    information we collect is accurate and up to date, and we provide you with the opportunity to update your information
-                    through your account profile settings. In the event that you believe your information is in any way incorrect or
-                    inaccurate,
-                </p>
-                <p className="mb-2" >
-                    please let us know immediately. Contact Us - You can exercise your rights over your personal information, by contacting
-                    us at Support@criativcity.com
-                </p>
+                <div className=" w-full mb-[10px] " >
+                    <p className=" font-bold " >1. Introduction</p>
+                    <p>
+                        1.1 GROGRIP MEDIA ("Company," "we," "our," or "us") is committed to protecting the privacy and security of the personal information of our clients ("Client," "you," or "your"). This Privacy Policy explains how we collect, use, disclose, and safeguard your personal information in connection with our YouTube Automation Services.
+                    </p>
+                </div>
+
+                <div className=" w-full mb-[10px] " >
+                    <p className=" font-bold " >2. Information We Collect</p>
+                    <p>
+                        2.1 We may collect various types of personal information from you, including but not limited to:
+                    </p>
+                    <p className="ml-4  " >- Contact information (e.g., name, email address, phone number)</p>
+                    <p className="ml-4  " >- Payment and billing details (if applicable)</p>
+                    <p className="ml-4  " >- Content and materials provided by the Client for video production</p>
+                    <p className="ml-4  " >- Communication history with GROGRIP MEDIA</p>
+                </div>
+
+                <div className=" w-full mb-[10px] " >
+                    <p className=" font-bold " >3. How We Use Your Information</p>
+                    <p>
+                        3.1 We use the collected information for the following purposes:
+                    </p>
+                    <p className="ml-4  " >- To provide and deliver our YouTube Automation Services</p>
+                    <p className="ml-4  " >- To communicate with you regarding your orders and services</p>
+                    <p className="ml-4  " >- To process payments and billing for the Services</p>
+                    <p className="ml-4  " >- To improve the quality and effectiveness of our Services</p>
+                    <p className="ml-4  " >- To address any inquiries, issues, or complaints</p>
+                </div>
+
+                <div className=" w-full mb-[10px] " >
+                    <p className=" font-bold " >4. Data Security</p>
+                    <p>
+                        4.1 GROGRIP MEDIA takes reasonable measures to protect the personal information of our clients. We implement appropriate technical and organisational security measures to safeguard against unauthorised access, disclosure, alteration, or destruction of data.
+                    </p>
+                </div>
+
+                <div className=" w-full mb-[10px] " >
+                    <p className=" font-bold " >5. Data Sharing and Disclosure</p>
+                    <p>
+                        5.1 We may share your personal information with third-party service providers, such as payment processors or delivery services, solely for the purpose of providing the Services.
+                    </p>
+                    <p>
+                        5.2 GROGRIP MEDIA will not sell, rent, or lease your personal information to any third party.
+                    </p>
+                    <p>
+                        5.3 We may disclose your personal information if required by law, court order, or governmental authority, or to protect our legal rights, property, or safety.
+                    </p>
+                </div>
+
+                <div className=" w-full mb-[10px] " >
+                    <p className=" font-bold " >6. Data Retention</p>
+                    <p>
+                        6.1 We will retain your personal information for as long as necessary to fulfill the purposes outlined in this Privacy Policy, unless a longer retention period is required or permitted by law.
+                    </p>
+                </div>
+
+                <div className=" w-full mb-[10px] " >
+                    <p className=" font-bold " >7. Your Choices</p>
+                    <p>
+                    7.1 You have the right to:
+                    </p>
+                    <p className="ml-4  " >- Access and update your personal information</p>
+                    <p className="ml-4  " >- Withdraw consent to the processing of your personal information (where applicable)</p>
+                    <p className="ml-4  " >- Request the deletion of your personal information (subject to legal limitations)</p>
+                </div>
+
+                <div className=" w-full mb-[10px] " >
+                    <p className=" font-bold " >8. Third-Party Links</p>
+                    <p>
+                    8.1 Our website may contain links to third-party websites. Please be aware that we are not responsible for the content or privacy practices of such sites. We encourage you to review the privacy policies of these third-party websites.
+                    </p>
+                </div>
+
+                <div className=" w-full mb-[10px] " >
+                    <p className=" font-bold " >9. Changes to this Privacy Policy</p>
+                    <p>
+                    9.1 GROGRIP MEDIA reserves the right to update or modify this Privacy Policy at any time. Any changes will be effective upon posting on our website. We encourage you to review this Privacy Policy periodically for any updates.
+                    </p>
+                </div>
+
+                <div className=" w-full mb-[10px] " >
+                    <p className=" font-bold " >10. Contact Information</p>
+                    <p>
+                    10.1 If you have any questions, concerns, or requests related to this Privacy Policy or the privacy practices of GROGRIP MEDIA, please contact us at support@grogrip.com.
+                    </p>
+                </div>
             </div>
         </div>
     );
