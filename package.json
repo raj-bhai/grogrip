@@ -17,6 +17,8 @@
     "@mui/material": "^5.12.3",
     "@react-oauth/google": "^0.5.1",
     "@reduxjs/toolkit": "^1.8.5",
+    "@stripe/react-stripe-js": "^2.1.1",
+    "@stripe/stripe-js": "^1.54.1",
     "@trendyol-js/react-carousel": "^3.0.0",
     "@vercel/analytics": "^0.1.5",
     "axios": "^0.27.2",
