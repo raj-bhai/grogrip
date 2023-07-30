@@ -16,19 +16,12 @@ function MyApp({ Component, pageProps }) {
   const ogImage = './favicon.ico'
 
   useEffect(() => {
-    // Initialize Google Analytics with your tracking ID
     ReactGA.initialize('G-RQF44EP1R1');
-
-    // Send initial pageview event
     ReactGA.pageview(window.location.pathname);
-
-    // Track pageview on route change
     const handleRouteChange = (url) => {
       ReactGA.pageview(url);
     };
     router.events.on('routeChangeComplete', handleRouteChange);
-
-    // Clean up event listener
     return () => {
       router.events.off('routeChangeComplete', handleRouteChange);
     };
@@ -36,10 +29,10 @@ function MyApp({ Component, pageProps }) {
 
   return (
     <>
-      <Head>
+      {/* <Head>
         <link rel="canonical" href="https://www.grogrip.com/home" />
         <meta name="google-site-verification" content="P1rLSRxY5hQ4--9Ktuz6cXNRY9bkDRqtloyNq1wein0" />
-      </Head>
+      </Head> */}
       <Provider store={store}>
         <Component {...pageProps} />
         <Analytics />

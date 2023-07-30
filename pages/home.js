@@ -7,40 +7,25 @@ import CustomPlan from '../components/Home/customPlan';
 import Success from '../components/pupups/sucess';
 import url from '../constants/url';
 import {
-    FaTwitter,
     FaFacebookSquare,
     FaInstagram,
     FaAngleDoubleUp,
     FaWhatsapp,
-    FaPlayCircle,
-    FaChevronRight,
-    FaLinkedinIn,
-    FaStar
 } from 'react-icons/fa';
 import Video from '../components/Home/video';
 import Globe from '../components/Home/globe';
 import Services from '../components/Home/services';
-import Review from '../components/Home/review';
-import Contact from '../components/Home/contact';
 import Footer from '../components/Home/footer';
-import Label from '../components/Home/micro/label';
 import Videos from '../constants/portfolio';
-import { AiFillEye } from 'react-icons/ai';
 import Modal from '@mui/material/Modal';
 import Box from '@mui/material/Box';
-import Typography from '@mui/material/Typography';
-import Stack from '@mui/material/Stack';
 import { styled } from '@mui/material/styles';
 import Paper from '@mui/material/Paper';
-import Image from 'next/image';
 import "react-responsive-carousel/lib/styles/carousel.min.css";
 import Carousel from '../components/Home/micro/imageCarousel';
-import { motion } from "framer-motion";
-import { staggerContainer, slideIn } from '../utils/motion';
 import axios from 'axios';
 import { useRouter } from 'next/router';
-// import { slideIn, staggerContainer, textVariant, textVariant2 } from "@/utils/motion";
-// import VaraText from '../components/Home/micro/VaraText';
+
 
 
 const ProjectTypes = [
@@ -58,20 +43,9 @@ const style = {
     top: '50%',
     left: '50%',
     transform: 'translate(-50%, -50%)',
-    // width: 400,
     bgcolor: 'background.paper',
-    // border: '2px solid #000',
-    // boxShadow: 24,
     p: 4,
 };
-
-const Item = styled(Paper)(({ theme }) => ({
-    backgroundColor: theme.palette.mode === 'dark' ? '#1A2027' : '#fff',
-    ...theme.typography.body2,
-    padding: theme.spacing(1),
-    textAlign: 'center',
-    color: theme.palette.text.secondary,
-}));
 
 const Home = () => {
 
@@ -85,14 +59,11 @@ const Home = () => {
     const HomeRef = useRef(null);
     const AboutRef = useRef(null);
     const ServicesRef = useRef(null);
-    const GlobeRef = useRef(null)
     const PortfolioRef = useRef(null)
     const PricingRef = useRef(null);
     const ExtraRef = useRef(null);
     const ExtraRef1 = useRef(null);
-    const ExtraRef2 = useRef(null);
     const CustomPlanRef = useRef(null)
-    const ContactRef = useRef(null);
     const FooterRef = useRef(null);
     const BottomRef = useRef(null);
     const backgroundGradient = ' bg-gradient-to-r from-[#107840] via-[#107840] via-[#1F5025] via -[#28602E] to-[#107840]';
@@ -132,7 +103,6 @@ const Home = () => {
     useEffect(() => {
         if (btn1Animate) {
             setTimeout(() => {
-                // console.log("abcde")
                 setBtn1Animate(false)
             }, 2500);
         }
@@ -141,7 +111,6 @@ const Home = () => {
     useEffect(() => {
         if (btn2Animate) {
             setTimeout(() => {
-                // console.log("abcde")
                 setBtn2Animate(false)
             }, 2500);
         }
@@ -252,14 +221,9 @@ const Home = () => {
         if (!result) {
             return;
         }
+
         router.push(`/payment?data=${result.data.clientSecret}`)
-        console.log(result.data)
     }
-
-
-    // useEffect(() => {
-    //     window.scrollTo(0, 0)
-    // }, [])
 
     const onScroll = () => {
         if (window.pageYOffset > 50) {
@@ -592,6 +556,7 @@ const Home = () => {
                                 }}
                                 onClick={() => {
                                     setPricingIndex(0)
+                                    createOrder(100)
                                 }}
                             />
                             <PricingCard
@@ -621,6 +586,7 @@ const Home = () => {
                                 }}
                                 onClick={() => {
                                     setPricingIndex(2)
+                                    createOrder(100)
                                 }}
                             />
                         </div>
