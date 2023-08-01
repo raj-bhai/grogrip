@@ -7,6 +7,7 @@ export default class MyDocument extends Document {
                 <Head>
                     <link rel="preconnect" href="https://fonts.googleapis.com" />
                     <link href="https://fonts.googleapis.com/css2?family=Lato&family=Yatra+One&display=swap" rel="stylesheet" />
+                    <script async src="https://www.googletagmanager.com/gtag/js?id=G-RQF44EP1R1"></script>
                     <script
                         dangerouslySetInnerHTML={{
                             __html: `
