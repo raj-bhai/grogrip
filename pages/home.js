@@ -343,8 +343,6 @@ const Home = () => {
                                                 >
                                                     {`Expert YouTube Service  and Support`}
                                                 </MovingText>
-
-                                                {/* <h1 className='text-white text-[40px] leading-[45px] mt-[30px] text-left font-normal ' >{'Creating videos is never so been easy'}</h1> */}
                                                 <div className='lg:mt-[28px] flex mt-[0px] border-[0px] lg:mt-0 mt-[50px] lg:h-[100px]' >
                                                     {
                                                         showText2 &&
@@ -503,13 +501,13 @@ const Home = () => {
                             </div>
                         </div>
                     </div>
-                    <div ref={ServicesRef} id='getStarted' className='   w-[100%] flex items-center justify-center'>
+                    {/* <div ref={ServicesRef} id='getStarted' className='   w-[100%] flex items-center justify-center'>
                         <div className='w-[100%] lg:flex lg:flex-col lg:items-center ' >
                             <Services
                                 id=''
                             />
                         </div>
-                    </div>
+                    </div> */}
                     <div ref={PortfolioRef}
                         id="portfolio" className='w-[100%] relative sm:mt-[0px] mt-[-100px] border-[0px] flex items-center justify-center '>
                         <img
@@ -525,8 +523,6 @@ const Home = () => {
                                 <img
                                     src="https://res.cloudinary.com/drgvislmm/image/upload/v1683385350/WebsiteImages/ggmoney_axjqvu.gif"
                                     className='absolute lg:w-[600px] lg:h-[400px] lg:top-0  top-1 '
-                                    // width={600}
-                                    // height={600}
                                     alt="person7" />
                             </div>
                             <div className='w-full flex flex-col lg:items-start lg:text-start items-center text-center lg:pb-[120px] sm:px-[40px] pr-[0] sm:mt-[0px] mt-[50px]  ' >
@@ -630,7 +626,6 @@ const Home = () => {
                                             return (
                                                 <button type="button"
                                                     key={index}
-                                                    // focus:ring focus:ring-green-700
                                                     className={` ${(index == 2) ? 'lg:w-[130px] w-[100px]' : 'lg:w-[120px] w-[80px]'} h-[35px] hover:bg-[#F2F4F4]  focus:text-[#fff] ny-font-bold focus:bg-green-600   drop-shadow-lg lg:text-[16px] lg:font-bold sm:text-[#000]  lg:border-[0px] rounded  lg:h-[40px] sm:mb-[0px] mb-[20px] cursor-pointer text-[13px] cursor-pointer ${(projectIndex == index) ? ' text-[#31FF52] bg-green-600' : ' text-[#fff] sm:bg-[#E5E7E9] '} `}
                                                     onClick={() => {
                                                         setprojectIndex(index)
