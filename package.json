@@ -11,10 +11,10 @@
     "lint": "next lint"
   },
   "dependencies": {
-    "@emotion/react": "^11.10.8",
-    "@emotion/styled": "^11.10.8",
+    "@emotion/react": "^11.11.1",
+    "@emotion/styled": "^11.11.0",
     "@fontsource/roboto": "^4.5.8",
-    "@mui/material": "^5.12.3",
+    "@mui/material": "^5.14.4",
     "@react-oauth/google": "^0.5.1",
     "@reduxjs/toolkit": "^1.8.5",
     "@stripe/react-stripe-js": "^2.1.1",
