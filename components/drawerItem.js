@@ -51,11 +51,9 @@ const DrawerItem = ({ money, onClose }) => {
         const result = await axios.post(`${url.apiRoot}/payment/createOrder`, {
             amount: amount * 100,
         });
-
         if (!result) {
             return;
         }
-
         router.push(`/payment?data=${result.data.clientSecret}`)
     }
     return (
