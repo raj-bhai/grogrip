@@ -48,6 +48,17 @@
     }
 }
 
+.page-content {
+    transition: filter 0.3s; /* This will smoothly transition the blur effect if you add or remove it. */
+}
+
+/* The class to blur your page. */
+.page-content--blurred {
+    filter: blur(8px); 
+    pointer-events: none; /* This will prevent the user from interacting with blurred elements. */
+    user-select: none;  /* This prevents text selection. */
+}
+
 
 .my-font {
     font-family: 'Montserrat', sans-serif;

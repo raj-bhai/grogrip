@@ -18,7 +18,6 @@ const LoginButton = () => {
         })
             .then(res => {
                 if (res.data.success) {
-                    // router.push('/home')
                     console.log("Success");
                 }
             })
