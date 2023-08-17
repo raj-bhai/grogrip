@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from "react";
 import { GoogleOAuthProvider, GoogleLogin } from "@react-oauth/google";
 import jwt_decode from "jwt-decode";
+import axios from "axios";
 
 const LoginButton = () => {
 
@@ -20,12 +21,12 @@ const LoginButton = () => {
             .then(res => {
                 if (res.data.success) {
                     console.log("response :", res.data);
-                    window.location.reload();
+                    // window.location.reload();
                 }
             })
             .catch(err => {
                 console.log(err);
-                window.location.reload();
+                // window.location.reload();
             });
     }
 
