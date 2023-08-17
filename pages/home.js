@@ -50,6 +50,8 @@ const style = {
     p: 4,
 };
 
+
+
 const Home = () => {
 
     const router = useRouter()
@@ -104,6 +106,12 @@ const Home = () => {
     const [SSopen, setSSOpen] = useState(false);
     const handleOpen = () => setSSOpen(true);
     const handleClose = () => setSSOpen(false);
+
+    let token
+    if (typeof window !== 'undefined') {
+        token = localStorage.getItem('token');
+        // ... do something with the value
+    }
 
 
 
@@ -281,7 +289,7 @@ const Home = () => {
                         }}
                     />
                 }
-                <div ref={HomeRef} className={`w-[100%] sm:min-h-[650px] border-[0px] ${ localStorage?.getItem('token')? 'page-content' : 'page-content--blurred' }`}>
+                <div ref={HomeRef} className={`w-[100%] sm:min-h-[650px] ${token ? 'page-content' : 'page-content--blurred'}`}>
                     <Header
                         className={headerStyle}
                         selectedHeader={selectedHeader}
@@ -707,8 +715,8 @@ const Home = () => {
                     onClose={() => setDrawerpen(false)}
                 >
                     <DrawerItem
-                    money={selectedPrice}
-                    onClose={() => setDrawerpen(false)}
+                        money={selectedPrice}
+                        onClose={() => setDrawerpen(false)}
                     />
                 </Drawer>
             </div >
