@@ -107,11 +107,6 @@ const Home = () => {
     const handleOpen = () => setSSOpen(true);
     const handleClose = () => setSSOpen(false);
 
-    let token
-    if (typeof window !== 'undefined') {
-        token = localStorage.getItem('token');
-        // ... do something with the value
-    }
 
 
 
@@ -289,7 +284,7 @@ const Home = () => {
                         }}
                     />
                 }
-                <div ref={HomeRef} className={`w-[100%] sm:min-h-[650px] ${token ? 'page-content' : 'page-content--blurred'}`}>
+                <div ref={HomeRef} className={`w-[100%] sm:min-h-[650px] ${localStorage.getItem('token') ? 'page-content' : 'page-content--blurred'}`}>
                     <Header
                         className={headerStyle}
                         selectedHeader={selectedHeader}

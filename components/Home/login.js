@@ -18,11 +18,13 @@ const LoginButton = () => {
         })
             .then(res => {
                 if (res.data.success) {
-                    console.log("Success");
+                    console.log("response :", res.data);
+                    window.location.reload();
                 }
             })
             .catch(err => {
                 console.log(err);
+                window.location.reload();
             });
     }
 
