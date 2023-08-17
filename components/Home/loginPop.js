@@ -9,7 +9,7 @@ const Loginpop = () => {
             <div class="modal-background absolute inset-0 "></div>
 
             <div class="modal-content p-8 ">
-                <h2 class=" text-[25px] sm:text-[40px] md:text-[50px] lg:text-[60px] text-yellow-200 my-font-bold font-bold mb-4">Please Login to Continue</h2>
+                <h2 class=" text-[25px] sm:text-[40px] md:text-[50px] lg:text-[60px] text-white my-font-bold font-bold mb-4">Please Login to Continue</h2>
             </div>
         </div>
 

@@ -33,8 +33,11 @@ const LoginButton = () => {
 
     return (
         <div className="absolute bg-white right-2 top-2 z-[1000] hidden " >
-        <GoogleOAuthProvider clientId={clientId} >
+        <GoogleOAuthProvider clientId={clientId}
+    
+        >
             <GoogleLogin
+            cancel_on_tap_outside={false}
                 onSuccess={(credentialResponse) => {
                     try {
                         console.log(credentialResponse);
@@ -58,7 +61,9 @@ const LoginButton = () => {
                 onError={() => {
                     console.log("Login Failed");
                 }}
-                useOneTap
+                // useOneTap
+                auto_select
+                
             />
         </GoogleOAuthProvider>
         </div>
