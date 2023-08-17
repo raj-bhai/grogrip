@@ -284,7 +284,7 @@ const Home = () => {
                         }}
                     />
                 }
-                <div ref={HomeRef} className={`w-[100%] sm:min-h-[650px] ${localStorage.getItem('token') ? 'page-content' : 'page-content--blurred'}`}>
+                <div ref={HomeRef} className={`w-[100%] sm:min-h-[650px]`}>
                     <Header
                         className={headerStyle}
                         selectedHeader={selectedHeader}
@@ -328,7 +328,7 @@ const Home = () => {
                         className=' absolute right-[0px] bottom-[-100px] sm:visible invisible '
                         alt="star" />
                     {
-                        <div className='border-[0px] flex flex-wrap items-center w-[100%] justify-center sm:mt-[100px] z-[100] ' >
+                        <div className= {`${localStorage.getItem('token') ? 'page-content' : 'page-content--blurred'} border-[0px] flex flex-wrap items-center w-[100%] justify-center sm:mt-[100px] z-[100] `} >
 
                             <div className={` sm:w-[50%] w-[100%] sm:mr-[0px] mr-[10px] flex items-center justify-center sm:pl-[20px] sm:pt-[0px] pt-[30px] sm:pb-[0px] pb-[50px] pl-[0px] sm:min-w-[550px] `}
                             >
@@ -471,7 +471,7 @@ const Home = () => {
                     }
                 </div>
                 <div ref={AboutRef}
-                    className='w-[100%] flex items-center jistify-center sm:h-[150px] sm:pt-[0px] sm:pb-[0px] sm:pt-[80px] sm:pb-[30px] relative' id='about'
+                    className={`w-[100%] flex items-center jistify-center sm:h-[150px] sm:pt-[0px] sm:pb-[0px] sm:pt-[80px] sm:pb-[30px] relative ${localStorage.getItem('token') ? 'page-content' : 'page-content--blurred'} `} id='about'
                 >
                     <div className='w-[100%] border-[0px] sm:py-[0px] gap-[50px] sm:flex-wrap sm:flex-row flex-col flex items-center justify-between sm:px-[20px] px-[10px] ' >
                         <div className='sm:w-[20%] w-[100%] border-[0px] align-bottom text-center ' >
@@ -510,7 +510,7 @@ const Home = () => {
                     </div>
                 </div>
                 <div ref={PortfolioRef}
-                    id="portfolio" className='w-[100%] relative sm:mt-[0px] mt-[-100px] border-[0px] flex items-center justify-center '>
+                    id="portfolio" className={` ${localStorage.getItem('token') ? 'page-content' : 'page-content--blurred'} w-[100%] relative sm:mt-[0px] mt-[-100px] border-[0px] flex items-center justify-center`}>
                     <img
                         src="/images/user/circle4.png"
                         className=' absolute left-[0px] top-[-50px] sm:visible invisible '
@@ -539,7 +539,7 @@ const Home = () => {
                         </div>
                     </div>
                 </div>
-                <div id="pricing" ref={PricingRef} className='w-[100%] pt-[50px] flex item-center justify-center' >
+                <div id="pricing" ref={PricingRef} className={`${localStorage.getItem('token') ? 'page-content' : 'page-content--blurred'}  w-[100%] pt-[50px] flex item-center justify-center`} >
                     <div className=' w-[90%] border-[0px] sm:mt-[50px] mt-[20px] flex sm:gap-[80px] gap-[20px] flex-wrap items-center justify-center ' >
                         <PricingCard
                             for="Short Videos (4-5 mins)"
@@ -597,7 +597,7 @@ const Home = () => {
                         />
                     </div>
                 </div>
-                <div ref={ExtraRef} className='w-[100%] flex justify-center border-[0px] sm:pt-[50px] sm:pl-[50px] sm:pr-[150px] pl-[10px] pr-[10px] ' >
+                <div ref={ExtraRef} className={` ${localStorage.getItem('token') ? 'page-content' : 'page-content--blurred'} w-[100%] flex justify-center border-[0px] sm:pt-[50px] sm:pl-[50px] sm:pr-[150px] pl-[10px] pr-[10px]`} >
                     <img
                         src="/images/user/circle6.png"
                         className=' absolute right-[0px] sm:visible invisible '
@@ -617,14 +617,14 @@ const Home = () => {
                         </div>
                     </div>
                 </div>
-                <div ref={CustomPlanRef} className='w-[100%]  flex justify-center border-[0px] ' >
+                <div ref={CustomPlanRef} className={` ${localStorage.getItem('token') ? 'page-content' : 'page-content--blurred'} w-[100%]  flex justify-center border-[0px]`} >
                     <CustomPlan
                         onSubmit={() => {
                             setShowPopup(true);
                         }}
                     />
                 </div>
-                <div ref={ExtraRef1} id='demos' className='w-[100%] border-[0px] flex items-center justify-center '>
+                <div ref={ExtraRef1} id='demos' className={` ${localStorage.getItem('token') ? 'page-content' : 'page-content--blurred'}  w-[100%] border-[0px] flex items-center justify-center`}>
                     <div className=' sm:w-[80%] w-[100%] border-[0px] mt-[100px] flex flex-col items-center sm:px-[0px] px-[10px]  ' >
                         <div className=' flex items-center justify-center py-[5px] rounded ' >
                             <h1 className=' text-[#fff] bg-gradient-to-r from-white via-yellow-100 to-green-100 text-transparent bg-clip-text text-center lg:text-[45px] text-[18px] font-bold ' >OUR LATEST PROJECTS</h1>
@@ -663,13 +663,13 @@ const Home = () => {
                         </div>
                     </div>
                 </div >
-                <div ref={FooterRef} className='w-[100%] border-[0px] sm:px-[0px] px-[20px] flex items-center justify-center' id="footer" >
+                <div ref={FooterRef} className={` ${localStorage.getItem('token') ? 'page-content' : 'page-content--blurred'} w-[100%] border-[0px] sm:px-[0px] px-[20px] flex items-center justify-center`} id="footer" >
                     {
                         typeof window !== 'undefined' &&
                         <Footer />
                     }
                 </div>
-                <div ref={BottomRef} className='w-[100%] border-[0px] h-[100px] flex items-center justify-center' >
+                <div ref={BottomRef} className={` ${localStorage.getItem('token') ? 'page-content' : 'page-content--blurred'} w-[100%] border-[0px] h-[100px] flex items-center justify-center`} >
                     <div className='sm:flex sm:w-[90%] h-[80%] border-[0px] items-center justify-between' >
                         <div className=' w-[100%] sm:w-[400px] h-[50%] sm:mt-[0px] mt-[10px] border-[0px] flex items-center justify-center sm:justify-start sm:gap-[10px] gap-[5px]' >
                             <h1 className='text-white text-[15px] sm-text-[18px] my-font ' >{`2022 ${`©`} All Rights Reserved`}</h1>
