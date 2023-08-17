@@ -130,54 +130,55 @@ const Home = () => {
 
 
     useEffect(() => {
-        if (countingStart) {
-            if (Math.floor(count) < 50) {
-                const intervalId = setInterval(() =>
-                    setCount(count + 0.5),
-                    0.01 // every 3 seconds
-                );
-                return () => clearTimeout(intervalId);
-            }
+        // if (countingStart) {
+        if (Math.floor(count) < 50) {
+            const intervalId = setInterval(() =>
+                setCount(count + 0.5),
+                0.01 // every 3 seconds
+            );
+            return () => clearTimeout(intervalId);
         }
+        // }
     }, [count, countingStart])
 
     useEffect(() => {
-        if (countingStart) {
-            if (Math.floor(count1) < 150) {
-                const intervalId = setInterval(() =>
-                    setCount1(count1 + 1),
-                    0.0001 // every 3 seconds
-                );
-                return () => clearTimeout(intervalId);
-            }
+        // if (countingStart) {
+        if (Math.floor(count1) < 150) {
+            const intervalId = setInterval(() =>
+                setCount1(count1 + 1),
+                0.0001 // every 3 seconds
+            );
+            return () => clearTimeout(intervalId);
         }
+        // }
     }, [count1, countingStart])
 
 
     useEffect(() => {
-        if (countingStart) {
-            if (Math.floor(count2) < 500) {
-                const intervalId = setInterval(() =>
-                    setCount2(count2 + 4),
-                    0.00000001 // every 3 seconds
-                );
-                return () => clearTimeout(intervalId);
-            }
+        // if (countingStart) {
+        if (Math.floor(count2) < 500) {
+            const intervalId = setInterval(() =>
+                setCount2(count2 + 4),
+                0.00000001 // every 3 seconds
+            );
+            return () => clearTimeout(intervalId);
         }
+        // }
     }, [count2, countingStart])
 
     useEffect(() => {
-        if (countingStart) {
-            if (Math.floor(count3) < 267841) {
-                const intervalId = setInterval(() =>
-                    setCount3(count3 + 1),
-                    0.001 // every 3 seconds
-                );
-                return () => clearTimeout(intervalId);
-            } else {
-                setCount3(215794)
-            }
+        // if (countingStart) {
+        if (Math.floor(count3) < 221841) {
+            const intervalId = setInterval(() =>
+                setCount3(count3 + 1),
+                0.001 // every 3 seconds
+            );
+            return () => clearTimeout(intervalId);
         }
+        // else {
+        //     setCount3(215794)
+        // }
+        // }
     }, [count3, countingStart])
 
     useEffect(() => {
@@ -288,7 +289,7 @@ const Home = () => {
                     localStorage.getItem('token') ?
                         null : <Loginpop />
                 }
-                <div ref={HomeRef} className={`w-[100%] sm:min-h-[650px]`}>
+                <div ref={HomeRef} className={`w-[100%] `}>
                     <Header
                         className={headerStyle}
                         selectedHeader={selectedHeader}
@@ -332,7 +333,7 @@ const Home = () => {
                         className=' absolute right-[0px] bottom-[-100px] sm:visible invisible '
                         alt="star" />
                     {
-                        <div className={`${localStorage.getItem('token') ? 'page-content' : 'page-content--blurred'} border-[0px] py-16 flex flex-wrap items-center w-[100%] justify-center sm:mt-[100px] z-[100] `} >
+                        <div className={`${localStorage.getItem('token') ? 'page-content' : 'page-content--blurred'} border-[0px] py-16 sm:py-2 flex flex-wrap items-center w-[100%] justify-center sm:mt-[100px] z-[100] `} >
 
                             <div className={` sm:w-[30%] w-[100%]  sm:mt-[-50px] sm:mr-[0px] mr-[10px] flex items-center justify-center sm:pl-[20px] sm:pt-[0px] pt-[10px] sm:pb-[0px] pb-[10px] pl-[0px] sm:min-w-[550px] `}
                             >
@@ -468,7 +469,7 @@ const Home = () => {
                                     </div>
                                 </div>
                             </div>
-                            <div className=' w-[95%] sm:w-[60%] p-2 sm:p-4 h-[200px] sm:h-[500px] border-[0px] sm:mr-[25px] flex rounded-lg lg:justify-end video-background justify-center   ' 
+                            <div className=' w-[95%] sm:w-[60%] p-2 sm:p-4 h-[200px] sm:h-[500px] border-[0px] sm:mr-[25px] flex rounded-lg lg:justify-end video-background justify-center   '
                             >
                                 {/* <Globe /> */}
                                 <iframe
@@ -483,8 +484,7 @@ const Home = () => {
                         </div>
                     }
                 </div>
-                <div ref={AboutRef}
-                    className={`w-[100%] flex items-center jistify-center sm:h-[150px] sm:pt-[0px] sm:pb-[0px] sm:pt-[80px] sm:pb-[30px] relative ${localStorage.getItem('token') ? 'page-content' : 'page-content--blurred'} `} id='about'
+                <div ref={AboutRef} className={`w-[100%] flex items-center jistify-center sm:h-[150px] sm:pt-[0px] sm:pb-[0px] sm:pb-[30px] relative ${localStorage.getItem('token') ? 'page-content' : 'page-content--blurred'} `} id='about'
                 >
                     <div className='w-[100%] border-[0px] sm:py-[0px] gap-[50px] sm:flex-wrap sm:flex-row flex-col flex items-center justify-between sm:px-[20px] px-[10px] ' >
                         <div className='sm:w-[20%] w-[100%] border-[0px] align-bottom text-center ' >
@@ -522,8 +522,7 @@ const Home = () => {
                         </div>
                     </div>
                 </div>
-                <div ref={PortfolioRef}
-                    id="portfolio" className={` ${localStorage.getItem('token') ? 'page-content' : 'page-content--blurred'} w-[100%] relative sm:mt-[0px] mt-[-100px] border-[0px] flex items-center justify-center`}>
+                {/* <div ref={PortfolioRef} id="portfolio" className={` ${localStorage.getItem('token') ? 'page-content' : 'page-content--blurred'} w-[100%]  border relative sm:mt-[0px] mt-[-100px] border-[0px] flex items-center justify-center`}>
                     <img
                         src="/images/user/circle4.png"
                         className=' absolute left-[0px] top-[-50px] sm:visible invisible '
@@ -551,8 +550,11 @@ const Home = () => {
                             </div>
                         </div>
                     </div>
-                </div>
-                <div id="pricing" ref={PricingRef} className={`${localStorage.getItem('token') ? 'page-content' : 'page-content--blurred'}  w-[100%] pt-[50px] flex item-center justify-center`} >
+                </div> */}
+                <div id="pricing" ref={PricingRef} className={`${localStorage.getItem('token') ? 'page-content' : 'page-content--blurred'}  w-[100%] pt-[50px] flex flex-col items-center justify-center`} >
+                    <btn className=' text-white text-[50px] w-[550px] hover:border-white hover:text-yellow-200 cursor-pointer border flex items-center justify-center  border-yellow-200 rounded-lg ml-8 my-font-bold  ' >
+                        <p>Cashcow Packages</p>
+                    </btn>
                     <div className=' w-[90%] border-[0px] sm:mt-[50px] mt-[20px] flex sm:gap-[80px] gap-[20px] flex-wrap items-center justify-center ' >
                         <PricingCard
                             for="Short Videos (4-5 mins)"
