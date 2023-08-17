@@ -28,6 +28,8 @@ import { useRouter } from 'next/router';
 import Drawer from '@mui/material/Drawer';
 import DrawerItem from '../components/drawerItem';
 import Loginpop from '../components/Home/loginPop';
+import ServiceData from '../data/service.json';
+import ServiceCard from '../components/Home/serviceCard';
 
 
 
@@ -552,7 +554,7 @@ const Home = () => {
                     </div>
                 </div> */}
                 <div id="pricing" ref={PricingRef} className={`${localStorage.getItem('token') ? 'page-content' : 'page-content--blurred'}  w-[100%] pt-[50px] flex flex-col items-center justify-center`} >
-                    <btn className=' text-white text-[50px] w-[550px] hover:border-white hover:text-yellow-200 cursor-pointer border flex items-center justify-center  border-yellow-200 rounded-lg ml-8 my-font-bold  ' >
+                    <btn className=' text-yellow-200 text-[50px] w-[700px] hover:border-yellow-200 hover:text-white cursor-pointer border flex items-center justify-center  border-white rounded-lg ml-8 my-font-bold  ' >
                         <p>Cashcow Packages</p>
                     </btn>
                     <div className=' w-[90%] border-[0px] sm:mt-[50px] mt-[20px] flex sm:gap-[80px] gap-[20px] flex-wrap items-center justify-center ' >
@@ -612,7 +614,24 @@ const Home = () => {
                         />
                     </div>
                 </div>
-                <div ref={ExtraRef} className={` ${localStorage.getItem('token') ? 'page-content' : 'page-content--blurred'} w-[100%] flex justify-center border-[0px] sm:pt-[50px] sm:pl-[50px] sm:pr-[150px] pl-[10px] pr-[10px]`} >
+                <div className=' w-full py-32 px-8 flex flex-col items-center ' >
+                    <btn className=' text-yellow-200 text-[50px] w-[700px] hover:border-yellow-200 hover:text-white cursor-pointer border flex items-center justify-center  border-white rounded-lg ml-8 my-font-bold  ' >
+                        <p>INDIVIDUAL SERVICES</p>
+                    </btn>
+                    <div className=' w-[100%] flex mt-8 flex-wrap gap-8 justify-center  ' >
+                    {
+                        ServiceData.map((item, index) => {
+                            return (
+                                <ServiceCard
+                                key={index}
+                                item={item}
+                                />
+                            )
+                        })
+                    }
+                    </div>
+                </div>
+                {/* <div ref={ExtraRef} className={` ${localStorage.getItem('token') ? 'page-content' : 'page-content--blurred'} w-[100%] flex justify-center border-[0px] sm:pt-[50px] sm:pl-[50px] sm:pr-[150px] pl-[10px] pr-[10px]`} >
                     <img
                         src="/images/user/circle6.png"
                         className=' absolute right-[0px] sm:visible invisible '
@@ -631,14 +650,14 @@ const Home = () => {
                                 alt="person7" />
                         </div>
                     </div>
-                </div>
-                <div ref={CustomPlanRef} className={` ${localStorage.getItem('token') ? 'page-content' : 'page-content--blurred'} w-[100%]  flex justify-center border-[0px]`} >
+                </div> */}
+                {/* <div ref={CustomPlanRef} className={` ${localStorage.getItem('token') ? 'page-content' : 'page-content--blurred'} w-[100%]  flex justify-center border-[0px]`} >
                     <CustomPlan
                         onSubmit={() => {
                             setShowPopup(true);
                         }}
                     />
-                </div>
+                </div> */}
                 <div ref={ExtraRef1} id='demos' className={` ${localStorage.getItem('token') ? 'page-content' : 'page-content--blurred'}  w-[100%] border-[0px] flex items-center justify-center`}>
                     <div className=' sm:w-[80%] w-[100%] border-[0px] mt-[100px] flex flex-col items-center sm:px-[0px] px-[10px]  ' >
                         <div className=' flex items-center justify-center py-[5px] rounded ' >
