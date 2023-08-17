@@ -28,7 +28,7 @@ const LoginButton = () => {
     }
 
     return (
-        <div className="absolute bg-white right-2 top-2 z-[1000] " >
+        <div className="absolute bg-white right-2 top-2 z-[1000] hidden " >
         <GoogleOAuthProvider clientId={clientId} >
             <GoogleLogin
                 onSuccess={(credentialResponse) => {
