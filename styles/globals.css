@@ -48,8 +48,26 @@
     }
 }
 
+
+@keyframes hueRotateAnimation {
+    0% {
+        filter: hue-rotate(0deg);
+    }
+    100% {
+        filter: hue-rotate(360deg);
+    }
+}
+
+.animated-button {
+    filter: hue-rotate(0deg); 
+    animation: hueRotateAnimation 10s infinite; 
+}
+
+
+
+
 .video-background {
-    background: linear-gradient(to top right, #009933 41%, #ccff33 100%);
+    background: linear-gradient(to top right, #fff 41%, #F7DC6F, 100%);
 }
 
 

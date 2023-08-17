@@ -12,6 +12,7 @@ import {
     FaAngleDoubleUp,
     FaWhatsapp,
 } from 'react-icons/fa';
+import { MdOpenInNew } from 'react-icons/md'
 import Video from '../components/Home/video';
 import Globe from '../components/Home/globe';
 import Services from '../components/Home/services';
@@ -524,35 +525,6 @@ const Home = () => {
                         </div>
                     </div>
                 </div>
-                {/* <div ref={PortfolioRef} id="portfolio" className={` ${localStorage.getItem('token') ? 'page-content' : 'page-content--blurred'} w-[100%]  border relative sm:mt-[0px] mt-[-100px] border-[0px] flex items-center justify-center`}>
-                    <img
-                        src="/images/user/circle4.png"
-                        className=' absolute left-[0px] top-[-50px] sm:visible invisible '
-                        alt="person7" />
-                    <img
-                        src="/images/user/circle5.png"
-                        className=' absolute right-[0px] bottom-[0px] sm:visible invisible  '
-                        alt="person7" />
-                    <div className=' lg:h-[400px] lg:mt-[0px] mt-[20px] w-[80%] border-[0px] lg:flex lg:flex-row flex flex-col items-center lg:justify-center  lg:pl-[0px] pl-10px ' >
-                        <div className=' w-[40%] lg:h-[400px] h-[200px] flex items-center justify-center ' >
-                            <img
-                                src="https://res.cloudinary.com/drgvislmm/image/upload/v1683385350/WebsiteImages/ggmoney_axjqvu.gif"
-                                className='absolute lg:w-[600px] lg:h-[400px] lg:top-0  top-1 '
-                                alt="person7" />
-                        </div>
-                        <div className='w-full flex flex-col lg:items-start lg:text-start items-center text-center lg:pb-[120px] sm:px-[40px] pr-[0] sm:mt-[0px] mt-[50px]  ' >
-                            <div className='sm:w-full sm:h-[120px] sm:mt-[80px] border-[0px] font-semibold flex items-center '  >
-                                <h1 className=' text-yellow-200 sm:text-[30px] my-font-bold text-[17px] leading-sm ' >AFFORDABLE PRICING, EXCEPTIONAL RESULTS</h1>
-                            </div>
-                            <div>
-                                <h1 className=' text-[#fff]  sm:text-[18px] my-font-semibold text-[13px] sm:-mt-[20px] mt-[10px]  leading-tight ' >
-                                    <p>"Choose from our flexible pricing plans to suit</p>
-                                    <p>your budget and goals."</p>
-                                </h1>
-                            </div>
-                        </div>
-                    </div>
-                </div> */}
                 <div id="pricing" ref={PricingRef} className={`${localStorage.getItem('token') ? 'page-content' : 'page-content--blurred'}  w-[100%] pt-[50px] flex flex-col items-center justify-center`} >
                     <btn className=' text-yellow-200 text-[50px] w-[700px] hover:border-yellow-200 hover:text-white cursor-pointer border flex items-center justify-center  border-white rounded-lg ml-8 my-font-bold  ' >
                         <p>Cashcow Packages</p>
@@ -614,51 +586,30 @@ const Home = () => {
                         />
                     </div>
                 </div>
-                <div className=' w-full py-32 px-8 flex flex-col items-center ' >
+                <div className={` ${localStorage.getItem('token') ? 'page-content' : 'page-content--blurred'} w-full  pt-32 pb-8 px-8 flex flex-col items-center`} >
                     <btn className=' text-yellow-200 text-[50px] w-[700px] hover:border-yellow-200 hover:text-white cursor-pointer border flex items-center justify-center  border-white rounded-lg ml-8 my-font-bold  ' >
                         <p>INDIVIDUAL SERVICES</p>
                     </btn>
                     <div className=' w-[100%] flex mt-8 flex-wrap gap-8 justify-center  ' >
-                    {
-                        ServiceData.map((item, index) => {
-                            return (
-                                <ServiceCard
-                                key={index}
-                                item={item}
-                                />
-                            )
-                        })
-                    }
+                        {
+                            ServiceData.map((item, index) => {
+                                return (
+                                    <ServiceCard
+                                        key={index}
+                                        item={item}
+                                    />
+                                )
+                            })
+                        }
                     </div>
                 </div>
-                {/* <div ref={ExtraRef} className={` ${localStorage.getItem('token') ? 'page-content' : 'page-content--blurred'} w-[100%] flex justify-center border-[0px] sm:pt-[50px] sm:pl-[50px] sm:pr-[150px] pl-[10px] pr-[10px]`} >
-                    <img
-                        src="/images/user/circle6.png"
-                        className=' absolute right-[0px] sm:visible invisible '
-                        alt="person7" />
-                    <div className='sm:h-[250px] h-[150px] w-[100%]  border-[0px] flex justify-between ' >
-                        <div className='sm:w-[600px] h-[100%] flex items-center ' >
-                            <div>
-                                <h1 className={`text-[#fff] sm:text-[40px] my-font-semibold ${gradiantText1}`} >Confused about the plans</h1>
-                                <h1 className={`text-[#fff] sm:text-[60px] my-font-bold ${gradiantText2}`} >Dont worry</h1>
-                            </div>
-                        </div>
-                        <div className='h-[100%] border-l-[0px] flex items-center justify-center ' >
-                            <img
-                                src="/images/user/girl1.png"
-                                className=' sm:w-[250px] w-[100px] h-[100px] sm:h-[250px] '
-                                alt="person7" />
-                        </div>
-                    </div>
-                </div> */}
-                {/* <div ref={CustomPlanRef} className={` ${localStorage.getItem('token') ? 'page-content' : 'page-content--blurred'} w-[100%]  flex justify-center border-[0px]`} >
-                    <CustomPlan
-                        onSubmit={() => {
-                            setShowPopup(true);
-                        }}
-                    />
-                </div> */}
-                <div ref={ExtraRef1} id='demos' className={` ${localStorage.getItem('token') ? 'page-content' : 'page-content--blurred'}  w-[100%] border-[0px] flex items-center justify-center`}>
+                <div className={` w-full h-[100px] flex flex-col items-center`} >
+                    <btn className='text-yellow-200 gap-2 text-[50px] w-[700px] cursor-pointer border flex items-center justify-center  border-white rounded-lg ml-8 my-font-bold animated-button'>
+                        <p>Checkout our portfolio</p>
+                        <MdOpenInNew />
+                    </btn>
+                </div>
+                {/* <div ref={ExtraRef1} id='demos' className={` ${localStorage.getItem('token') ? 'page-content' : 'page-content--blurred'}  w-[100%] border-[0px] flex items-center justify-center`}>
                     <div className=' sm:w-[80%] w-[100%] border-[0px] mt-[100px] flex flex-col items-center sm:px-[0px] px-[10px]  ' >
                         <div className=' flex items-center justify-center py-[5px] rounded ' >
                             <h1 className=' text-[#fff] bg-gradient-to-r from-white via-yellow-100 to-green-100 text-transparent bg-clip-text text-center lg:text-[45px] text-[18px] font-bold ' >OUR LATEST PROJECTS</h1>
@@ -696,7 +647,7 @@ const Home = () => {
                             </div>
                         </div>
                     </div>
-                </div >
+                </div > */}
                 <div ref={FooterRef} className={` ${localStorage.getItem('token') ? 'page-content' : 'page-content--blurred'} w-[100%] border-[0px] sm:px-[0px] px-[20px] flex items-center justify-center`} id="footer" >
                     {
                         typeof window !== 'undefined' &&
