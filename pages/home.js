@@ -30,8 +30,6 @@ import DrawerItem from '../components/drawerItem';
 import LoginButton from '../components/Home/login';
 
 
-const token = localStorage.getItem('token');
-
 
 const ProjectTypes = [
     "ALL",
@@ -106,6 +104,8 @@ const Home = () => {
     const [SSopen, setSSOpen] = useState(false);
     const handleOpen = () => setSSOpen(true);
     const handleClose = () => setSSOpen(false);
+
+
 
 
     useEffect(() => {
@@ -281,7 +281,7 @@ const Home = () => {
                         }}
                     />
                 }
-                <div ref={HomeRef} className={`w-[100%] sm:min-h-[650px] border-[0px] ${ token? 'page-content' : 'page-content--blurred' }`}>
+                <div ref={HomeRef} className={`w-[100%] sm:min-h-[650px] border-[0px] ${ localStorage?.getItem('token')? 'page-content' : 'page-content--blurred' }`}>
                     <Header
                         className={headerStyle}
                         selectedHeader={selectedHeader}
