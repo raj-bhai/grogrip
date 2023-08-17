@@ -78,16 +78,12 @@ const PricingCard = (props) => {
                 setFocused(false);
                 console.log("ff")
             }}
-            onClick={() => {
-                props.onClick()
-            }}
         >
             <div className="w-[100%] h-[80%]" >
                 <div className="w-[100%] sm:h-[100px] h-[60px] border-b-[0px] flex " >
                     <div className="sm:w-[60px] sm:h-[60px] w-[40px] h-[40px] bg-[#fff] rounded-[5px]  " >
                         <img
                             src="/images/user/pricing1.png"
-                            // className=' absolute right-[0px] bottom-[0px]  '
                             alt="grogrip_plan" />
                     </div>
                     <div className="ml-[20px] " >
@@ -106,31 +102,6 @@ const PricingCard = (props) => {
                     <h1 className=" text-[#fff] sm:text-[15px] text-[13px] my-font-semibold " >What&apos;s included</h1>
                 </div>
                 <div className=" mt-[5px] " >
-                    {/* {
-                        Features(
-                            "Script"
-                        )
-                    }
-                    {
-                        Features(
-                            "Voice over"
-                        )
-                    }
-                    {
-                        Features(
-                            "Video Editing"
-                        )
-                    }
-                    {
-                        Features(
-                            "Thumbnail"
-                        )
-                    }
-                    {
-                        Features(
-                            "SEO"
-                        )
-                    } */}
                     <Features
                         name="Script"
                         focused={focused}
@@ -174,7 +145,11 @@ const PricingCard = (props) => {
                 </div>
             </div>
             <div className=" w-[100%] border-t-[0px] flex justify-center " >
-                <div className={`sm:w-[250px] w-[200px] cursor-pointer h-[50px] mt-[20px] rounded-[50px] flex items-center justify-center ${focused ? focusedBG : unFocusedBG}`} >
+                <div className={`sm:w-[250px] w-[200px] cursor-pointer h-[50px] mt-[20px] rounded-[50px] flex items-center justify-center ${focused ? focusedBG : unFocusedBG}`}
+                onClick={() => {
+                    props.onClick()
+                }}
+                >
                     <h1 className={`text-[20px] leading-none ${focused ? focusedbtnText : unfocusedBtnText} `} >Get Started</h1>
                 </div>
 

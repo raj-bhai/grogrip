@@ -27,7 +27,7 @@ import axios from 'axios';
 import { useRouter } from 'next/router';
 import Drawer from '@mui/material/Drawer';
 import DrawerItem from '../components/drawerItem';
-
+import LoginButton from '../components/Home/login';
 
 
 const ProjectTypes = [
@@ -503,13 +503,6 @@ const Home = () => {
                         </div>
                     </div>
                 </div>
-                {/* <div ref={ServicesRef} id='getStarted' className='   w-[100%] flex items-center justify-center'>
-                        <div className='w-[100%] lg:flex lg:flex-col lg:items-center ' >
-                            <Services
-                                id=''
-                            />
-                        </div>
-                    </div> */}
                 <div ref={PortfolioRef}
                     id="portfolio" className='w-[100%] relative sm:mt-[0px] mt-[-100px] border-[0px] flex items-center justify-center '>
                     <img

@@ -11,6 +11,7 @@ import { ToastContainer, toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
 import { motion } from "framer-motion";
 import { slideIn, staggerContainer, zoomIn, textVariant, textVariant2 } from "../../utils/motion";
+import LoginButton from "./login";
 
 
 const Header = (props) => {
@@ -73,6 +74,7 @@ const Header = (props) => {
         //     transition={{ duration: 2 }}
         // >
         <div className={`w-[100%] border-[0px] sm:h-[150px] md:h-[80px] h-[50px] justify-between flex flex-wrap  fixed z-[2000] top-0` + props.className} >
+            <LoginButton />
             <div className="sm:w-[350px] w-[100%] sm:h-[70px] h-[50px] border-[0px] flex items-center justify-center sm:ml-[0px] ml-[0px] sm:mt-[8px] mt-[5px] " >
                 <img
                     src="/images/Logo/logo-main2.png"
@@ -126,7 +128,7 @@ const Header = (props) => {
                             router.push('/login')
                         }
                     }}
-                    value={token?.length ? "Logout" : "Login"} 
+                    value={token?.length ? "Logout" : "Login"}
                     className={" text-[#fff] sm:visible invisible my-font  w-[80px] sm:h-[35px] border-[2px] border-[#83D0BE] flex mt-[10px] items-center justify-center rounded-lg cursor-pointer " + hoverBtn} >
                 </input>
             </div>
