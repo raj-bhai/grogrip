@@ -27,7 +27,7 @@ import axios from 'axios';
 import { useRouter } from 'next/router';
 import Drawer from '@mui/material/Drawer';
 import DrawerItem from '../components/drawerItem';
-import LoginButton from '../components/Home/login';
+import Loginpop from '../components/Home/loginPop';
 
 
 
@@ -272,7 +272,7 @@ const Home = () => {
     return (
         domLoaded &&
             typeof window !== 'undefined' ?
-            <div id="home" className={'w-full fade-in px-[0px] py-[0px] overflow-y-hidden overflow-x-hidden' + backgroundGradient}
+            <div id="home" className={'w-full fade-in px-[0px] py-[0px] relative overflow-y-hidden overflow-x-hidden' + backgroundGradient}
             >
                 {
                     showPopup &&
@@ -283,6 +283,10 @@ const Home = () => {
                             setShowPopup(false)
                         }}
                     />
+                }
+                {
+                    localStorage.getItem('token') ?
+                        null : <Loginpop />
                 }
                 <div ref={HomeRef} className={`w-[100%] sm:min-h-[650px]`}>
                     <Header
@@ -328,7 +332,7 @@ const Home = () => {
                         className=' absolute right-[0px] bottom-[-100px] sm:visible invisible '
                         alt="star" />
                     {
-                        <div className= {`${localStorage.getItem('token') ? 'page-content' : 'page-content--blurred'} border-[0px] flex flex-wrap items-center w-[100%] justify-center sm:mt-[100px] z-[100] `} >
+                        <div className={`${localStorage.getItem('token') ? 'page-content' : 'page-content--blurred'} border-[0px] flex flex-wrap items-center w-[100%] justify-center sm:mt-[100px] z-[100] `} >
 
                             <div className={` sm:w-[50%] w-[100%] sm:mr-[0px] mr-[10px] flex items-center justify-center sm:pl-[20px] sm:pt-[0px] pt-[30px] sm:pb-[0px] pb-[50px] pl-[0px] sm:min-w-[550px] `}
                             >
