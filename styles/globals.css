@@ -48,6 +48,11 @@
     }
 }
 
+.video-background {
+    background: linear-gradient(to top right, #009933 41%, #ccff33 100%);
+}
+
+
 .page-content {
     transition: filter 0.3s; /* This will smoothly transition the blur effect if you add or remove it. */
 }

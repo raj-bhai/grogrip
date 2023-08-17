@@ -128,6 +128,7 @@ const Header = (props) => {
                             localStorage.removeItem("token")
                             successLogin("you are logged out !")
                         } else {
+                            // localStorage.setItem("token", "ggg");
                             router.push('/login')
                         }
                     }}

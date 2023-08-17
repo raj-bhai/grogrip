@@ -332,17 +332,17 @@ const Home = () => {
                         className=' absolute right-[0px] bottom-[-100px] sm:visible invisible '
                         alt="star" />
                     {
-                        <div className={`${localStorage.getItem('token') ? 'page-content' : 'page-content--blurred'} border-[0px] flex flex-wrap items-center w-[100%] justify-center sm:mt-[100px] z-[100] `} >
+                        <div className={`${localStorage.getItem('token') ? 'page-content' : 'page-content--blurred'} border-[0px] py-16 flex flex-wrap items-center w-[100%] justify-center sm:mt-[100px] z-[100] `} >
 
-                            <div className={` sm:w-[50%] w-[100%] sm:mr-[0px] mr-[10px] flex items-center justify-center sm:pl-[20px] sm:pt-[0px] pt-[30px] sm:pb-[0px] pb-[50px] pl-[0px] sm:min-w-[550px] `}
+                            <div className={` sm:w-[30%] w-[100%]  sm:mt-[-50px] sm:mr-[0px] mr-[10px] flex items-center justify-center sm:pl-[20px] sm:pt-[0px] pt-[10px] sm:pb-[0px] pb-[10px] pl-[0px] sm:min-w-[550px] `}
                             >
-                                <div className='sm:w-[600px]  w-[100%] h-[80%] border-[0px] sm:ml-[0px] ml-[10px] sm:mt-[80px] mt-[60px] flex relative ' >
+                                <div className='sm:w-[600px]  w-[100%] h-[80%] border-[0px] sm:ml-[0px] ml-[10px] sm:mt-[80px] mt-[20px] flex relative ' >
                                     <img
                                         src="/images/user/star.png"
-                                        className='sm:w-[40px] h-[20px] sm:h-[40px] h-[20px] absolute sm:top-[50px] sm:top-[-5px] top-[-10px] sm:left-[-50px] left-[200px] '
+                                        className='sm:w-[40px] h-[20px] sm:h-[40px] h-[20px] absolute sm:top-[50px] sm:top-[-50px] top-[-10px] sm:left-0 left-[200px] '
                                         alt="star" />
                                     <div>
-                                        <div className=' lg:py-0 py-[20px] pb-[40px] flex flex-col lg:gap-0 gap-[20px] lg:p-0 pr-[20px] pl-[20px] ' >
+                                        <div className=' lg:py-0 sm:py-[20px] sm:pb-[40px] flex flex-col lg:gap-0 gap-[20px] lg:p-0 pr-[20px] pl-[20px] ' >
                                             <MovingText
                                                 type="flipFromLeftToCenter"
                                                 duration="1000ms"
@@ -351,7 +351,7 @@ const Home = () => {
                                                 timing="ease"
                                                 iteration={1}
                                                 fillMode="none"
-                                                className='  text-shadow my-font-bold  drop-shadow-lg text-yellow-200 sm:text-[50px] text-[25px] sm:leading-[50px] text-left font-semibold  '
+                                                className='  text-shadow my-font-bold  drop-shadow-lg text-yellow-200 sm:text-[40px] text-[25px] sm:leading-[50px] text-left font-semibold  '
                                             >
                                                 {`Expert YouTube Service  and Support`}
                                             </MovingText>
@@ -468,8 +468,17 @@ const Home = () => {
                                     </div>
                                 </div>
                             </div>
-                            <div className='lg:w-[50%] lg:min-w-[550px] w-0 h-0 lg:h-[500px] border-[0px] flex lg:justify-end justify-center lg:pr-[50px] lg:visible invisible  ' >
-                                <Globe />
+                            <div className=' w-[95%] sm:w-[60%] p-2 sm:p-4 h-[200px] sm:h-[500px] border-[0px] sm:mr-[25px] flex rounded-lg lg:justify-end video-background justify-center   ' 
+                            >
+                                {/* <Globe /> */}
+                                <iframe
+                                    className="w-[100%] h-[100%] rounded-lg "
+                                    src={`https://www.youtube.com/embed/ERAfmohHuxE`}
+                                    title="YouTube video player"
+                                    frameborder="0"
+                                    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                                    allowfullscreen
+                                ></iframe>
                             </div>
                         </div>
                     }
