@@ -74,7 +74,10 @@ const Header = (props) => {
         //     transition={{ duration: 2 }}
         // >
         <div className={`w-[100%] border-[0px] sm:h-[150px] md:h-[80px] h-[50px] justify-between flex flex-wrap  fixed z-[2000] top-0` + props.className} >
-            <LoginButton />
+            {
+                localStorage.getItem('token')?
+                <LoginButton /> : null
+            }
             <div className="sm:w-[350px] w-[100%] sm:h-[70px] h-[50px] border-[0px] flex items-center justify-center sm:ml-[0px] ml-[0px] sm:mt-[8px] mt-[5px] " >
                 <img
                     src="/images/Logo/logo-main2.png"
