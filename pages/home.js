@@ -16,7 +16,7 @@ import { MdOpenInNew } from 'react-icons/md'
 import Video from '../components/Home/video';
 import Globe from '../components/Home/globe';
 import Services from '../components/Home/services';
-import Footer from '../components/Home/footer';
+// import Footer from '../components/Home/footer';
 import Videos from '../constants/portfolio';
 import Modal from '@mui/material/Modal';
 import Box from '@mui/material/Box';
@@ -35,6 +35,7 @@ import Testimonial from '../components/Home/testimonial';
 import Analytics from '../components/Home/analytics';
 // import Contact from '../components/Home/contact';
 import Contact from '../components/Home/contact-new';
+import Footer from '../components/Home/footer-new';
 
 
 
@@ -655,7 +656,13 @@ const Home = () => {
                         </div>
                     </div>
                 </div > */}
-                <div ref={FooterRef} className={` ${localStorage.getItem('token') ? 'page-content' : 'page-content--blurred'} w-[100%] border-[0px] sm:px-[0px] px-[20px] flex items-center justify-center`} id="footer" >
+
+                <Footer />
+
+
+
+
+                {/* <div ref={FooterRef} className={` ${localStorage.getItem('token') ? 'page-content' : 'page-content--blurred'} w-[100%] border-[0px] sm:px-[0px] px-[20px] flex items-center justify-center`} id="footer" >
                     {
                         typeof window !== 'undefined' &&
                         <Footer />
@@ -695,7 +702,7 @@ const Home = () => {
                             >+91 8076455801</h1>
                         </div>
                     </div>
-                </div>
+                </div> */}
                 <Drawer
                     anchor="right"
                     open={drawerOpen}
