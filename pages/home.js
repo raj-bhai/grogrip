@@ -31,6 +31,10 @@ import DrawerItem from '../components/drawerItem';
 import Loginpop from '../components/Home/loginPop';
 import ServiceData from '../data/service.json';
 import ServiceCard from '../components/Home/serviceCard';
+import Testimonial from '../components/Home/testimonial';
+import Analytics from '../components/Home/analytics';
+// import Contact from '../components/Home/contact';
+import Contact from '../components/Home/contact-new';
 
 
 
@@ -609,6 +613,9 @@ const Home = () => {
                         <MdOpenInNew />
                     </btn>
                 </div>
+                <Testimonial />
+                <Analytics />
+                <Contact />
                 {/* <div ref={ExtraRef1} id='demos' className={` ${localStorage.getItem('token') ? 'page-content' : 'page-content--blurred'}  w-[100%] border-[0px] flex items-center justify-center`}>
                     <div className=' sm:w-[80%] w-[100%] border-[0px] mt-[100px] flex flex-col items-center sm:px-[0px] px-[10px]  ' >
                         <div className=' flex items-center justify-center py-[5px] rounded ' >
