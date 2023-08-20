@@ -1,0 +1,20 @@
+[
+    {
+        "id" : 22,
+        "type" : "SEO Search Engine",
+        "price" : "Optimization 5$",
+        "image" : "https://res.cloudinary.com/drgvislmm/image/upload/v1692300770/WebsiteImages/serviceImages/seo_ko8758.png"
+    },
+    {
+        "id" : 22,
+        "type" : "Custom Package",
+        "price" : "0$ - 2000$",
+        "image" : "https://res.cloudinary.com/drgvislmm/image/upload/v1692300770/WebsiteImages/serviceImages/seo_ko8758.png"
+    },
+    {
+        "id" : 21,
+        "type" : "Channel Manager",
+        "price" : "200$",
+        "image" : "https://res.cloudinary.com/drgvislmm/image/upload/v1692300769/WebsiteImages/serviceImages/channel_manager_i5my8l.png"
+    }
+]

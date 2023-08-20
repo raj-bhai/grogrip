@@ -89,28 +89,29 @@ const Header = (props) => {
             <div className="flex mt-[19.5px] mr-[220px]  sm:visible invisible border-[0px] pr-[10px] justify-evenly gap-[50px] " >
                 <div className=" w-[80px] sm:h-[60px] sm:visible invisible border-[0px] flex items-center justify-center "
                     onClick={() => {
-                        props.onClickHome()
+                        router.push('/home')
                     }}
                 >
                     <h1 className={selectedHeader == 1 ? textSelectedStyle : textStyle} >Home</h1>
                 </div>
                 <div className=" w-[80px] sm:h-[60px] sm:visible invisible border-[0px] flex items-center justify-center "
                     onClick={() => {
-                        props.onClickService()
+                        router.push('/shop')
                     }}
                 >
-                    <h1 className={selectedHeader == 2 ? textSelectedStyle : textStyle} >Services</h1>
+                    <h1 className={selectedHeader == 2 ? textSelectedStyle : textStyle} >Shop</h1>
                 </div>
                 <div className=" w-[80px] sm:h-[60px] sm:visible invisible border-[0px] flex items-center justify-center "
                     onClick={() => {
-                        props.onClickPricing()
+                        // router.push('/shop')
+                        // props.onClickPricing()
                     }}
                 >
                     <h1 className={selectedHeader == 3 ? textSelectedStyle : textStyle} >Pricing</h1>
                 </div>
                 <div className=" w-[80px] sm:h-[60px] sm:visible invisible border-[0px] flex items-center justify-center "
                     onClick={() => {
-                        props.onClickContact()
+                        // props.onClickContact()
                     }}
                 >
                     <h1 className={selectedHeader == 4 ? textSelectedStyle : textStyle} >Contact</h1>
