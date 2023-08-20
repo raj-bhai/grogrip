@@ -1,12 +1,20 @@
 import React from 'react'
 import Services from '../../data/shop2.json'
+import Rating from '@mui/material/Rating';
 
 
 
 const Item = ({ item }) => {
     return (
-        <div className=" w-[300px] relative h-[420px] hover:border-yellow-200 border-white border border-[2px] bg-[rgba(149,165,166,0.1)] rounded-lg flex flex-col items-center px-8 py-8 text-white my-font-bold text-[20px] leading-[38px]  " >
-            <div className=" w-[100%] border-[0px] rounded-lg border-[#ABB2B9] h-[200px] relative flex items-center justify-center " >
+        <div className=" w-[300px] relative h-[450px] hover:border-yellow-200 border-white border border-[2px] bg-[rgba(149,165,166,0.1)] rounded-lg flex flex-col items-center px-8 py-8 text-white my-font-bold text-[20px] leading-[38px]  " >
+            {
+                item.ratings &&
+                <div className=' absolute z-[1000]  top-0 ' >
+                <Rating name="read-only" value={item.ratings}  precision={0.5} readOnly />
+                <p className='text-white leading-tight -mt-2 ' > {item.detail} </p>
+                </div>
+            }
+            <div className=" w-[100%] border-[0px] rounded-lg mt-8 border-[#ABB2B9] h-[200px] relative flex items-center justify-center " >
                 <img
                     src={item.image}
                     className=" absolute h-[100%] "
