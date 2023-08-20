@@ -1,9 +1,9 @@
 import {combineReducers} from 'redux';
-import dashboard from './dashboard';
+import product from './product';
 
 
 const rootReducer = combineReducers({
-    dashboard: dashboard
+    product : product
 });
 
 export default rootReducer;
