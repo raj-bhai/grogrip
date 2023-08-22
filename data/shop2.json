@@ -1,22 +1,88 @@
 [
     {
-        "id" : 22,
-        "type" : "SEO Search Engine",
-        "price" : "Optimization 5$",
-        "image" : "https://res.cloudinary.com/drgvislmm/image/upload/v1692300770/WebsiteImages/serviceImages/seo_ko8758.png"
+        "id": 22,
+        "type": "SEO Search Engine",
+        "price": "Optimization 5$",
+        "image": "https://res.cloudinary.com/drgvislmm/image/upload/v1692300770/WebsiteImages/serviceImages/seo_ko8758.png",
+        "desc": [
+            {
+                "key": "",
+                "value": "1x premium Script of 700-800 words."
+            },
+            {
+                "key": "",
+                "value": "1x Voice-Over artist from your choice."
+            },
+            {
+                "key": "",
+                "value": "1x(4-5 min) Premium Video."
+            },
+            {
+                "key": "",
+                "value": "1x Eye-Catching Thumbnail."
+            },
+            {
+                "key": "",
+                "value": "3x Revisions."
+            }
+        ]
     },
     {
-        "id" : 22,
-        "type" : "Custom Package",
-        "price" : "0$ - 2000$",
-        "ratings" : 4.5,
-        "detail" : "(Make your own Package)",
-        "image" : "https://res.cloudinary.com/drgvislmm/image/upload/v1692300770/WebsiteImages/serviceImages/seo_ko8758.png"
+        "id": 22,
+        "type": "Custom Package",
+        "price": "0$ - 2000$",
+        "ratings": 4.5,
+        "detail": "(Make your own Package)",
+        "image": "https://res.cloudinary.com/drgvislmm/image/upload/v1692300770/WebsiteImages/serviceImages/seo_ko8758.png",
+        "desc": [
+            {
+                "key": "",
+                "value": "1x premium Script of 700-800 words."
+            },
+            {
+                "key": "",
+                "value": "1x Voice-Over artist from your choice."
+            },
+            {
+                "key": "",
+                "value": "1x(4-5 min) Premium Video."
+            },
+            {
+                "key": "",
+                "value": "1x Eye-Catching Thumbnail."
+            },
+            {
+                "key": "",
+                "value": "3x Revisions."
+            }
+        ]
     },
     {
-        "id" : 21,
-        "type" : "Channel Manager",
-        "price" : "200$",
-        "image" : "https://res.cloudinary.com/drgvislmm/image/upload/v1692300769/WebsiteImages/serviceImages/channel_manager_i5my8l.png"
+        "id": 21,
+        "type": "Channel Manager",
+        "price": "200$",
+        "image": "https://res.cloudinary.com/drgvislmm/image/upload/v1692300769/WebsiteImages/serviceImages/channel_manager_i5my8l.png",
+        "desc": [
+            {
+                "key": "",
+                "value": "1x premium Script of 700-800 words."
+            },
+            {
+                "key": "",
+                "value": "1x Voice-Over artist from your choice."
+            },
+            {
+                "key": "",
+                "value": "1x(4-5 min) Premium Video."
+            },
+            {
+                "key": "",
+                "value": "1x Eye-Catching Thumbnail."
+            },
+            {
+                "key": "",
+                "value": "3x Revisions."
+            }
+        ]
     }
 ]

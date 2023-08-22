@@ -1,26 +1,114 @@
 [
     {
-        "id" : 11,
-        "type" : "Script",
-        "price" : "$7 - 11$",
-        "image" : "https://res.cloudinary.com/drgvislmm/image/upload/v1692300276/WebsiteImages/serviceImages/scriptW_hb3nlj.png"
+        "id": 11,
+        "type": "Script",
+        "price": "$7 - 11$",
+        "image": "https://res.cloudinary.com/drgvislmm/image/upload/v1692300276/WebsiteImages/serviceImages/scriptW_hb3nlj.png",
+        "desc": [
+            {
+                "key": "",
+                "value": "1x premium Script of 700-800 words."
+            },
+            {
+                "key": "",
+                "value": "1x Voice-Over artist from your choice."
+            },
+            {
+                "key": "",
+                "value": "1x(4-5 min) Premium Video."
+            },
+            {
+                "key": "",
+                "value": "1x Eye-Catching Thumbnail."
+            },
+            {
+                "key": "",
+                "value": "3x Revisions."
+            }
+        ]
     },
     {
-        "id" : 12,
-        "type" : "Voice-Over",
-        "price" : "$9 - 15$",
-        "image" : "https://res.cloudinary.com/drgvislmm/image/upload/v1692300276/WebsiteImages/serviceImages/voice-over_wwdt6u.png"
+        "id": 12,
+        "type": "Voice-Over",
+        "price": "$9 - 15$",
+        "image": "https://res.cloudinary.com/drgvislmm/image/upload/v1692300276/WebsiteImages/serviceImages/voice-over_wwdt6u.png",
+        "desc": [
+            {
+                "key": "",
+                "value": "1x premium Script of 700-800 words."
+            },
+            {
+                "key": "",
+                "value": "1x Voice-Over artist from your choice."
+            },
+            {
+                "key": "",
+                "value": "1x(4-5 min) Premium Video."
+            },
+            {
+                "key": "",
+                "value": "1x Eye-Catching Thumbnail."
+            },
+            {
+                "key": "",
+                "value": "3x Revisions."
+            }
+        ]
     },
     {
-        "id" : 13,
-        "type" : "Video Editing",
-        "price" : "$15 - 100$",
-        "image" : "https://res.cloudinary.com/drgvislmm/image/upload/v1692300771/WebsiteImages/serviceImages/video_jlpfyt.png"
+        "id": 13,
+        "type": "Video Editing",
+        "price": "$15 - 100$",
+        "image": "https://res.cloudinary.com/drgvislmm/image/upload/v1692300771/WebsiteImages/serviceImages/video_jlpfyt.png",
+        "desc": [
+            {
+                "key": "",
+                "value": "1x premium Script of 700-800 words."
+            },
+            {
+                "key": "",
+                "value": "1x Voice-Over artist from your choice."
+            },
+            {
+                "key": "",
+                "value": "1x(4-5 min) Premium Video."
+            },
+            {
+                "key": "",
+                "value": "1x Eye-Catching Thumbnail."
+            },
+            {
+                "key": "",
+                "value": "3x Revisions."
+            }
+        ]
     },
     {
-        "id" : 14,
-        "type" : "Thumbnail",
-        "price" : "$15 - 100$",
-        "image" : "https://res.cloudinary.com/drgvislmm/image/upload/v1692300771/WebsiteImages/serviceImages/thumbnail_m0y5et.png"
+        "id": 14,
+        "type": "Thumbnail",
+        "price": "$15 - 100$",
+        "image": "https://res.cloudinary.com/drgvislmm/image/upload/v1692300771/WebsiteImages/serviceImages/thumbnail_m0y5et.png",
+        "desc": [
+            {
+                "key": "",
+                "value": "1x premium Script of 700-800 words."
+            },
+            {
+                "key": "",
+                "value": "1x Voice-Over artist from your choice."
+            },
+            {
+                "key": "",
+                "value": "1x(4-5 min) Premium Video."
+            },
+            {
+                "key": "",
+                "value": "1x Eye-Catching Thumbnail."
+            },
+            {
+                "key": "",
+                "value": "3x Revisions."
+            }
+        ]
     }
 ]
