@@ -1,15 +1,19 @@
 import React, { useState, useEffect, useRef } from "react";
-import { useSelector } from "react-redux";
+import { useSelector, useDispatch } from "react-redux";
 import { BsDot } from 'react-icons/bs'
 import { FaCheck } from "react-icons/fa";
 import { MdKeyboardArrowDown } from 'react-icons/md';
 import { AiFillPlayCircle, AiFillPauseCircle } from 'react-icons/ai'
 import { GoPlusCircle } from 'react-icons/go'
 import { HiOutlineMinusCircle, HiOutlinePlusCircle } from 'react-icons/hi'
+import Rating from '@mui/material/Rating';
+import TopicDetail from "./topic-detail";
+
+import { AddToCart } from "../../redux/action/cart";
 
 const backgroundGradient = ' bg-gradient-to-r from-[#107840] via-[#107840] via-[#1F5025] via -[#28602E] to-[#107840]';
 
-const VoiceDropdown = () => {
+const VoiceDropdown = ({ setVoice }) => {
     const [isOpen, setIsOpen] = useState(false);
     const [selectedVoice, setSelectedVoice] = useState(null);
 
@@ -73,6 +77,7 @@ const VoiceDropdown = () => {
     }, []);
 
     const handleVoiceSelect = (voice) => {
+        setVoice(voice)
         setSelectedVoice(voice);
         setIsOpen(false);
     }
@@ -120,19 +125,20 @@ const VoiceDropdown = () => {
 }
 
 
-const Counter = () => {
+const Counter = ({ updateCount }) => {
 
     const [count, setCount] = useState(1)
 
     const IncrementHandle = () => {
+        updateCount(count + 1)
         setCount(count + 1)
     }
 
     const DecrementHandle = () => {
         if (count > 1) {
+            updateCount(count - 1)
             setCount(count - 1)
         }
-
     }
 
     return (
@@ -154,6 +160,41 @@ const Counter = () => {
 }
 
 
+const Item = ({ item, onClick }) => {
+    // const dispatch = useDispatch()
+    return (
+        <div className=" w-[300px] relative  h-[450px] hover:border-yellow-200 border-white border border-[2px] bg-[rgba(149,165,166,0.1)] rounded-lg flex flex-col items-center px-8 py-8 text-white my-font-bold text-[20px] leading-[38px]  " >
+            {
+                item.ratings &&
+                <div className=' absolute z-[1000] left-4 top-0 ' >
+                    <Rating name="read-only" value={item.ratings} precision={0.5} readOnly />
+                    <p className='text-white leading-tight -mt-2 ' > {item.duration} </p>
+                </div>
+            }
+            <div className=" w-[100%] border-[0px] rounded-lg border-[#ABB2B9] h-[200px] relative flex items-center justify-center " >
+                <img
+                    src={item.image}
+                    className=" absolute h-[100%] "
+                >
+                </img>
+            </div>
+            <h1 className=' scale-[1.05] ' >{item.type}</h1>
+            <h1 className=' text-[15px] leading-tight border-white ' >{item.detail}</h1>
+            <h1 className=' mt-2 ' >{item.price}</h1>
+            <img
+                className=" w-[200%] absolute bottom-[-20px] cursor-pointer "
+                src='/images/buttons/shopnow.png'
+                onClick={() => {
+                    onClick()
+                    // dispatch(ToogleModal(true));
+                    // dispatch(SetSelectedProduct(item))
+                }}
+            >
+            </img>
+        </div>
+    )
+}
+
 
 const ProductModal = () => {
 
@@ -164,13 +205,18 @@ const ProductModal = () => {
         transform: 'translate(-50%, -50%)',
         boxShadow: 24,
         p: 4,
+        overflowY: 'auto',       // Added this line
+        maxHeight: '800px'      // Added this line as an example (adjust as needed)
     };
 
-    const { openModal, SelectedProduct } = useSelector(state => state.product)
+    const { openModal, SelectedProduct } = useSelector(state => state.product);
+    const [payload, setPayload] = useState({});
+    const dispatch = useDispatch()
+
 
     return (
-        <div style={style} className={`w-[90%] p-4 h-[500px] ${backgroundGradient}`} >
-            <div className=" w-[100%] h-[100%]  flex flex-wrap justify-between " >
+        <div style={style} className={` w-[90%] p-4 h-[700px] ${backgroundGradient}`} >
+            <div className=" w-[100%] flex flex-wrap px-8 py-8 justify-between " >
                 <div className=" w-[500px] h-[100%] " >
                     <h1 className=" my-font-bold text-yellow-200 text-[25px] leading-loose " >{SelectedProduct?.type}</h1>
                     {
@@ -181,14 +227,56 @@ const ProductModal = () => {
                         })
                     }
                     <div>
-                        <VoiceDropdown />
-                        <Counter />
+                        <VoiceDropdown
+                            setVoice={(voice) => {
+                                // console.log("voice :", voice)
+                                let obj = payload
+                                // console.log("obj :", obj)
+                                obj.voice = voice
+                                setPayload(obj)
+                            }}
+                        />
+                        <Counter
+                            updateCount={(count) => {
+                                let obj = payload
+                                obj.count = count
+                                setPayload(obj)
+                            }}
+                        />
                     </div>
                 </div>
-                <div className=" w-[500px] h-[100%] border " >
-
+                <div className=" w-[500px] h-[100%] flex justify-center " >
+                    <Item
+                        item={SelectedProduct}
+                        onClick={() => {
+                            dispatch(AddToCart(payload))
+                            // console.log("Payload :", payload)
+                        }}
+                    />
                 </div>
             </div>
+            <TopicDetail
+                updateTopic={(text) => {
+                    let obj = payload
+                    obj.topic = text
+                    setPayload(obj)
+                }}
+                updateReferral={(text) => {
+                    let obj = payload
+                    obj.referral = text
+                    setPayload(obj)
+                }}
+                updateContact={(text) => {
+                    let obj = payload
+                    obj.Contact = text
+                    setPayload(obj)
+                }}
+                updateDoc={(text) => {
+                    let obj = payload
+                    obj.doc = text
+                    setPayload(obj)
+                }}
+            />
         </div>
     )
 }
