@@ -211,7 +211,7 @@ const ProductModal = ({ isUpdate }) => {
         maxHeight: '800px'      // Added this line as an example (adjust as needed)
     };
 
-    const { openModal, SelectedProduct, SelectedProductCart } = useSelector(state => state.product);
+    const {SelectedProduct, SelectedProductCart } = useSelector(state => state.product);
     const [payload, setPayload] = useState({});
     const dispatch = useDispatch();
     const [submitted, setSubmitted] = useState(false)

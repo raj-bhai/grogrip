@@ -2,11 +2,13 @@ import React, {useState, useEffect} from "react";
 import { planetVariants } from "../../utils/motion";
 
 
-const Input = ({ label, placeholder, onChange }) => {
+const Input = ({ label, placeholder, onChange, defaultValue }) => {
     return (
         <div className=" w-[60%] mt-8 " >
             <h1 className=" my-font text-[24px] text-white " >{label}</h1>
-            <input type='text' className=" w-full h-[45px] rounded-lg text-gray px-4 mt-1" placeholder={placeholder}
+            <input type='text' className=" w-full h-[45px] rounded-lg text-gray px-4 mt-1" 
+            // defaultValue={defaultValue} 
+            placeholder={placeholder}
             onChange={(e) => {
                 onChange(e.target.value)
             }}
@@ -16,7 +18,7 @@ const Input = ({ label, placeholder, onChange }) => {
     )
 }
 
-const TopicDetail = ({updateTopic, updateReferral, updateContact, updateDoc}) => {
+const TopicDetail = ({updateTopic, updateReferral, updateContact, updateDoc, defaultValue}) => {
 
     const [topic, setTopic] = useState("");
     const [referral, setReferral] = useState("");
@@ -32,6 +34,7 @@ const TopicDetail = ({updateTopic, updateReferral, updateContact, updateDoc}) =>
                     setTopic(text)
                     updateTopic(text)
                 }}
+                // defaultValue={defaultValue}
             />
             <Input
                 label="Reference (optional)"
@@ -40,6 +43,7 @@ const TopicDetail = ({updateTopic, updateReferral, updateContact, updateDoc}) =>
                     setReferral(text)
                     updateReferral(text)
                 }}
+                // defaultValue={defaultValue}
             />
             <Input
                 label="Your contact details*"
@@ -48,6 +52,7 @@ const TopicDetail = ({updateTopic, updateReferral, updateContact, updateDoc}) =>
                     setContact(text)
                     updateContact(text)
                 }}
+                // defaultValue={defaultValue}
             />
             <Input
                 label="Attach a document for the topic (for more than one topic)"
@@ -56,6 +61,7 @@ const TopicDetail = ({updateTopic, updateReferral, updateContact, updateDoc}) =>
                     setDoc(text)
                     updateDoc(text)
                 }}
+                // defaultValue={defaultValue}
             />
         </div>
     )

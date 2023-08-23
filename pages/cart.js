@@ -8,6 +8,7 @@ import EmptyCart from "../components/cart/empty-cart";
 import Modal from '@mui/material/Modal';
 import ProductModal from "../components/shop/product-modal";
 import { ToogleModal, SetSelectedProduct } from "../redux/action/product";
+import { GetCart } from "../redux/action/cart";
 
 
 const backgroundGradient = ' bg-gradient-to-r from-[#107840] via-[#107840] via-[#1F5025] via -[#28602E] to-[#107840]';
@@ -24,6 +25,7 @@ const Cart = () => {
 
     useEffect(() => {
         setDomLoaded(true)
+        dispatch(GetCart())
     }, [])
 
     const handleClose = () => {

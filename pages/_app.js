@@ -7,9 +7,12 @@ import { Analytics } from '@vercel/analytics/react';
 import SEO from '../components/SEO';
 import ReactGA from 'react-ga';
 import { useRouter } from 'next/router';
+// import { useDispatch } from 'react-redux';
+// import { GetCart } from '../redux/action/cart';
 
 function MyApp({ Component, pageProps }) {
   const router = useRouter()
+  // const dispatch = useDispatch()
   const title = "Grogrip Power up Your YouTube Success - Automation, SEO, Content Mastery!"
   const description = "Boost YouTube growth with Grogrip: automation, SEO, content creation. Enhance online presence, drive targeted traffic. Expert strategies for success"
   const keywords = "Grogrip, Grogrip Media, growgrip,#grogrip, #grogrip_media, #Grogrip, Youtube Automation, SEO, Script Writing, Content Writing"
@@ -26,6 +29,11 @@ function MyApp({ Component, pageProps }) {
       router.events.off('routeChangeComplete', handleRouteChange);
     };
   }, []);
+
+
+  // useEffect(() => {
+  //   dispatch(GetCart())
+  // })
 
   return (
     <>

@@ -3,28 +3,16 @@ import Header from '../components/Home/header';
 import MovingText from 'react-moving-text';
 import ParticleEffectButton from 'react-particle-effect-button'
 import PricingCard from '../components/Home/pricingCard';
-import CustomPlan from '../components/Home/customPlan';
 import Success from '../components/pupups/sucess';
-import url from '../constants/url';
 import {
-    FaFacebookSquare,
-    FaInstagram,
     FaAngleDoubleUp,
-    FaWhatsapp,
 } from 'react-icons/fa';
 import { MdOpenInNew } from 'react-icons/md'
-import Video from '../components/Home/video';
-import Globe from '../components/Home/globe';
-import Services from '../components/Home/services';
-// import Footer from '../components/Home/footer';
 import Videos from '../constants/portfolio';
 import Modal from '@mui/material/Modal';
 import Box from '@mui/material/Box';
-import { styled } from '@mui/material/styles';
-import Paper from '@mui/material/Paper';
 import "react-responsive-carousel/lib/styles/carousel.min.css";
 import Carousel from '../components/Home/micro/imageCarousel';
-import axios from 'axios';
 import { useRouter } from 'next/router';
 import Drawer from '@mui/material/Drawer';
 import DrawerItem from '../components/drawerItem';
@@ -33,7 +21,6 @@ import ServiceData from '../data/service.json';
 import ServiceCard from '../components/Home/serviceCard';
 import Testimonial from '../components/Home/testimonial';
 import Analytics from '../components/Home/analytics';
-// import Contact from '../components/Home/contact';
 import Contact from '../components/Home/contact-new';
 import Footer from '../components/Home/footer-new';
 import { useSelector, useDispatch } from 'react-redux';
@@ -76,20 +63,10 @@ const Home = () => {
     const [showArrowUp, setShowArrowUp] = useState(false);
     const HomeRef = useRef(null);
     const AboutRef = useRef(null);
-    const ServicesRef = useRef(null);
-    const PortfolioRef = useRef(null)
     const PricingRef = useRef(null);
-    const ExtraRef = useRef(null);
-    const ExtraRef1 = useRef(null);
-    const CustomPlanRef = useRef(null)
-    const FooterRef = useRef(null);
-    const BottomRef = useRef(null);
     const backgroundGradient = ' bg-gradient-to-r from-[#107840] via-[#107840] via-[#1F5025] via -[#28602E] to-[#107840]';
 
     const [showPopup, setShowPopup] = useState(false);
-
-    const gradiantText1 = ' text-transparent bg-clip-text bg-gradient-to-r from-[#F0F3F4] via-[#B2BABB] to-[#F0F3F4]';
-    const gradiantText2 = ' text-transparent bg-clip-text bg-gradient-to-r from-[#F0F3F4] via-[#5D9B81] via-[#93D900] to-[#93D900]';
 
     const [showText2, setShowText2] = useState(false);
     const [showText3, setShowText3] = useState(false);
