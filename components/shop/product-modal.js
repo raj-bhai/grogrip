@@ -8,6 +8,7 @@ import { GoPlusCircle } from 'react-icons/go'
 import { HiOutlineMinusCircle, HiOutlinePlusCircle } from 'react-icons/hi'
 import Rating from '@mui/material/Rating';
 import TopicDetail from "./topic-detail";
+import { ToastContainer, toast } from 'react-toastify';
 
 import { AddToCart } from "../../redux/action/cart";
 
@@ -211,11 +212,57 @@ const ProductModal = () => {
 
     const { openModal, SelectedProduct } = useSelector(state => state.product);
     const [payload, setPayload] = useState({});
-    const dispatch = useDispatch()
+    const dispatch = useDispatch();
+    const [submitted, setSubmitted] = useState(false)
+
+
+    const handleAddToCart = async() => {
+        if (!payload?.topic?.length || !payload?.Contact?.length) {
+            toast.error("Please fill all required fields!!", {
+                position: "top-center",
+                autoClose: 1000,
+                hideProgressBar: true,
+                closeOnClick: true,
+                pauseOnHover: true,
+                draggable: true,
+                progress: false,
+                theme: "colored",
+            })
+            setSubmitted(true)
+            return
+        }
+        if (payload?.Contact?.length < 10) {
+            toast.error("Invalid Contact Detail", {
+                position: "top-center",
+                autoClose: 1000,
+                hideProgressBar: true,
+                closeOnClick: true,
+                pauseOnHover: true,
+                draggable: true,
+                progress: false,
+                theme: "colored",
+            })
+            setSubmitted(true)
+            return
+        }
+        setSubmitted(false)
+        dispatch(AddToCart(payload))
+        toast.success("Added to Cart !!", {
+            position: "top-center",
+            autoClose: 1000,
+            hideProgressBar: true,
+            closeOnClick: true,
+            pauseOnHover: true,
+            draggable: true,
+            progress: false,
+            theme: "colored",
+        })
+    }
 
 
     return (
         <div style={style} className={` w-[90%] p-4 h-[700px] ${backgroundGradient}`} >
+            <ToastContainer/>
             <div className=" w-[100%] flex flex-wrap px-8 py-8 justify-between " >
                 <div className=" w-[500px] h-[100%] " >
                     <h1 className=" my-font-bold text-yellow-200 text-[25px] leading-loose " >{SelectedProduct?.type}</h1>
@@ -229,9 +276,7 @@ const ProductModal = () => {
                     <div>
                         <VoiceDropdown
                             setVoice={(voice) => {
-                                // console.log("voice :", voice)
                                 let obj = payload
-                                // console.log("obj :", obj)
                                 obj.voice = voice
                                 setPayload(obj)
                             }}
@@ -249,8 +294,7 @@ const ProductModal = () => {
                     <Item
                         item={SelectedProduct}
                         onClick={() => {
-                            dispatch(AddToCart(payload))
-                            // console.log("Payload :", payload)
+                            handleAddToCart()
                         }}
                     />
                 </div>

@@ -7,15 +7,18 @@ import {
 } from 'react-icons/fa'
 
 import { ToastContainer, toast } from 'react-toastify';
+import { AiOutlineShoppingCart } from 'react-icons/ai'
 
 import 'react-toastify/dist/ReactToastify.css';
 import { motion } from "framer-motion";
 import { slideIn, staggerContainer, zoomIn, textVariant, textVariant2 } from "../../utils/motion";
 import LoginButton from "./login";
+import { useSelector } from "react-redux";
 
 
 const Header = (props) => {
     const router = useRouter();
+    const Cart = useSelector(state => state.cart.CartData)
     const token = localStorage.getItem("token")
     const textHover = ' hover:text-yellow-200 hover:border-b-[2px] hover:border-b-yellow-200 '
     const selected = ' text-yellow-200 border-b-[2px] border-b-yellow-200 '
@@ -75,8 +78,8 @@ const Header = (props) => {
         // >
         <div className={`w-[100%] border-[0px] sm:h-[150px] md:h-[80px] h-[50px] justify-between flex flex-wrap  fixed z-[2000] top-0` + props.className} >
             {
-                localStorage.getItem('token')?
-                 null : <LoginButton /> 
+                localStorage.getItem('token') ?
+                    null : <LoginButton />
             }
             <div className="sm:w-[350px] w-[100%] sm:h-[70px] h-[50px] border-[0px] flex items-center justify-center sm:ml-[0px] ml-[0px] sm:mt-[8px] mt-[5px] " >
                 <img
@@ -107,7 +110,7 @@ const Header = (props) => {
                         // props.onClickPricing()
                     }}
                 >
-                    <h1 className={selectedHeader == 3 ? textSelectedStyle : textStyle} >Pricing</h1>
+                    <h1 className={selectedHeader == 3 ? textSelectedStyle : textStyle} >Portfolio</h1>
                 </div>
                 <div className=" w-[80px] sm:h-[60px] sm:visible invisible border-[0px] flex items-center justify-center "
                     onClick={() => {
@@ -138,21 +141,34 @@ const Header = (props) => {
                 </input>
             </div>
             <div className=" sm:w-[200px] sm:h-[60px] border-[0px] absolute sm:right-[20px] right-[10px] sm:top-[15px] top-[10px] flex items-center justify-end gap-[10px] " >
-                <img
+                {/* <img
                     src={`/images/icons/instagram1.webp`}
                     className=' sm:w-[35px] sm:h-[35px] w-[25px] h-[25px] '
                     alt="grogrip"
                     onClick={() => {
                         window?.open("https://www.instagram.com/grogrip_media/")
                     }}
-                />
-                <FaWhatsapp
+                /> */}
+                {/* <FaWhatsapp
                     color='white'
                     className='text-[30px] sm:text-[35px] cursor-pointer '
                     onClick={() => {
                         window?.open("https://wa.me/918076455801")
                     }}
-                />
+                /> */}
+                <div className="relative" >
+                    <AiOutlineShoppingCart
+                        color="#fff"
+                        size={60}
+                    />
+                    {
+                        Cart?.length ?
+                            <div className=" flex items-center justify-center rounded-md font-bold text-[#000] w-[20px] absolute -top-[10px] -right-[5px] h-[20px] bg-white " >
+                                <h1>{Cart.length}</h1>
+                            </div> :
+                            null
+                    }
+                </div>
             </div>
             <ToastContainer
             />
