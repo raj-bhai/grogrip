@@ -1,26 +1,34 @@
 import React, { useState, useEffect } from "react";
 import Header from "../components/Home/header";
-import { useSelector } from "react-redux";
+import { useSelector, useDispatch } from "react-redux";
 import CartItem from "../components/cart/cart-item";
 import Products from '../data/shop1.json';
 import Footer from "../components/Home/footer-new";
-
+import EmptyCart from "../components/cart/empty-cart";
+import Modal from '@mui/material/Modal';
+import ProductModal from "../components/shop/product-modal";
+import { ToogleModal, SetSelectedProduct } from "../redux/action/product";
 
 
 const backgroundGradient = ' bg-gradient-to-r from-[#107840] via-[#107840] via-[#1F5025] via -[#28602E] to-[#107840]';
 
 const Cart = () => {
-
+    const dispatch = useDispatch()
     const [headerStyle, setHeaderStyle] = useState(' bg-gradient-to-r from-[#107840] via-[#107840] via-[#1F5025] via -[#28602E] to-[#107840]');
     const [selectedHeader, setSelectedHeader] = useState(7);
     const [domLoaded, setDomLoaded] = useState(false);
-    const Cart = useSelector(state => state.cart.CartData)
+    const Cart = useSelector(state => state.cart.CartData);
+    const { openModal, SelectedProduct } = useSelector(state => state.product);
 
-    console.log("Cart :", Cart)
+    // console.log("Cart :", Cart)
 
     useEffect(() => {
         setDomLoaded(true)
     }, [])
+
+    const handleClose = () => {
+        dispatch(ToogleModal(false))
+    }
 
     return (
         domLoaded &&
@@ -34,15 +42,20 @@ const Cart = () => {
                     <p>CART</p>
                 </btn>
                 <div className=" w-full px-16 flex flex-col items-center" >
-                <div className=" w-full flex text-white my font px-4 text-[30px] justify-between " >
-                        <h1>Package Name</h1>
-                        <h1>Product Name</h1>
-                        <h1>Price</h1>
-                        <h1>Quantity</h1>
-                        <h1>Subtotal</h1>
-                    </div>
                     {
-                        Products?.map((item, index) => {
+                        !Cart?.length ?
+                            <EmptyCart />
+                            :
+                            <div className=" w-full flex text-white my font px-4 text-[30px] justify-between " >
+                                <h1>Package Name</h1>
+                                <h1>Product Name</h1>
+                                <h1>Price</h1>
+                                <h1>Quantity</h1>
+                                <h1>Subtotal</h1>
+                            </div>
+                    }
+                    {
+                        Cart?.map((item, index) => {
                             return (
                                 <CartItem
                                     data={item}
@@ -53,7 +66,21 @@ const Cart = () => {
                     }
                 </div>
             </div>
-            <Footer/>
+            <Footer />
+            {
+                openModal &&
+                <Modal
+                    open={openModal}
+                    onClose={handleClose}
+                    aria-labelledby="modal-modal-title"
+                    aria-describedby="modal-modal-description"
+                >
+                    <ProductModal 
+                    isUpdate={true}
+                    />
+                </Modal>
+
+            }
         </div>
     )
 }

@@ -1,21 +1,46 @@
 import {
-ADDTOCART
+    ADDTOCART,
+    REMOVEFROMCART
 } from '../action/cart';
 
 
 const initialState = {
-    CartData : []
+    CartData: []
 }
 
 
 export default (state = initialState, action) => {
-    switch(action.type) {
-        case ADDTOCART : {
-            return {
-                ...state,
-                CartData : [...state.CartData, action.data]
+    switch (action.type) {
+        case ADDTOCART: {
+            // return {
+            //     ...state,
+            //     CartData: [...state.CartData, action.data]
+            // }
+            const itemIndex = state.CartData.findIndex(item => item.id === action.data.id);
+
+            if (itemIndex >= 0) {
+                // If item exists, update it
+                return {
+                    ...state,
+                    CartData: state.CartData.map((item, index) =>
+                        index === itemIndex ? action.data : item
+                    )
+                }
+            } else {
+                // If item doesn't exist, add it
+                return {
+                    ...state,
+                    CartData: [...state.CartData, action.data]
+                }
             }
         }
+        case REMOVEFROMCART: {
+            return {
+                ...state,
+                CartData: state.CartData.filter(item => item.id !== action.itemId)
+            }
+        }
+        default:
+            return state;
     }
-    return state;
 }

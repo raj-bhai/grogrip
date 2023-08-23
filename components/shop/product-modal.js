@@ -198,7 +198,7 @@ const Item = ({ item, onClick }) => {
 }
 
 
-const ProductModal = () => {
+const ProductModal = ({ isUpdate }) => {
 
     const style = {
         position: 'absolute',
@@ -211,51 +211,57 @@ const ProductModal = () => {
         maxHeight: '800px'      // Added this line as an example (adjust as needed)
     };
 
-    const { openModal, SelectedProduct } = useSelector(state => state.product);
+    const { openModal, SelectedProduct, SelectedProductCart } = useSelector(state => state.product);
     const [payload, setPayload] = useState({});
     const dispatch = useDispatch();
     const [submitted, setSubmitted] = useState(false)
 
 
     useEffect(() => {
-        if (SelectedProduct){
-            setPayload(prevPayload => ({
-                ...prevPayload,
-                Product : SelectedProduct
-              }));
+        if (SelectedProduct) {
+            if (isUpdate) {
+                setPayload(SelectedProductCart)
+            } else {
+                setPayload(prevPayload => ({
+                    ...prevPayload,
+                    Product: SelectedProduct,
+                    quantity: 1,
+                    id: SelectedProduct?.id
+                }));
+            }
         }
     }, [SelectedProduct])
 
 
     const handleAddToCart = async () => {
-        if (!payload?.topic?.length || !payload?.Contact?.length) {
-            toast.error("Please fill all required fields!!", {
-                position: "top-center",
-                autoClose: 1000,
-                hideProgressBar: true,
-                closeOnClick: true,
-                pauseOnHover: true,
-                draggable: true,
-                progress: false,
-                theme: "colored",
-            })
-            setSubmitted(true)
-            return
-        }
-        if (payload?.Contact?.length < 10) {
-            toast.error("Invalid Contact Detail", {
-                position: "top-center",
-                autoClose: 1000,
-                hideProgressBar: true,
-                closeOnClick: true,
-                pauseOnHover: true,
-                draggable: true,
-                progress: false,
-                theme: "colored",
-            })
-            setSubmitted(true)
-            return
-        }
+        // if (!payload?.topic?.length || !payload?.Contact?.length) {
+        //     toast.error("Please fill all required fields!!", {
+        //         position: "top-center",
+        //         autoClose: 1000,
+        //         hideProgressBar: true,
+        //         closeOnClick: true,
+        //         pauseOnHover: true,
+        //         draggable: true,
+        //         progress: false,
+        //         theme: "colored",
+        //     })
+        //     setSubmitted(true)
+        //     return
+        // }
+        // if (payload?.Contact?.length < 10) {
+        //     toast.error("Invalid Contact Detail", {
+        //         position: "top-center",
+        //         autoClose: 1000,
+        //         hideProgressBar: true,
+        //         closeOnClick: true,
+        //         pauseOnHover: true,
+        //         draggable: true,
+        //         progress: false,
+        //         theme: "colored",
+        //     })
+        //     setSubmitted(true)
+        //     return
+        // }
         setSubmitted(false)
         dispatch(AddToCart(payload))
         dispatch(ToogleModal(false))
@@ -270,7 +276,6 @@ const ProductModal = () => {
             theme: "colored",
         })
     }
-
 
     return (
         <div style={style} className={` w-[90%] p-4 h-[700px] ${backgroundGradient}`} >
@@ -288,9 +293,6 @@ const ProductModal = () => {
                     <div>
                         <VoiceDropdown
                             setVoice={(voice) => {
-                                // let obj = payload
-                                // obj.voice = voice
-                                // setPayload(obj)
                                 setPayload(prevPayload => ({
                                     ...prevPayload,
                                     voice: voice
@@ -299,12 +301,9 @@ const ProductModal = () => {
                         />
                         <Counter
                             updateCount={(count) => {
-                                // let obj = payload
-                                // obj.count = count
-                                // setPayload(obj)
                                 setPayload(prevPayload => ({
                                     ...prevPayload,
-                                    count: count
+                                    quantity: count
                                 }));
                             }}
                         />
@@ -321,36 +320,24 @@ const ProductModal = () => {
             </div>
             <TopicDetail
                 updateTopic={(text) => {
-                    // let obj = payload
-                    // obj.topic = text
-                    // setPayload(obj)
                     setPayload(prevPayload => ({
                         ...prevPayload,
                         topic: text
                     }));
                 }}
                 updateReferral={(text) => {
-                    // let obj = payload
-                    // obj.referral = text
-                    // setPayload(obj)
                     setPayload(prevPayload => ({
                         ...prevPayload,
                         referral: text
                     }));
                 }}
                 updateContact={(text) => {
-                    // let obj = payload
-                    // obj.Contact = text
-                    // setPayload(obj)
                     setPayload(prevPayload => ({
                         ...prevPayload,
                         Contact: text
                     }));
                 }}
                 updateDoc={(text) => {
-                    // let obj = payload
-                    // obj.doc = text
-                    // setPayload(obj)
                     setPayload(prevPayload => ({
                         ...prevPayload,
                         doc: text

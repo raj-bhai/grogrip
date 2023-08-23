@@ -1,12 +1,14 @@
 import {
     OPENMODAL,
-    SELECTED_PRODUCT
+    SELECTED_PRODUCT,
+    SELECTED_PRODUCT_CART
 } from '../action/product';
 
 
 const initialState = {
     openModal : false,
-    SelectedProduct : null
+    SelectedProduct : null,
+    SelectedProductCart : null
 };
 
 export default (state = initialState, action) => {
@@ -21,6 +23,12 @@ export default (state = initialState, action) => {
             return {
                 ...state,
                 SelectedProduct: action.data,
+            }
+        }
+        case SELECTED_PRODUCT_CART : {
+            return {
+                ...state,
+                SelectedProductCart: action.data,
             }
         }
     }

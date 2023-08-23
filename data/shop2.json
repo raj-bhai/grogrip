@@ -28,7 +28,7 @@
         ]
     },
     {
-        "id": 22,
+        "id": 23,
         "type": "Custom Package",
         "price": "0$ - 2000$",
         "ratings": 4.5,
@@ -58,7 +58,7 @@
         ]
     },
     {
-        "id": 21,
+        "id": 24,
         "type": "Channel Manager",
         "price": "200$",
         "image": "https://res.cloudinary.com/drgvislmm/image/upload/v1692300769/WebsiteImages/serviceImages/channel_manager_i5my8l.png",

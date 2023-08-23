@@ -1,4 +1,5 @@
 export const ADDTOCART = "ADDTOCART"
+export const REMOVEFROMCART = "REMOVEFROMCART"
 
 
 export const GetCart = () => {
@@ -14,9 +15,9 @@ export const UpdateCart = () => {
     }
 }
 
-export const RemoveFromCart = () => {
+export const RemoveFromCart = (id) => {
     return dispatch => {
-
+        dispatch({ type: REMOVEFROMCART, itemId: id })
     }
 }
 
