@@ -15,7 +15,7 @@ const Shop = () => {
     const [headerStyle, setHeaderStyle] = useState(' bg-gradient-to-r from-[#107840] via-[#107840] via-[#1F5025] via -[#28602E] to-[#107840]');
     const [selectedHeader, setSelectedHeader] = useState(2);
     const [domLoaded, setDomLoaded] = useState(false);
-    const { openModal, SelectedProduct } = useSelector(state => state.product)
+    const { openModal, SelectedProduct } = useSelector(state => state.product);
 
     useEffect(() => {
         setDomLoaded(true)

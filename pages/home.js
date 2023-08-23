@@ -36,6 +36,9 @@ import Analytics from '../components/Home/analytics';
 // import Contact from '../components/Home/contact';
 import Contact from '../components/Home/contact-new';
 import Footer from '../components/Home/footer-new';
+import { useSelector, useDispatch } from 'react-redux';
+import ProductModal from '../components/shop/product-modal';
+import { ToogleModal, SetSelectedProduct } from '../redux/action/product'
 
 
 
@@ -63,8 +66,10 @@ const style = {
 const Home = () => {
 
     const router = useRouter()
+    const dispatch = useDispatch()
     const [domLoaded, setDomLoaded] = useState(false);
 
+    const { openModal, SelectedProduct } = useSelector(state => state.product);
     const [headerStyle, setHeaderStyle] = useState(' bg-gradient-to-r from-[#107840] via-[#107840] via-[#1F5025] via -[#28602E] to-[#107840]');
     const [btn1Animate, setBtn1Animate] = useState(false);
     const [btn2Animate, setBtn2Animate] = useState(false);
@@ -114,6 +119,11 @@ const Home = () => {
     const [SSopen, setSSOpen] = useState(false);
     const handleOpen = () => setSSOpen(true);
     const handleClose = () => setSSOpen(false);
+
+
+    const handleModalClose = () => {
+        dispatch(ToogleModal(false))
+    }
 
 
 
@@ -713,6 +723,18 @@ const Home = () => {
                         onClose={() => setDrawerpen(false)}
                     />
                 </Drawer>
+                {
+                    openModal &&
+                    <Modal
+                        open={openModal}
+                        onClose={handleModalClose}
+                        aria-labelledby="modal-modal-title"
+                        aria-describedby="modal-modal-description"
+                    >
+                        <ProductModal />
+                    </Modal>
+
+                }
             </div >
             : null
     )
