@@ -8,32 +8,24 @@ import EmptyCart from "../components/cart/empty-cart";
 import Modal from '@mui/material/Modal';
 import ProductModal from "../components/shop/product-modal";
 import { ToogleModal, SetSelectedProduct } from "../redux/action/product";
-import { GetCart } from "../redux/action/cart";
+import { FetchData } from "../lib/utils";
 
 
 const backgroundGradient = ' bg-gradient-to-r from-[#107840] via-[#107840] via-[#1F5025] via -[#28602E] to-[#107840]';
 
 const Cart = () => {
     const dispatch = useDispatch()
+    const fetchData = FetchData()
     const [headerStyle, setHeaderStyle] = useState(' bg-gradient-to-r from-[#107840] via-[#107840] via-[#1F5025] via -[#28602E] to-[#107840]');
     const [selectedHeader, setSelectedHeader] = useState(7);
-    const [domLoaded, setDomLoaded] = useState(false);
     const Cart = useSelector(state => state.cart.CartData);
     const { openModal, SelectedProduct } = useSelector(state => state.product);
-
-    // console.log("Cart :", Cart)
-
-    useEffect(() => {
-        setDomLoaded(true)
-        dispatch(GetCart())
-    }, [])
 
     const handleClose = () => {
         dispatch(ToogleModal(false))
     }
 
     return (
-        domLoaded &&
         <div className={'w-full fade-in px-[0px] py-[0px] relative overflow-y-hidden overflow-x-hidden' + backgroundGradient} >
             <Header
                 className={headerStyle}

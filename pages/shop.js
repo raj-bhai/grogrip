@@ -8,6 +8,7 @@ import { useSelector, useDispatch } from "react-redux";
 import Modal from '@mui/material/Modal';
 import ProductModal from "../components/shop/product-modal";
 import { ToogleModal, SetSelectedProduct } from '../redux/action/product'
+import { FetchData } from "../lib/utils";
 
 
 
@@ -15,14 +16,11 @@ const backgroundGradient = ' bg-gradient-to-r from-[#107840] via-[#107840] via-[
 
 const Shop = () => {
     const dispatch = useDispatch()
+    const fetchData = FetchData()
     const [headerStyle, setHeaderStyle] = useState(' bg-gradient-to-r from-[#107840] via-[#107840] via-[#1F5025] via -[#28602E] to-[#107840]');
     const [selectedHeader, setSelectedHeader] = useState(2);
-    const [domLoaded, setDomLoaded] = useState(false);
     const { openModal, SelectedProduct } = useSelector(state => state.product);
 
-    useEffect(() => {
-        setDomLoaded(true)
-    }, [])
 
     console.log("openModal :", openModal)
 
@@ -33,7 +31,6 @@ const Shop = () => {
 
 
     return (
-        domLoaded &&
         <div className={'w-full fade-in px-[0px] py-[0px] relative overflow-y-hidden overflow-x-hidden' + backgroundGradient} >
             <Header
                 className={headerStyle}

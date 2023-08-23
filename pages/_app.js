@@ -1,6 +1,6 @@
 import '../styles/globals.css'
 import { Provider } from 'react-redux';
-import { useEffect } from 'react'
+import { useEffect, useState } from 'react'
 import Head from 'next/head';
 import store from '../redux/store';
 import { Analytics } from '@vercel/analytics/react';
@@ -12,13 +12,14 @@ import { useRouter } from 'next/router';
 
 function MyApp({ Component, pageProps }) {
   const router = useRouter()
-  // const dispatch = useDispatch()
+  const [domLoaded, setDomLoaded] = useState(false)
   const title = "Grogrip Power up Your YouTube Success - Automation, SEO, Content Mastery!"
   const description = "Boost YouTube growth with Grogrip: automation, SEO, content creation. Enhance online presence, drive targeted traffic. Expert strategies for success"
   const keywords = "Grogrip, Grogrip Media, growgrip,#grogrip, #grogrip_media, #Grogrip, Youtube Automation, SEO, Script Writing, Content Writing"
   const ogImage = './favicon.ico'
 
   useEffect(() => {
+    setDomLoaded(true)
     ReactGA.initialize('G-RQF44EP1R1');
     ReactGA.pageview(window.location.pathname);
     const handleRouteChange = (url) => {
@@ -31,20 +32,19 @@ function MyApp({ Component, pageProps }) {
   }, []);
 
 
-  // useEffect(() => {
-  //   dispatch(GetCart())
-  // })
-
   return (
     <>
       {/* <Head>
         <link rel="canonical" href="https://www.grogrip.com/home" />
         <meta name="google-site-verification" content="P1rLSRxY5hQ4--9Ktuz6cXNRY9bkDRqtloyNq1wein0" />
       </Head> */}
-      <Provider store={store}>
+      {
+        domLoaded &&
+        <Provider store={store}>
         <Component {...pageProps} />
         <Analytics />
       </Provider>
+      }
       <SEO title={title} pageDescription={description} keywords={keywords} ogImage={ogImage}></SEO>
     </>
   )

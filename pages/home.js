@@ -26,6 +26,7 @@ import Footer from '../components/Home/footer-new';
 import { useSelector, useDispatch } from 'react-redux';
 import ProductModal from '../components/shop/product-modal';
 import { ToogleModal, SetSelectedProduct } from '../redux/action/product'
+import { FetchData } from "../lib/utils";
 
 
 
@@ -53,8 +54,9 @@ const style = {
 const Home = () => {
 
     const router = useRouter()
+    const fetchData = FetchData()
     const dispatch = useDispatch()
-    const [domLoaded, setDomLoaded] = useState(false);
+    // const [domLoaded, setDomLoaded] = useState(false);
 
     const { openModal, SelectedProduct } = useSelector(state => state.product);
     const [headerStyle, setHeaderStyle] = useState(' bg-gradient-to-r from-[#107840] via-[#107840] via-[#1F5025] via -[#28602E] to-[#107840]');
@@ -198,9 +200,9 @@ const Home = () => {
     }, [projectIndex])
 
 
-    useEffect(() => {
-        setDomLoaded(true);
-    }, []);
+    // useEffect(() => {
+    //     setDomLoaded(true);
+    // }, []);
 
     setTimeout(() => {
         setShowText2(true)
@@ -266,7 +268,7 @@ const Home = () => {
 
 
     return (
-        domLoaded &&
+        // domLoaded &&
             typeof window !== 'undefined' ?
             <div id="home" className={'w-full fade-in px-[0px] py-[0px] relative overflow-y-hidden overflow-x-hidden' + backgroundGradient}
             >

@@ -31,12 +31,6 @@ export const GetCart = () => {
 }
 
 
-export const UpdateCart = () => {
-    return dispatch => {
-
-    }
-}
-
 export const RemoveFromCart = (id) => {
     return dispatch => {
         const token = localStorage.getItem('token') // usually comes from your authentication process
