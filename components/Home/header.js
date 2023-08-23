@@ -121,7 +121,7 @@ const Header = (props) => {
                 </div>
                 <div className=" w-[80px] sm:h-[60px] sm:visible invisible border-[0px] flex items-center justify-center "
                     onClick={() => {
-                        props.onClickAbout()
+                        // props.onClickAbout()
                     }}
                 >
                     <h1 className={selectedHeader == 5 ? textSelectedStyle : textStyle} >About</h1>
@@ -158,8 +158,12 @@ const Header = (props) => {
                 /> */}
                 <div className="relative" >
                     <AiOutlineShoppingCart
-                        color="#fff"
+                        color= {(props.selectedHeader == 7)? '#EED777' : "#fff"} 
                         size={60}
+                        className=" cursor-pointer "
+                        onClick={() => {
+                            router.push('/cart')
+                        }}
                     />
                     {
                         Cart?.length ?

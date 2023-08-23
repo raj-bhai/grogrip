@@ -9,6 +9,7 @@ import { HiOutlineMinusCircle, HiOutlinePlusCircle } from 'react-icons/hi'
 import Rating from '@mui/material/Rating';
 import TopicDetail from "./topic-detail";
 import { ToastContainer, toast } from 'react-toastify';
+import { ToogleModal } from "../../redux/action/product";
 
 import { AddToCart } from "../../redux/action/cart";
 
@@ -216,7 +217,17 @@ const ProductModal = () => {
     const [submitted, setSubmitted] = useState(false)
 
 
-    const handleAddToCart = async() => {
+    useEffect(() => {
+        if (SelectedProduct){
+            setPayload(prevPayload => ({
+                ...prevPayload,
+                Product : SelectedProduct
+              }));
+        }
+    }, [SelectedProduct])
+
+
+    const handleAddToCart = async () => {
         if (!payload?.topic?.length || !payload?.Contact?.length) {
             toast.error("Please fill all required fields!!", {
                 position: "top-center",
@@ -247,6 +258,7 @@ const ProductModal = () => {
         }
         setSubmitted(false)
         dispatch(AddToCart(payload))
+        dispatch(ToogleModal(false))
         toast.success("Added to Cart !!", {
             position: "top-center",
             autoClose: 1000,
@@ -262,7 +274,7 @@ const ProductModal = () => {
 
     return (
         <div style={style} className={` w-[90%] p-4 h-[700px] ${backgroundGradient}`} >
-            <ToastContainer/>
+            <ToastContainer />
             <div className=" w-[100%] flex flex-wrap px-8 py-8 justify-between " >
                 <div className=" w-[500px] h-[100%] " >
                     <h1 className=" my-font-bold text-yellow-200 text-[25px] leading-loose " >{SelectedProduct?.type}</h1>
@@ -276,16 +288,24 @@ const ProductModal = () => {
                     <div>
                         <VoiceDropdown
                             setVoice={(voice) => {
-                                let obj = payload
-                                obj.voice = voice
-                                setPayload(obj)
+                                // let obj = payload
+                                // obj.voice = voice
+                                // setPayload(obj)
+                                setPayload(prevPayload => ({
+                                    ...prevPayload,
+                                    voice: voice
+                                }));
                             }}
                         />
                         <Counter
                             updateCount={(count) => {
-                                let obj = payload
-                                obj.count = count
-                                setPayload(obj)
+                                // let obj = payload
+                                // obj.count = count
+                                // setPayload(obj)
+                                setPayload(prevPayload => ({
+                                    ...prevPayload,
+                                    count: count
+                                }));
                             }}
                         />
                     </div>
@@ -301,24 +321,40 @@ const ProductModal = () => {
             </div>
             <TopicDetail
                 updateTopic={(text) => {
-                    let obj = payload
-                    obj.topic = text
-                    setPayload(obj)
+                    // let obj = payload
+                    // obj.topic = text
+                    // setPayload(obj)
+                    setPayload(prevPayload => ({
+                        ...prevPayload,
+                        topic: text
+                    }));
                 }}
                 updateReferral={(text) => {
-                    let obj = payload
-                    obj.referral = text
-                    setPayload(obj)
+                    // let obj = payload
+                    // obj.referral = text
+                    // setPayload(obj)
+                    setPayload(prevPayload => ({
+                        ...prevPayload,
+                        referral: text
+                    }));
                 }}
                 updateContact={(text) => {
-                    let obj = payload
-                    obj.Contact = text
-                    setPayload(obj)
+                    // let obj = payload
+                    // obj.Contact = text
+                    // setPayload(obj)
+                    setPayload(prevPayload => ({
+                        ...prevPayload,
+                        Contact: text
+                    }));
                 }}
                 updateDoc={(text) => {
-                    let obj = payload
-                    obj.doc = text
-                    setPayload(obj)
+                    // let obj = payload
+                    // obj.doc = text
+                    // setPayload(obj)
+                    setPayload(prevPayload => ({
+                        ...prevPayload,
+                        doc: text
+                    }));
                 }}
             />
         </div>

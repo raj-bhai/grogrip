@@ -1,5 +1,4 @@
 import React, { useState, useEffect } from "react";
-const backgroundGradient = ' bg-gradient-to-r from-[#107840] via-[#107840] via-[#1F5025] via -[#28602E] to-[#107840]';
 import Header from "../components/Home/header";
 import Footer from "../components/Home/footer-new";
 import Type1 from "../components/shop/shop-type1";
@@ -9,6 +8,10 @@ import { useSelector, useDispatch } from "react-redux";
 import Modal from '@mui/material/Modal';
 import ProductModal from "../components/shop/product-modal";
 import { ToogleModal, SetSelectedProduct } from '../redux/action/product'
+
+
+
+const backgroundGradient = ' bg-gradient-to-r from-[#107840] via-[#107840] via-[#1F5025] via -[#28602E] to-[#107840]';
 
 const Shop = () => {
     const dispatch = useDispatch()
