@@ -1,5 +1,9 @@
-import React, { useState, useEffect } from "react";
+import React, { useState, useEffect, useRef } from "react";
 import { FaCheck } from "react-icons/fa";
+import { MdKeyboardArrowDown } from 'react-icons/md';
+import { AiFillPlayCircle, AiFillPauseCircle } from 'react-icons/ai'
+
+// import gg from '../../voices/ggVoice.mp3'
 
 const unFocusedBG = ' bg-[#0FA152]'  //green
 const focusedBG = ' bg-[#fff]'  //white
@@ -24,6 +28,120 @@ const Features = (props) => {
         </div>
     )
 }
+
+const VoiceDropdown = () => {
+    const [isOpen, setIsOpen] = useState(false);
+    const [selectedVoice, setSelectedVoice] = useState(null);
+
+    const [isPlaying, setIsPlaying] = useState(false); // New state for tracking if a voice is playing
+    const [playingVoice, setPlayingVoice] = useState(null); // New state for tracking which voice is playing
+
+    const dropdownRef = useRef();
+    const audioRef = useRef(new Audio());
+
+    const toggleVoiceSample = (voice) => {
+        if (isPlaying) {
+            audioRef.current.pause();
+            setIsPlaying(false);
+            setPlayingVoice(null);
+        } else {
+            console.log("Playing voice:", voice.url);
+            audioRef.current.src = voice.url;
+            audioRef.current.play();
+            setIsPlaying(true);
+            setPlayingVoice(voice.name);
+        }
+    }
+    const voices = [
+        { name: "Artist 1", url: 'https://res.cloudinary.com/drgvislmm/video/upload/v1692293661/voiceOver/ggVoice_flhppl.mp3' },
+        { name: "Artist 2", url: 'https://res.cloudinary.com/drgvislmm/video/upload/v1692293661/voiceOver/ggVoice_flhppl.mp3' },
+        { name: "Artist 3", url: 'https://res.cloudinary.com/drgvislmm/video/upload/v1692293661/voiceOver/ggVoice_flhppl.mp3' },
+    ];
+
+    useEffect(() => {
+
+        const handleOutsideClick = (event) => {
+            if (dropdownRef.current && !dropdownRef.current.contains(event.target)) {
+                setIsOpen(false);
+                // Stop playing voice when dropdown closes
+                audioRef.current.pause();
+                setIsPlaying(false);
+                setPlayingVoice(null);
+            }
+        };
+
+        audioRef.current.onended = () => {
+            setIsPlaying(false);
+            setPlayingVoice(null);
+        }
+
+        document.addEventListener("click", handleOutsideClick);
+
+        return () => {
+            // Cleanup event listener on component unmount
+            document.removeEventListener("click", handleOutsideClick);
+        };
+
+    }, [])
+
+    useEffect(() => {
+        // Reset playing state when audio finishes
+        audioRef.current.onended = () => {
+            setIsPlaying(false);
+            setPlayingVoice(null);
+        }
+    }, []);
+
+    const handleVoiceSelect = (voice) => {
+        setSelectedVoice(voice);
+        setIsOpen(false);
+    }
+
+    const playVoiceSample = (voiceUrl) => {
+        console.log("hello mf");
+        console.log("url :", voiceUrl)
+        const audio = new Audio(voiceUrl);
+        audio.play();
+        // Logic to play a voice sample for the selected voice
+    }
+
+    return (
+        <div ref={dropdownRef} className="w-[100%] mt-2 relative  "> {/* Set parent to position: relative */}
+            <h1 className="text-white my-font-bold py-1">Select Voice Artist</h1>
+            <div className="w-[100%] h-[50px] border mt-2 rounded-md  bg-[#1b5a2c] text-white flex justify-between items-center px-2 cursor-pointer" onClick={() => setIsOpen(!isOpen)}>
+                <AiFillPlayCircle
+                    size={30}
+                />
+                {selectedVoice?.name || "Select a voice"}
+                <MdKeyboardArrowDown size={25} />
+            </div>
+            {isOpen && (
+                <div className="w-[100%] border rounded-md mt-2 absolute z-10 bg-[#1b5a2c] text-white"> {/* Dropdown positioned absolutely */}
+                    {voices.map(voice => (
+                        <div key={voice.name} className="flex justify-between items-center px-2 py-1 cursor-pointer hover:bg-[#117A65]" onClick={() => handleVoiceSelect(voice)}>
+                            {isPlaying && playingVoice === voice.name ? (
+                                <AiFillPauseCircle size={30} onClick={(e) => {
+                                    e.stopPropagation();
+                                    toggleVoiceSample(voice);
+                                }} />
+                            ) : (
+                                <AiFillPlayCircle size={30} onClick={(e) => {
+                                    e.stopPropagation();
+                                    toggleVoiceSample(voice);
+                                }} />
+                            )}
+                            {voice.name}
+                        </div>
+                    ))}
+                </div>
+            )}
+        </div>
+    );
+}
+
+// export default VoiceDropdown;
+
+
 
 const PricingCard = (props) => {
 
@@ -70,7 +188,7 @@ const PricingCard = (props) => {
 
     return (
         domLoaded &&
-        <div className={`sm:w-[320px] w-[250px] sm:h-[500px] rounded-[20px] sm:px-[20px] sm:pt-[20px] sm:pb-[20px] px-[15px] pt-[15px] pb-[15px] ${focused ? focusedBorder : unFocusedBorder} `}
+        <div className={`sm:w-[320px] w-[250px]  rounded-[20px] sm:px-[20px] sm:pt-[20px] sm:pb-[20px] px-[15px] pt-[15px] pb-[15px] ${focused ? focusedBorder : unFocusedBorder} `}
             onFocus={() => {
                 props.onFocus();
             }}
@@ -98,6 +216,20 @@ const PricingCard = (props) => {
                     <h1 className=" text-[#fff] sm:text-[50px] text-[16px] sm:leading-none my-font-bold " >${price}</h1>
                     <h1 className=" text-[#fff] my-font-semibold sm:text-[18px] text-[14px] "  > /video</h1>
                 </div>
+                {/* <div className=" w-[100%] mt-2  " >
+                    <h1 className=" text-white my-font-bold py-1 " >Select Voice Artist</h1>
+                    <div className=" w-[100%] h-[50px] rounded-md border text-white flex justify-between items-center px-2  " >
+                        <AiFillPlayCircle
+                            size={30}
+                            className=" cursor-pointer "
+                        />
+                        <MdKeyboardArrowDown
+                            size={25}
+                            className=" cursor-pointer "
+                        />
+                    </div>
+                </div> */}
+                <VoiceDropdown />
                 <div className=" sm:mt-[15px] mt-[5px] " >
                     <h1 className=" text-[#fff] sm:text-[15px] text-[13px] my-font-semibold " >What&apos;s included</h1>
                 </div>
@@ -146,9 +278,9 @@ const PricingCard = (props) => {
             </div>
             <div className=" w-[100%] border-t-[0px] flex justify-center " >
                 <div className={`sm:w-[250px] w-[200px] cursor-pointer h-[50px] mt-[20px] rounded-[50px] flex items-center justify-center ${focused ? focusedBG : unFocusedBG}`}
-                onClick={() => {
-                    props.onClick()
-                }}
+                    onClick={() => {
+                        props.onClick()
+                    }}
                 >
                     <h1 className={`text-[20px] leading-none ${focused ? focusedbtnText : unfocusedBtnText} `} >Get Started</h1>
                 </div>

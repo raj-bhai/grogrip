@@ -3,31 +3,30 @@ import Header from '../components/Home/header';
 import MovingText from 'react-moving-text';
 import ParticleEffectButton from 'react-particle-effect-button'
 import PricingCard from '../components/Home/pricingCard';
-import CustomPlan from '../components/Home/customPlan';
 import Success from '../components/pupups/sucess';
-import url from '../constants/url';
 import {
-    FaFacebookSquare,
-    FaInstagram,
     FaAngleDoubleUp,
-    FaWhatsapp,
 } from 'react-icons/fa';
-import Video from '../components/Home/video';
-import Globe from '../components/Home/globe';
-import Services from '../components/Home/services';
-import Footer from '../components/Home/footer';
+import { MdOpenInNew } from 'react-icons/md'
 import Videos from '../constants/portfolio';
 import Modal from '@mui/material/Modal';
 import Box from '@mui/material/Box';
-import { styled } from '@mui/material/styles';
-import Paper from '@mui/material/Paper';
 import "react-responsive-carousel/lib/styles/carousel.min.css";
 import Carousel from '../components/Home/micro/imageCarousel';
-import axios from 'axios';
 import { useRouter } from 'next/router';
 import Drawer from '@mui/material/Drawer';
 import DrawerItem from '../components/drawerItem';
 import Loginpop from '../components/Home/loginPop';
+import ServiceData from '../data/service.json';
+import ServiceCard from '../components/Home/serviceCard';
+import Testimonial from '../components/Home/testimonial';
+import Analytics from '../components/Home/analytics';
+import Contact from '../components/Home/contact-new';
+import Footer from '../components/Home/footer-new';
+import { useSelector, useDispatch } from 'react-redux';
+import ProductModal from '../components/shop/product-modal';
+import { ToogleModal, SetSelectedProduct } from '../redux/action/product'
+import { FetchData } from "../lib/utils";
 
 
 
@@ -55,28 +54,21 @@ const style = {
 const Home = () => {
 
     const router = useRouter()
-    const [domLoaded, setDomLoaded] = useState(false);
+    const fetchData = FetchData()
+    const dispatch = useDispatch()
+    // const [domLoaded, setDomLoaded] = useState(false);
 
+    const { openModal, SelectedProduct } = useSelector(state => state.product);
     const [headerStyle, setHeaderStyle] = useState(' bg-gradient-to-r from-[#107840] via-[#107840] via-[#1F5025] via -[#28602E] to-[#107840]');
     const [btn1Animate, setBtn1Animate] = useState(false);
     const [btn2Animate, setBtn2Animate] = useState(false);
     const [showArrowUp, setShowArrowUp] = useState(false);
     const HomeRef = useRef(null);
     const AboutRef = useRef(null);
-    const ServicesRef = useRef(null);
-    const PortfolioRef = useRef(null)
     const PricingRef = useRef(null);
-    const ExtraRef = useRef(null);
-    const ExtraRef1 = useRef(null);
-    const CustomPlanRef = useRef(null)
-    const FooterRef = useRef(null);
-    const BottomRef = useRef(null);
     const backgroundGradient = ' bg-gradient-to-r from-[#107840] via-[#107840] via-[#1F5025] via -[#28602E] to-[#107840]';
 
     const [showPopup, setShowPopup] = useState(false);
-
-    const gradiantText1 = ' text-transparent bg-clip-text bg-gradient-to-r from-[#F0F3F4] via-[#B2BABB] to-[#F0F3F4]';
-    const gradiantText2 = ' text-transparent bg-clip-text bg-gradient-to-r from-[#F0F3F4] via-[#5D9B81] via-[#93D900] to-[#93D900]';
 
     const [showText2, setShowText2] = useState(false);
     const [showText3, setShowText3] = useState(false);
@@ -108,6 +100,11 @@ const Home = () => {
     const handleClose = () => setSSOpen(false);
 
 
+    const handleModalClose = () => {
+        dispatch(ToogleModal(false))
+    }
+
+
 
 
 
@@ -130,54 +127,55 @@ const Home = () => {
 
 
     useEffect(() => {
-        if (countingStart) {
-            if (Math.floor(count) < 50) {
-                const intervalId = setInterval(() =>
-                    setCount(count + 0.5),
-                    0.01 // every 3 seconds
-                );
-                return () => clearTimeout(intervalId);
-            }
+        // if (countingStart) {
+        if (Math.floor(count) < 50) {
+            const intervalId = setInterval(() =>
+                setCount(count + 0.5),
+                0.01 // every 3 seconds
+            );
+            return () => clearTimeout(intervalId);
         }
+        // }
     }, [count, countingStart])
 
     useEffect(() => {
-        if (countingStart) {
-            if (Math.floor(count1) < 150) {
-                const intervalId = setInterval(() =>
-                    setCount1(count1 + 1),
-                    0.0001 // every 3 seconds
-                );
-                return () => clearTimeout(intervalId);
-            }
+        // if (countingStart) {
+        if (Math.floor(count1) < 150) {
+            const intervalId = setInterval(() =>
+                setCount1(count1 + 1),
+                0.0001 // every 3 seconds
+            );
+            return () => clearTimeout(intervalId);
         }
+        // }
     }, [count1, countingStart])
 
 
     useEffect(() => {
-        if (countingStart) {
-            if (Math.floor(count2) < 500) {
-                const intervalId = setInterval(() =>
-                    setCount2(count2 + 4),
-                    0.00000001 // every 3 seconds
-                );
-                return () => clearTimeout(intervalId);
-            }
+        // if (countingStart) {
+        if (Math.floor(count2) < 500) {
+            const intervalId = setInterval(() =>
+                setCount2(count2 + 4),
+                0.00000001 // every 3 seconds
+            );
+            return () => clearTimeout(intervalId);
         }
+        // }
     }, [count2, countingStart])
 
     useEffect(() => {
-        if (countingStart) {
-            if (Math.floor(count3) < 267841) {
-                const intervalId = setInterval(() =>
-                    setCount3(count3 + 1),
-                    0.001 // every 3 seconds
-                );
-                return () => clearTimeout(intervalId);
-            } else {
-                setCount3(215794)
-            }
+        // if (countingStart) {
+        if (Math.floor(count3) < 221841) {
+            const intervalId = setInterval(() =>
+                setCount3(count3 + 1),
+                0.001 // every 3 seconds
+            );
+            return () => clearTimeout(intervalId);
         }
+        // else {
+        //     setCount3(215794)
+        // }
+        // }
     }, [count3, countingStart])
 
     useEffect(() => {
@@ -202,9 +200,9 @@ const Home = () => {
     }, [projectIndex])
 
 
-    useEffect(() => {
-        setDomLoaded(true);
-    }, []);
+    // useEffect(() => {
+    //     setDomLoaded(true);
+    // }, []);
 
     setTimeout(() => {
         setShowText2(true)
@@ -270,7 +268,7 @@ const Home = () => {
 
 
     return (
-        domLoaded &&
+        // domLoaded &&
             typeof window !== 'undefined' ?
             <div id="home" className={'w-full fade-in px-[0px] py-[0px] relative overflow-y-hidden overflow-x-hidden' + backgroundGradient}
             >
@@ -288,7 +286,7 @@ const Home = () => {
                     localStorage.getItem('token') ?
                         null : <Loginpop />
                 }
-                <div ref={HomeRef} className={`w-[100%] sm:min-h-[650px]`}>
+                <div ref={HomeRef} className={`w-[100%] `}>
                     <Header
                         className={headerStyle}
                         selectedHeader={selectedHeader}
@@ -332,17 +330,17 @@ const Home = () => {
                         className=' absolute right-[0px] bottom-[-100px] sm:visible invisible '
                         alt="star" />
                     {
-                        <div className={`${localStorage.getItem('token') ? 'page-content' : 'page-content--blurred'} border-[0px] flex flex-wrap items-center w-[100%] justify-center sm:mt-[100px] z-[100] `} >
+                        <div className={`${localStorage.getItem('token') ? 'page-content' : 'page-content--blurred'} border-[0px] py-16 sm:py-2 flex flex-wrap items-center w-[100%] justify-center sm:mt-[100px] z-[100] `} >
 
-                            <div className={` sm:w-[50%] w-[100%] sm:mr-[0px] mr-[10px] flex items-center justify-center sm:pl-[20px] sm:pt-[0px] pt-[30px] sm:pb-[0px] pb-[50px] pl-[0px] sm:min-w-[550px] `}
+                            <div className={` sm:w-[30%] w-[100%]  sm:mt-[-50px] sm:mr-[0px] mr-[10px] flex items-center justify-center sm:pl-[20px] sm:pt-[0px] pt-[10px] sm:pb-[0px] pb-[10px] pl-[0px] sm:min-w-[550px] `}
                             >
-                                <div className='sm:w-[600px]  w-[100%] h-[80%] border-[0px] sm:ml-[0px] ml-[10px] sm:mt-[80px] mt-[60px] flex relative ' >
+                                <div className='sm:w-[600px]  w-[100%] h-[80%] border-[0px] sm:ml-[0px] ml-[10px] sm:mt-[80px] mt-[20px] flex relative ' >
                                     <img
                                         src="/images/user/star.png"
-                                        className='sm:w-[40px] h-[20px] sm:h-[40px] h-[20px] absolute sm:top-[50px] sm:top-[-5px] top-[-10px] sm:left-[-50px] left-[200px] '
+                                        className='sm:w-[40px] h-[20px] sm:h-[40px] h-[20px] absolute sm:top-[50px] sm:top-[-50px] top-[-10px] sm:left-0 left-[200px] '
                                         alt="star" />
                                     <div>
-                                        <div className=' lg:py-0 py-[20px] pb-[40px] flex flex-col lg:gap-0 gap-[20px] lg:p-0 pr-[20px] pl-[20px] ' >
+                                        <div className=' lg:py-0 sm:py-[20px] sm:pb-[40px] flex flex-col lg:gap-0 gap-[20px] lg:p-0 pr-[20px] pl-[20px] ' >
                                             <MovingText
                                                 type="flipFromLeftToCenter"
                                                 duration="1000ms"
@@ -351,7 +349,7 @@ const Home = () => {
                                                 timing="ease"
                                                 iteration={1}
                                                 fillMode="none"
-                                                className='  text-shadow my-font-bold  drop-shadow-lg text-yellow-200 sm:text-[50px] text-[25px] sm:leading-[50px] text-left font-semibold  '
+                                                className='  text-shadow my-font-bold  drop-shadow-lg text-yellow-200 sm:text-[40px] text-[25px] sm:leading-[50px] text-left font-semibold  '
                                             >
                                                 {`Expert YouTube Service  and Support`}
                                             </MovingText>
@@ -468,14 +466,22 @@ const Home = () => {
                                     </div>
                                 </div>
                             </div>
-                            <div className='lg:w-[50%] lg:min-w-[550px] w-0 h-0 lg:h-[500px] border-[0px] flex lg:justify-end justify-center lg:pr-[50px] lg:visible invisible  ' >
-                                <Globe />
+                            <div className=' w-[95%] sm:w-[60%] p-2 sm:p-4 h-[200px] sm:h-[500px] border-[0px] sm:mr-[25px] flex rounded-lg lg:justify-end video-background justify-center   '
+                            >
+                                {/* <Globe /> */}
+                                <iframe
+                                    className="w-[100%] h-[100%] rounded-lg "
+                                    src={`https://www.youtube.com/embed/ERAfmohHuxE`}
+                                    title="YouTube video player"
+                                    frameborder="0"
+                                    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                                    allowfullscreen
+                                ></iframe>
                             </div>
                         </div>
                     }
                 </div>
-                <div ref={AboutRef}
-                    className={`w-[100%] flex items-center jistify-center sm:h-[150px] sm:pt-[0px] sm:pb-[0px] sm:pt-[80px] sm:pb-[30px] relative ${localStorage.getItem('token') ? 'page-content' : 'page-content--blurred'} `} id='about'
+                <div ref={AboutRef} className={`w-[100%] flex items-center jistify-center sm:h-[150px] sm:pt-[0px] sm:pb-[0px] sm:pb-[30px] relative ${localStorage.getItem('token') ? 'page-content' : 'page-content--blurred'} `} id='about'
                 >
                     <div className='w-[100%] border-[0px] sm:py-[0px] gap-[50px] sm:flex-wrap sm:flex-row flex-col flex items-center justify-between sm:px-[20px] px-[10px] ' >
                         <div className='sm:w-[20%] w-[100%] border-[0px] align-bottom text-center ' >
@@ -513,37 +519,10 @@ const Home = () => {
                         </div>
                     </div>
                 </div>
-                <div ref={PortfolioRef}
-                    id="portfolio" className={` ${localStorage.getItem('token') ? 'page-content' : 'page-content--blurred'} w-[100%] relative sm:mt-[0px] mt-[-100px] border-[0px] flex items-center justify-center`}>
-                    <img
-                        src="/images/user/circle4.png"
-                        className=' absolute left-[0px] top-[-50px] sm:visible invisible '
-                        alt="person7" />
-                    <img
-                        src="/images/user/circle5.png"
-                        className=' absolute right-[0px] bottom-[0px] sm:visible invisible  '
-                        alt="person7" />
-                    <div className=' lg:h-[400px] lg:mt-[0px] mt-[20px] w-[80%] border-[0px] lg:flex lg:flex-row flex flex-col items-center lg:justify-center  lg:pl-[0px] pl-10px ' >
-                        <div className=' w-[40%] lg:h-[400px] h-[200px] flex items-center justify-center ' >
-                            <img
-                                src="https://res.cloudinary.com/drgvislmm/image/upload/v1683385350/WebsiteImages/ggmoney_axjqvu.gif"
-                                className='absolute lg:w-[600px] lg:h-[400px] lg:top-0  top-1 '
-                                alt="person7" />
-                        </div>
-                        <div className='w-full flex flex-col lg:items-start lg:text-start items-center text-center lg:pb-[120px] sm:px-[40px] pr-[0] sm:mt-[0px] mt-[50px]  ' >
-                            <div className='sm:w-full sm:h-[120px] sm:mt-[80px] border-[0px] font-semibold flex items-center '  >
-                                <h1 className=' text-yellow-200 sm:text-[30px] my-font-bold text-[17px] leading-sm ' >AFFORDABLE PRICING, EXCEPTIONAL RESULTS</h1>
-                            </div>
-                            <div>
-                                <h1 className=' text-[#fff]  sm:text-[18px] my-font-semibold text-[13px] sm:-mt-[20px] mt-[10px]  leading-tight ' >
-                                    <p>"Choose from our flexible pricing plans to suit</p>
-                                    <p>your budget and goals."</p>
-                                </h1>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <div id="pricing" ref={PricingRef} className={`${localStorage.getItem('token') ? 'page-content' : 'page-content--blurred'}  w-[100%] pt-[50px] flex item-center justify-center`} >
+                <div id="pricing" ref={PricingRef} className={`${localStorage.getItem('token') ? 'page-content' : 'page-content--blurred'}  w-[100%] pt-[50px] flex flex-col items-center justify-center`} >
+                    <btn className=' text-yellow-200 text-[50px] w-[700px] hover:border-yellow-200 hover:text-white cursor-pointer border flex items-center justify-center  border-white rounded-lg ml-8 my-font-bold  ' >
+                        <p>Cashcow Packages</p>
+                    </btn>
                     <div className=' w-[90%] border-[0px] sm:mt-[50px] mt-[20px] flex sm:gap-[80px] gap-[20px] flex-wrap items-center justify-center ' >
                         <PricingCard
                             for="Short Videos (4-5 mins)"
@@ -601,34 +580,33 @@ const Home = () => {
                         />
                     </div>
                 </div>
-                <div ref={ExtraRef} className={` ${localStorage.getItem('token') ? 'page-content' : 'page-content--blurred'} w-[100%] flex justify-center border-[0px] sm:pt-[50px] sm:pl-[50px] sm:pr-[150px] pl-[10px] pr-[10px]`} >
-                    <img
-                        src="/images/user/circle6.png"
-                        className=' absolute right-[0px] sm:visible invisible '
-                        alt="person7" />
-                    <div className='sm:h-[250px] h-[150px] w-[100%]  border-[0px] flex justify-between ' >
-                        <div className='sm:w-[600px] h-[100%] flex items-center ' >
-                            <div>
-                                <h1 className={`text-[#fff] sm:text-[40px] my-font-semibold ${gradiantText1}`} >Confused about the plans</h1>
-                                <h1 className={`text-[#fff] sm:text-[60px] my-font-bold ${gradiantText2}`} >Dont worry</h1>
-                            </div>
-                        </div>
-                        <div className='h-[100%] border-l-[0px] flex items-center justify-center ' >
-                            <img
-                                src="/images/user/girl1.png"
-                                className=' sm:w-[250px] w-[100px] h-[100px] sm:h-[250px] '
-                                alt="person7" />
-                        </div>
+                <div className={` ${localStorage.getItem('token') ? 'page-content' : 'page-content--blurred'} w-full  pt-32 pb-8 px-8 flex flex-col items-center`} >
+                    <btn className=' text-yellow-200 text-[50px] w-[700px] hover:border-yellow-200 hover:text-white cursor-pointer border flex items-center justify-center  border-white rounded-lg ml-8 my-font-bold  ' >
+                        <p>INDIVIDUAL SERVICES</p>
+                    </btn>
+                    <div className=' w-[100%] flex mt-8 flex-wrap gap-8 justify-center  ' >
+                        {
+                            ServiceData.map((item, index) => {
+                                return (
+                                    <ServiceCard
+                                        key={index}
+                                        item={item}
+                                    />
+                                )
+                            })
+                        }
                     </div>
                 </div>
-                <div ref={CustomPlanRef} className={` ${localStorage.getItem('token') ? 'page-content' : 'page-content--blurred'} w-[100%]  flex justify-center border-[0px]`} >
-                    <CustomPlan
-                        onSubmit={() => {
-                            setShowPopup(true);
-                        }}
-                    />
+                <div className={` w-full h-[100px] flex flex-col items-center`} >
+                    <btn className='text-yellow-200 gap-2 text-[50px] w-[700px] cursor-pointer border flex items-center justify-center  border-white rounded-lg ml-8 my-font-bold animated-button'>
+                        <p>Checkout our portfolio</p>
+                        <MdOpenInNew />
+                    </btn>
                 </div>
-                <div ref={ExtraRef1} id='demos' className={` ${localStorage.getItem('token') ? 'page-content' : 'page-content--blurred'}  w-[100%] border-[0px] flex items-center justify-center`}>
+                <Testimonial />
+                <Analytics />
+                <Contact />
+                {/* <div ref={ExtraRef1} id='demos' className={` ${localStorage.getItem('token') ? 'page-content' : 'page-content--blurred'}  w-[100%] border-[0px] flex items-center justify-center`}>
                     <div className=' sm:w-[80%] w-[100%] border-[0px] mt-[100px] flex flex-col items-center sm:px-[0px] px-[10px]  ' >
                         <div className=' flex items-center justify-center py-[5px] rounded ' >
                             <h1 className=' text-[#fff] bg-gradient-to-r from-white via-yellow-100 to-green-100 text-transparent bg-clip-text text-center lg:text-[45px] text-[18px] font-bold ' >OUR LATEST PROJECTS</h1>
@@ -666,8 +644,14 @@ const Home = () => {
                             </div>
                         </div>
                     </div>
-                </div >
-                <div ref={FooterRef} className={` ${localStorage.getItem('token') ? 'page-content' : 'page-content--blurred'} w-[100%] border-[0px] sm:px-[0px] px-[20px] flex items-center justify-center`} id="footer" >
+                </div > */}
+
+                <Footer />
+
+
+
+
+                {/* <div ref={FooterRef} className={` ${localStorage.getItem('token') ? 'page-content' : 'page-content--blurred'} w-[100%] border-[0px] sm:px-[0px] px-[20px] flex items-center justify-center`} id="footer" >
                     {
                         typeof window !== 'undefined' &&
                         <Footer />
@@ -707,7 +691,7 @@ const Home = () => {
                             >+91 8076455801</h1>
                         </div>
                     </div>
-                </div>
+                </div> */}
                 <Drawer
                     anchor="right"
                     open={drawerOpen}
@@ -718,6 +702,18 @@ const Home = () => {
                         onClose={() => setDrawerpen(false)}
                     />
                 </Drawer>
+                {
+                    openModal &&
+                    <Modal
+                        open={openModal}
+                        onClose={handleModalClose}
+                        aria-labelledby="modal-modal-title"
+                        aria-describedby="modal-modal-description"
+                    >
+                        <ProductModal />
+                    </Modal>
+
+                }
             </div >
             : null
     )

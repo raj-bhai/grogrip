@@ -1,0 +1,130 @@
+[
+    {
+        "id": 31,
+        "type": "BASIC PACKAGE",
+        "duration": "4-5 min",
+        "detail": "INCLUDING EVERYTHING",
+        "price": "$29 - 35$",
+        "realPrice" : 35,
+        "ratings": 4,
+        "image": "https://res.cloudinary.com/drgvislmm/image/upload/v1692540112/WebsiteImages/serviceImages/BASIC_clro44.png",
+        "desc": [
+            {
+                "key": "",
+                "value": "1x premium Script of 700-800 words."
+            },
+            {
+                "key": "",
+                "value": "1x Voice-Over artist from your choice."
+            },
+            {
+                "key": "",
+                "value": "1x(4-5 min) Premium Video."
+            },
+            {
+                "key": "",
+                "value": "1x Eye-Catching Thumbnail."
+            },
+            {
+                "key": "",
+                "value": "3x Revisions."
+            }
+        ]
+    },
+    {
+        "id": 32,
+        "type": "STANDARD",
+        "duration": "8-10 min",
+        "detail": "INCLUDING EVERYTHING",
+        "price": "$55 - 60$",
+        "realPrice" : 60,
+        "ratings": 4.5,
+        "image": "https://res.cloudinary.com/drgvislmm/image/upload/v1692540114/WebsiteImages/serviceImages/STANDARD_y7aymf.png",
+        "desc": [
+            {
+                "key": "",
+                "value": "1x premium Script of 700-800 words."
+            },
+            {
+                "key": "",
+                "value": "1x Voice-Over artist from your choice."
+            },
+            {
+                "key": "",
+                "value": "1x(4-5 min) Premium Video."
+            },
+            {
+                "key": "",
+                "value": "1x Eye-Catching Thumbnail."
+            },
+            {
+                "key": "",
+                "value": "3x Revisions."
+            }
+        ]
+    },
+    {
+        "id": 33,
+        "type": "WEEKLY PACKAGE",
+        "duration": "8-10 min",
+        "detail": "INCLUDING EVERYTHING",
+        "price": "$15 - 100$",
+        "realPrice" : 100,
+        "ratings": 5,
+        "image": "https://res.cloudinary.com/drgvislmm/image/upload/v1692540012/WebsiteImages/serviceImages/WEEKLY_PACKAGE_vhdshj.png",
+        "desc": [
+            {
+                "key": "",
+                "value": "1x premium Script of 700-800 words."
+            },
+            {
+                "key": "",
+                "value": "1x Voice-Over artist from your choice."
+            },
+            {
+                "key": "",
+                "value": "1x(4-5 min) Premium Video."
+            },
+            {
+                "key": "",
+                "value": "1x Eye-Catching Thumbnail."
+            },
+            {
+                "key": "",
+                "value": "3x Revisions."
+            }
+        ]
+    },
+    {
+        "id": 34,
+        "type": "MONTHLY PACKAGE",
+        "duration": "8-10 min",
+        "detail": "INCLUDING EVERYTHING",
+        "price": "$15 - 100$",
+        "realPrice" : 100,
+        "ratings": 5,
+        "image": "https://res.cloudinary.com/drgvislmm/image/upload/v1692540059/WebsiteImages/serviceImages/MONTHLY_dyuiei.png",
+        "desc": [
+            {
+                "key": "",
+                "value": "1x premium Script of 700-800 words."
+            },
+            {
+                "key": "",
+                "value": "1x Voice-Over artist from your choice."
+            },
+            {
+                "key": "",
+                "value": "1x(4-5 min) Premium Video."
+            },
+            {
+                "key": "",
+                "value": "1x Eye-Catching Thumbnail."
+            },
+            {
+                "key": "",
+                "value": "3x Revisions."
+            }
+        ]
+    }
+]
