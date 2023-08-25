@@ -5,59 +5,18 @@
         "price": "Optimization 5$",
         "realPrice" : 5,
         "image": "https://res.cloudinary.com/drgvislmm/image/upload/v1692300770/WebsiteImages/serviceImages/seo_ko8758.png",
-        "desc": [
-            {
-                "key": "",
-                "value": "1x premium Script of 700-800 words."
-            },
-            {
-                "key": "",
-                "value": "1x Voice-Over artist from your choice."
-            },
-            {
-                "key": "",
-                "value": "1x(4-5 min) Premium Video."
-            },
-            {
-                "key": "",
-                "value": "1x Eye-Catching Thumbnail."
-            },
-            {
-                "key": "",
-                "value": "3x Revisions."
-            }
-        ]
+        "desc": []
     },
     {
         "id": 23,
         "type": "Custom Package",
-        "price": "0$ - 2000$",
-        "realPrice" : 2000,
+        "heading" : "MAKE YOUR DESIRED CUSTOM PACKAGE",
+        "price": "Book with $5",
+        "realPrice" : 5,
         "ratings": 4.5,
         "detail": "(Make your own Package)",
-        "image": "https://res.cloudinary.com/drgvislmm/image/upload/v1692300770/WebsiteImages/serviceImages/seo_ko8758.png",
-        "desc": [
-            {
-                "key": "",
-                "value": "1x premium Script of 700-800 words."
-            },
-            {
-                "key": "",
-                "value": "1x Voice-Over artist from your choice."
-            },
-            {
-                "key": "",
-                "value": "1x(4-5 min) Premium Video."
-            },
-            {
-                "key": "",
-                "value": "1x Eye-Catching Thumbnail."
-            },
-            {
-                "key": "",
-                "value": "3x Revisions."
-            }
-        ]
+        "image": "https://res.cloudinary.com/drgvislmm/image/upload/v1692996305/WebsiteImages/serviceImages/custom-package_h1gony.png",
+        "desc": []
     },
     {
         "id": 24,
@@ -65,27 +24,6 @@
         "price": "200$",
         "realPrice" : 200,
         "image": "https://res.cloudinary.com/drgvislmm/image/upload/v1692300769/WebsiteImages/serviceImages/channel_manager_i5my8l.png",
-        "desc": [
-            {
-                "key": "",
-                "value": "1x premium Script of 700-800 words."
-            },
-            {
-                "key": "",
-                "value": "1x Voice-Over artist from your choice."
-            },
-            {
-                "key": "",
-                "value": "1x(4-5 min) Premium Video."
-            },
-            {
-                "key": "",
-                "value": "1x Eye-Catching Thumbnail."
-            },
-            {
-                "key": "",
-                "value": "3x Revisions."
-            }
-        ]
+        "desc": []
     }
 ]

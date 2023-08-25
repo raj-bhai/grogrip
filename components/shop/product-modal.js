@@ -11,10 +11,13 @@ import TopicDetail from "./topic-detail";
 import { ToastContainer, toast } from 'react-toastify';
 import { ToogleModal } from "../../redux/action/product";
 import ProductButton from "../common/button";
+import Options from "./options";
 
 import { AddToCart } from "../../redux/action/cart";
 
 const backgroundGradient = ' bg-gradient-to-r from-[#107840] via-[#107840] via-[#1F5025] via -[#28602E] to-[#107840]';
+
+const initialCustomCount = 10
 
 const VoiceDropdown = ({ setVoice }) => {
     const [isOpen, setIsOpen] = useState(false);
@@ -145,8 +148,42 @@ const Counter = ({ updateCount }) => {
     }
 
     return (
-        <div className=" w-full h-[60px] mt-4 text-[28px] text-white bg-green-500 rounded-lg  flex items-center justify-between px-4 " >
+        <div className=" w-[450px] my-font h-[60px] mt-4 text-[20px] text-white bg-green-500 rounded-lg  flex items-center justify-between px-4 " >
             <p>QUANTITY</p>
+            <div className=" my-font w-[200px] h-[100%]  flex justify-between items-center text-[30px]  " >
+                <HiOutlineMinusCircle
+                    size={40}
+                    onClick={DecrementHandle}
+                />
+                <p >{count}</p>
+                <HiOutlinePlusCircle
+                    size={40}
+                    onClick={IncrementHandle}
+                />
+            </div>
+        </div>
+    )
+}
+
+const Duration = ({ updateCount }) => {
+
+    const [count, setCount] = useState(initialCustomCount)
+
+    const IncrementHandle = () => {
+        updateCount(count + 1)
+        setCount(count + 1)
+    }
+
+    const DecrementHandle = () => {
+        if (count > 1) {
+            updateCount(count - 1)
+            setCount(count - 1)
+        }
+    }
+
+    return (
+        <div className=" w-[450px] h-[60px] my-font mt-4 text-[21px] text-white bg-green-500 rounded-lg  flex items-center justify-between px-4 " >
+            <p>Duration (in min)</p>
             <div className=" w-[200px] h-[100%]  flex justify-between items-center text-[30px]  " >
                 <HiOutlineMinusCircle
                     size={40}
@@ -163,13 +200,13 @@ const Counter = ({ updateCount }) => {
 }
 
 
-const Item = ({ item, onClick }) => {
+const Item = ({ item, onClick, price, quantity }) => {
     // const dispatch = useDispatch()
     return (
         <div className=" w-[300px] relative  h-[450px] hover:border-yellow-200 border-white border border-[2px] bg-[rgba(149,165,166,0.1)] rounded-lg flex flex-col items-center px-8 py-8 text-white my-font-bold text-[20px] leading-[38px]  " >
             {
                 item.ratings &&
-                <div className=' absolute z-[1000] left-4 top-0 ' >
+                <div className=' my-font absolute z-[1000] left-4 top-0 ' >
                     <Rating name="read-only" value={item.ratings} precision={0.5} readOnly />
                     <p className='text-white leading-tight -mt-2 ' > {item.duration} </p>
                 </div>
@@ -181,9 +218,9 @@ const Item = ({ item, onClick }) => {
                 >
                 </img>
             </div>
-            <h1 className=' scale-[1.05] ' >{item.type}</h1>
-            <h1 className=' text-[15px] leading-tight border-white ' >{item.detail}</h1>
-            <h1 className=' mt-2 ' >{item.price}</h1>
+            <h1 className=' my-font scale-[1.05] ' >{item.type}</h1>
+            <h1 className=' my-font text-[15px] leading-tight border-white ' >{item.detail}</h1>
+            <h1 className=' my-font mt-2 ' >{item.id == 23 ? 'Book With' : ''} {price * quantity}$</h1>
             {/* <img
                 className=" w-[200%] absolute bottom-[-20px] cursor-pointer "
                 src='/images/buttons/shopnow.png'
@@ -221,7 +258,14 @@ const ProductModal = ({ isUpdate }) => {
     const { SelectedProduct, SelectedProductCart } = useSelector(state => state.product);
     const [payload, setPayload] = useState({});
     const dispatch = useDispatch();
-    const [submitted, setSubmitted] = useState(false)
+    const [submitted, setSubmitted] = useState(false);
+    const [price, setPrice] = useState(0);
+    const [quantity, setQuantity] = useState(1);
+    const [customOpen, setCustomOpen] = useState(false);
+    const [pricePerMin, setPricePerMin] = useState(0);
+    const [thumbnailChecked, setThumbnailChecked] = useState(true);
+
+
 
 
     useEffect(() => {
@@ -234,11 +278,33 @@ const ProductModal = ({ isUpdate }) => {
                     Product: SelectedProduct,
                     quantity: 1,
                     id: SelectedProduct?.id,
-                    price: SelectedProduct?.realPrice
+                    // price: SelectedProduct?.realPrice
                 }));
+            }
+            const customOption = SelectedProduct?.options?.find(option => option.pricePerMin !== undefined);
+            if (customOption) {
+                setPricePerMin(customOption.pricePerMin)
+            } else {
+                console.log('No option with a price per minute was found.');
+            }
+
+            if (SelectedProduct.realPrice && !SelectedProduct?.options?.length) {
+                setPrice(SelectedProduct.realPrice)
+            }
+            if (SelectedProduct.priceWithThumbnail) {
+                setPrice(SelectedProduct.priceWithThumbnail)
             }
         }
     }, [SelectedProduct])
+
+    useEffect(() => {
+        if (SelectedProduct) {
+            setPayload(prevPayload => ({
+                ...prevPayload,
+                price: price
+            }));
+        }
+    }, [SelectedProduct, price])
 
 
     const handleAddToCart = async () => {
@@ -289,8 +355,44 @@ const ProductModal = ({ isUpdate }) => {
         <div style={style} className={` w-[90%] p-4 h-[700px] ${backgroundGradient}`} >
             <ToastContainer />
             <div className=" w-[100%] flex flex-wrap px-8 py-8 justify-between " >
-                <div className=" w-[500px] h-[100%] " >
-                    <h1 className=" my-font-bold text-yellow-200 text-[25px] leading-loose " >{SelectedProduct?.type}</h1>
+                <div className=" w-[690px] h-[100%] relative " >
+                    {
+                        SelectedProduct?.priceWithThumbnail &&
+                        <div className=" flex px-2 text-[20px] gap-2 items-center text-white h-[40px] absolute right-0 " >
+                            <input
+                                className=" w-[20px] h-[20px] "
+                                type="checkbox"
+                                value={thumbnailChecked}
+                                onChange={(e) => {
+                                    setThumbnailChecked(e.target.checked)
+                                    if (e.target.checked) {
+                                        setPrice(SelectedProduct?.priceWithThumbnail)
+                                    } else {
+                                        setPrice(SelectedProduct?.priceWithThumbnail - SelectedProduct?.thumbnailPrice)
+                                    }
+                                }}
+                            />
+                            <p>Thumbnail</p>
+                        </div>
+                    }
+                    <h1 className=" my-font-bold text-yellow-200 text-[25px] leading-loose my-font " >{SelectedProduct?.type}</h1>
+                    <h2 className=" my-font-bold text-white text-[25px] leading-loose my-font " >{SelectedProduct?.heading}</h2>
+
+                    {
+                        SelectedProduct?.id == 23 &&   //custom-package
+                        <>
+                            <div className=" w-[600px] text-white my-font " >
+                                <p>Your Contact Details *</p>
+                                <input className=" w-[100%] h-[45px] border text-[#000] px-2 rounded-lg " placeholder="whatsapp/email"  >
+                                </input>
+                            </div>
+                            <div className=" w-[600px] text-white my-font mt-4 " >
+                                <p>Let us know your custom package Details here & We will come up with a direct url with a payment *</p>
+                                <input className=" w-[100%] h-[45px] border text-[#000] px-2 rounded-lg " placeholder="enter drive link"  >
+                                </input>
+                            </div>
+                        </>
+                    }
                     {
                         SelectedProduct?.desc?.map((product, index) => {
                             return (
@@ -299,20 +401,45 @@ const ProductModal = ({ isUpdate }) => {
                         })
                     }
                     <div>
-                        <VoiceDropdown
-                            setVoice={(voice) => {
-                                setPayload(prevPayload => ({
-                                    ...prevPayload,
-                                    voice: voice
-                                }));
-                            }}
-                        />
+                        {
+                            SelectedProduct?.options &&
+                            <Options
+                                data={SelectedProduct.options}
+                                onChange={(num) => setPrice(num)}
+                                customOpen={(boolean) => {
+                                    setCustomOpen(boolean)
+                                    if (boolean) {
+                                        setPrice(pricePerMin * initialCustomCount)
+                                    }
+                                }}
+                            />
+                        }
+                        {
+                            SelectedProduct?.showVoiceArtist &&
+                            <VoiceDropdown
+                                setVoice={(voice) => {
+                                    setPayload(prevPayload => ({
+                                        ...prevPayload,
+                                        voice: voice
+                                    }));
+                                }}
+                            />
+                        }
+                        {
+                            customOpen &&
+                            <Duration
+                                updateCount={(count) => {
+                                    setPrice(pricePerMin * count)
+                                }}
+                            />
+                        }
                         <Counter
                             updateCount={(count) => {
                                 setPayload(prevPayload => ({
                                     ...prevPayload,
                                     quantity: count
                                 }));
+                                setQuantity(count)
                             }}
                         />
                     </div>
@@ -323,10 +450,12 @@ const ProductModal = ({ isUpdate }) => {
                         onClick={() => {
                             handleAddToCart()
                         }}
+                        price={price}
+                        quantity={quantity}
                     />
                 </div>
             </div>
-            <TopicDetail
+            {/* <TopicDetail
                 updateTopic={(text) => {
                     setPayload(prevPayload => ({
                         ...prevPayload,
@@ -351,7 +480,7 @@ const ProductModal = ({ isUpdate }) => {
                         doc: text
                     }));
                 }}
-            />
+            /> */}
         </div>
     )
 }

@@ -2,117 +2,84 @@
     {
         "id": 11,
         "type": "Script",
+        "heading" : "WHAT SHOULD BE THE DURATION OF THE SCRIPT?",
         "price": "$7 - 11$",
-        "realPrice" : 11,
         "image": "https://res.cloudinary.com/drgvislmm/image/upload/v1692300276/WebsiteImages/serviceImages/scriptW_hb3nlj.png",
-        "desc": [
+        "desc": [],
+        "options" : [
             {
-                "key": "",
-                "value": "1x premium Script of 700-800 words."
+                "id" : "option1",
+                "value" : "A Professional Script of 4-5 min video",
+                "price" : 7
             },
             {
-                "key": "",
-                "value": "1x Voice-Over artist from your choice."
+                "id" : "option2",
+                "value" : "A Professional Script of 8-9 min video",
+                "price" : 11
             },
             {
-                "key": "",
-                "value": "1x(4-5 min) Premium Video."
-            },
-            {
-                "key": "",
-                "value": "1x Eye-Catching Thumbnail."
-            },
-            {
-                "key": "",
-                "value": "3x Revisions."
+                "id" : "custom",
+                "value" : "Make You Custom Duration!",
+                "pricePerMin" : 1.5
             }
         ]
     },
     {
         "id": 12,
         "type": "Voice-Over",
+        "heading" : "WHAT SHOULD BE THE DURATION OF THE VOICE-OVER?",
         "price": "$9 - 15$",
-        "realPrice" : 15,
+        "showVoiceArtist" : true,
         "image": "https://res.cloudinary.com/drgvislmm/image/upload/v1692300276/WebsiteImages/serviceImages/voice-over_wwdt6u.png",
-        "desc": [
+        "desc": [],
+        "options" : [
             {
-                "key": "",
-                "value": "1x premium Script of 700-800 words."
+                "id" : "option1",
+                "value" : "A Professional human voice-over of 4-5 min",
+                "price" : 9
             },
             {
-                "key": "",
-                "value": "1x Voice-Over artist from your choice."
+                "id" : "option2",
+                "value" : "A Professional human voice-over of 8-9 min",
+                "price" : 15
             },
             {
-                "key": "",
-                "value": "1x(4-5 min) Premium Video."
-            },
-            {
-                "key": "",
-                "value": "1x Eye-Catching Thumbnail."
-            },
-            {
-                "key": "",
-                "value": "3x Revisions."
+                "id" : "custom",
+                "value" : "Make You Custom Duration!",
+                "pricePerMin" : 1.8
             }
         ]
     },
     {
         "id": 13,
         "type": "Video Editing",
-        "price": "$15 - 100$",
-        "realPrice" : 100,
+        "price": "$17 - 25$",
         "image": "https://res.cloudinary.com/drgvislmm/image/upload/v1692300771/WebsiteImages/serviceImages/video_jlpfyt.png",
-        "desc": [
+        "desc": [],
+        "options" : [
             {
-                "key": "",
-                "value": "1x premium Script of 700-800 words."
+                "id" : "option1",
+                "value" : "A Professional Video of 4-5 min (With Effects, Overlays, Texts, Motion Graphics & Animations)" ,
+                "price" : 17
             },
             {
-                "key": "",
-                "value": "1x Voice-Over artist from your choice."
+                "id" : "option2",
+                "value" : "A Professional Video of 8-9 min (With Effects, Overlays, Texts, Motion Graphics & Animations)",
+                "price" : 25
             },
             {
-                "key": "",
-                "value": "1x(4-5 min) Premium Video."
-            },
-            {
-                "key": "",
-                "value": "1x Eye-Catching Thumbnail."
-            },
-            {
-                "key": "",
-                "value": "3x Revisions."
+                "id" : "custom",
+                "value" : "Make You Custom Duration!",
+                "pricePerMin" : 3
             }
         ]
     },
     {
         "id": 14,
         "type": "Thumbnail",
-        "price": "$15 - 100$",
-        "realPrice" : 100,
+        "price": "5$",
+        "realPrice" : 5,
         "image": "https://res.cloudinary.com/drgvislmm/image/upload/v1692300771/WebsiteImages/serviceImages/thumbnail_m0y5et.png",
-        "desc": [
-            {
-                "key": "",
-                "value": "1x premium Script of 700-800 words."
-            },
-            {
-                "key": "",
-                "value": "1x Voice-Over artist from your choice."
-            },
-            {
-                "key": "",
-                "value": "1x(4-5 min) Premium Video."
-            },
-            {
-                "key": "",
-                "value": "1x Eye-Catching Thumbnail."
-            },
-            {
-                "key": "",
-                "value": "3x Revisions."
-            }
-        ]
+        "desc": []
     }
 ]
