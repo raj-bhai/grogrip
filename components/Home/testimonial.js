@@ -11,14 +11,13 @@ const Testimonial = () => {
             </btn>
             <div className='w-[100%] gap-4 flex mt-8 items-center justify-center ' >
                 <div className=' h-[100%] ' >
-                    <img src='/images/testimonialLG.png'
+                    <img src='https://res.cloudinary.com/drgvislmm/image/upload/v1692970148/WebsiteImages/testimonial/testimonialLg_qi120e.png'
                         className='rounded-lg'
                     >
-
                     </img>
                 </div>
                 <div className=' h-[100%] ' >
-                    <img src='/images/testimonialSM.png'
+                    <img src='https://res.cloudinary.com/drgvislmm/image/upload/v1692970151/WebsiteImages/testimonial/testimonialSM_uvx15j.png'
                         className='rounded-lg'
                     >
                     </img>
@@ -26,13 +25,13 @@ const Testimonial = () => {
             </div>
             <div className='w-[100%]  gap-4 mt-8 flex mt-4 items-center justify-center ' >
                 <div className=' h-[100%] ' >
-                    <img src='/images/testimonialLG1.png'
+                    <img src='https://res.cloudinary.com/drgvislmm/image/upload/v1692970148/WebsiteImages/testimonial/testimonialSM1_qnnqv2.png'
                         className='rounded-lg'
                     >
                     </img>
                 </div>
                 <div className=' h-[100%] ' >
-                    <img src='/images/testimonialSM1.png'
+                    <img src='https://res.cloudinary.com/drgvislmm/image/upload/v1692970146/WebsiteImages/testimonial/testimonialLg1_vhhsvq.png'
                         className='rounded-lg'
                     >
                     </img>
