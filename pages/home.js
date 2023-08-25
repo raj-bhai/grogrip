@@ -483,7 +483,9 @@ const Home = () => {
                 </div>
                 <div ref={AboutRef} className={`w-[100%] flex items-center jistify-center sm:h-[150px] sm:pt-[0px] sm:pb-[0px] sm:pb-[30px] relative ${localStorage.getItem('token') ? 'page-content' : 'page-content--blurred'} `} id='about'
                 >
-                    <div className='w-[100%] border-[0px] sm:py-[0px] gap-[50px] sm:flex-wrap sm:flex-row flex-col flex items-center justify-between sm:px-[20px] px-[10px] ' >
+                    <div 
+                    className={`${localStorage.getItem('token') ? 'page-content' : 'page-content--blurred'} w-[100%] border-[0px] sm:py-[0px] gap-[50px] sm:flex-wrap sm:flex-row flex-col flex items-center justify-between sm:px-[20px] px-[10px] `}
+                    >
                         <div className='sm:w-[20%] w-[100%] border-[0px] align-bottom text-center ' >
                             <div className=' w-[100%] flex justify-center items-center ' >
                                 <h1 className='text-[#fff] lg:text-[50px] text-[30px] my-font leading-tight  ' >{Math.round(count)}+</h1>
@@ -597,7 +599,7 @@ const Home = () => {
                         }
                     </div>
                 </div>
-                <div className={` w-full h-[100px] flex flex-col items-center`} >
+                <div className={` ${localStorage.getItem('token') ? 'page-content' : 'page-content--blurred'}  w-full h-[100px] flex flex-col items-center`} >
                     <btn className='text-yellow-200 gap-2 text-[50px] w-[700px] cursor-pointer border flex items-center justify-center  border-white rounded-lg ml-8 my-font-bold animated-button'>
                         <p>Checkout our portfolio</p>
                         <MdOpenInNew />

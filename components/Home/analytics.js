@@ -4,7 +4,7 @@ import { MdOpenInNew } from 'react-icons/md';
 const Analytics = () => {
     return (
         <div
-            className={` w-full pt-16 flex flex-col items-center px-4 pb-8 `}
+            className={` ${localStorage.getItem('token') ? 'page-content' : 'page-content--blurred'} w-full pt-16 flex flex-col items-center px-4 pb-8 `}
         >
             <btn className='text-yellow-200 gap-2 text-[50px] w-[700px] cursor-pointer border flex items-center justify-center  border-white rounded-lg ml-8 my-font-bold'>
                 <p>Analytics/Proofs</p>

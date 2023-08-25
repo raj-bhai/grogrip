@@ -13,7 +13,9 @@ const InputBox = ({ onChange, label, placeholder }) => {
 
 const Contact = () => {
     return (
-        <div className=" w-full flex-wrap justify-center sm:gap-4 flex px-8 py-16 " >
+        <div 
+        className={`${localStorage.getItem('token') ? 'page-content' : 'page-content--blurred'} w-full flex-wrap justify-center sm:gap-4 flex px-8 py-16 `}
+        >
             <div className="w-[400px] h-[200px] sm:h-[500px] relative flex justify-center " >
                 <img
                     src="/images/Logo/logo-main2.png"

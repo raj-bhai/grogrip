@@ -99,7 +99,9 @@ const Header = (props) => {
                 </div>
                 <div className=" w-[80px] sm:h-[60px] sm:visible invisible border-[0px] flex items-center justify-center "
                     onClick={() => {
-                        router.push('/shop')
+                        if (token?.length){
+                            router.push('/shop')
+                        }
                     }}
                 >
                     <h1 className={selectedHeader == 2 ? textSelectedStyle : textStyle} >Shop</h1>
