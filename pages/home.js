@@ -604,7 +604,11 @@ const Home = () => {
                     </div>
                 </div>
                 <div className={` ${localStorage.getItem('token') ? 'page-content' : 'page-content--blurred'}  w-full h-[100px] flex flex-col items-center`} >
-                    <btn className='text-yellow-200 gap-2 text-[50px] w-[700px] cursor-pointer border flex items-center justify-center  border-white rounded-lg ml-8 my-font-bold animated-button'>
+                    <btn className='text-yellow-200 gap-2 text-[50px] w-[700px] cursor-pointer border flex items-center justify-center  border-white rounded-lg ml-8 my-font-bold animated-button'
+                    onClick={() => {
+                        router.push('/portfolio')
+                    }}
+                    >
                         <p>Checkout our portfolio</p>
                         <MdOpenInNew />
                     </btn>

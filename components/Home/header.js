@@ -48,7 +48,7 @@ const Header = (props) => {
     }, [logoColor])
 
     useEffect(() => {
-        console.log("Selected Header :", props.selectedHeader);
+        // console.log("Selected Header :", props.selectedHeader);
         setSelectedHeader(props.selectedHeader)
     }, [props.selectedHeader])
 
@@ -108,7 +108,7 @@ const Header = (props) => {
                 </div>
                 <div className=" w-[80px] sm:h-[60px] sm:visible invisible border-[0px] flex items-center justify-center "
                     onClick={() => {
-                        // router.push('/shop')
+                        router.push('/portfolio')
                         // props.onClickPricing()
                     }}
                 >
