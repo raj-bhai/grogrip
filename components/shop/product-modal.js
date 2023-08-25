@@ -10,6 +10,7 @@ import Rating from '@mui/material/Rating';
 import TopicDetail from "./topic-detail";
 import { ToastContainer, toast } from 'react-toastify';
 import { ToogleModal } from "../../redux/action/product";
+import ProductButton from "../common/button";
 
 import { AddToCart } from "../../redux/action/cart";
 
@@ -183,7 +184,7 @@ const Item = ({ item, onClick }) => {
             <h1 className=' scale-[1.05] ' >{item.type}</h1>
             <h1 className=' text-[15px] leading-tight border-white ' >{item.detail}</h1>
             <h1 className=' mt-2 ' >{item.price}</h1>
-            <img
+            {/* <img
                 className=" w-[200%] absolute bottom-[-20px] cursor-pointer "
                 src='/images/buttons/shopnow.png'
                 onClick={() => {
@@ -192,7 +193,13 @@ const Item = ({ item, onClick }) => {
                     // dispatch(SetSelectedProduct(item))
                 }}
             >
-            </img>
+            </img> */}
+            <ProductButton
+                title={"Add to Cart"}
+                onClick={() => {
+                    onClick()
+                }}
+            />
         </div>
     )
 }
@@ -211,7 +218,7 @@ const ProductModal = ({ isUpdate }) => {
         maxHeight: '800px'      // Added this line as an example (adjust as needed)
     };
 
-    const {SelectedProduct, SelectedProductCart } = useSelector(state => state.product);
+    const { SelectedProduct, SelectedProductCart } = useSelector(state => state.product);
     const [payload, setPayload] = useState({});
     const dispatch = useDispatch();
     const [submitted, setSubmitted] = useState(false)
@@ -226,7 +233,8 @@ const ProductModal = ({ isUpdate }) => {
                     ...prevPayload,
                     Product: SelectedProduct,
                     quantity: 1,
-                    id: SelectedProduct?.id
+                    id: SelectedProduct?.id,
+                    price: SelectedProduct?.realPrice
                 }));
             }
         }

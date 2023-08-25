@@ -159,7 +159,7 @@ const Header = (props) => {
                 <div className="relative" >
                     <AiOutlineShoppingCart
                         color= {(props.selectedHeader == 7)? '#EED777' : "#fff"} 
-                        size={60}
+                        size={50}
                         className=" cursor-pointer "
                         onClick={() => {
                             router.push('/cart')

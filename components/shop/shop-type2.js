@@ -3,6 +3,7 @@ import Services from '../../data/shop2.json'
 import Rating from '@mui/material/Rating';
 import { useDispatch } from 'react-redux'
 import { ToogleModal, SetSelectedProduct } from '../../redux/action/product'
+import ProductButton from '../common/button';
 
 
 
@@ -13,8 +14,8 @@ const Item = ({ item }) => {
             {
                 item.ratings &&
                 <div className=' absolute z-[1000]  top-0 ' >
-                <Rating name="read-only" value={item.ratings}  precision={0.5} readOnly />
-                <p className='text-white leading-tight -mt-2 ' > {item.detail} </p>
+                    <Rating name="read-only" value={item.ratings} precision={0.5} readOnly />
+                    <p className='text-white leading-tight -mt-2 ' > {item.detail} </p>
                 </div>
             }
             <div className=" w-[100%] border-[0px] rounded-lg mt-8 border-[#ABB2B9] h-[200px] relative flex items-center justify-center " >
@@ -26,7 +27,7 @@ const Item = ({ item }) => {
             </div>
             <h1>{item.type}</h1>
             <h1>{item.price}</h1>
-            <img
+            {/* <img
                 className=" w-[200%] absolute bottom-[-20px] cursor-pointer "
                 src='/images/buttons/shopnow.png'
                 onClick={() => {
@@ -34,7 +35,14 @@ const Item = ({ item }) => {
                     dispatch(SetSelectedProduct(item))
                 }}
             >
-            </img>
+            </img> */}
+            <ProductButton
+                title={"SHOP NOW"}
+                onClick={() => {
+                    dispatch(ToogleModal(true));
+                    dispatch(SetSelectedProduct(item))
+                }}
+            />
         </div>
     )
 }

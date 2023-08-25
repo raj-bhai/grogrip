@@ -23,7 +23,7 @@ const CartItem = ({ data }) => {
 
 
     return (
-        <div className=' w-full relative h-[250px] flex bg-green-600 rounded-[40px] mt-8 justify-between '
+        <div className=' w-full relative h-[220px] flex bg-green-600 rounded-[40px] mt-8 justify-between '
             onMouseEnter={() => {
                 setFocused(true)
             }}
@@ -33,7 +33,7 @@ const CartItem = ({ data }) => {
         >
             {
                 focused &&
-                <div className=' w-[50px] h-[50px] border border-white absolute left-[50px] top-[10px] flex text-white items-center justify-center text-[50px] rounded-md hover:border-yellow-200 hover:text-yellow-200 hover:scale-[1.1] cursor-pointer  ' >
+                <div className=' w-[40px] h-[40px] border border-white absolute left-[50px] top-[10px] flex text-white items-center justify-center text-[30px] rounded-md hover:border-yellow-200 hover:text-yellow-200 hover:scale-[1.1] cursor-pointer  ' >
                     <AiOutlineClose
                         onClick={() => {
                             dispatch(RemoveFromCart(data?.id))
@@ -44,7 +44,7 @@ const CartItem = ({ data }) => {
 
             {
                 focused &&
-                <div className=' w-[50px] h-[50px] border border-white absolute right-[50px] flex bottom-[10px] text-white items-center justify-center text-[30px] rounded-md hover:border-yellow-200 hover:text-yellow-200 hover:scale-[1.1] cursor-pointer ' >
+                <div className=' w-[40px] h-[40px] border border-white absolute right-[50px] flex bottom-[10px] text-white items-center justify-center text-[30px] rounded-md hover:border-yellow-200 hover:text-yellow-200 hover:scale-[1.1] cursor-pointer ' >
                     <AiTwotoneEdit
                         onClick={() => {
                             dispatch(ToogleModal(true))
@@ -70,7 +70,7 @@ const CartItem = ({ data }) => {
             </Box>
             <Box>
                 <div className={`${textContainer}`} >
-                    <h1>$350</h1>
+                    <h1>{data?.price}</h1>
                 </div>
             </Box>
 

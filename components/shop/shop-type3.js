@@ -3,6 +3,7 @@ import Services from '../../data/shop3.json'
 import Rating from '@mui/material/Rating';
 import { useDispatch } from 'react-redux'
 import { ToogleModal, SetSelectedProduct } from '../../redux/action/product'
+import ProductButton from '../common/button';
 
 
 
@@ -11,8 +12,8 @@ const Item = ({ item }) => {
     return (
         <div className=" w-[300px] relative  h-[450px] hover:border-yellow-200 border-white border border-[2px] bg-[rgba(149,165,166,0.1)] rounded-lg flex flex-col items-center px-8 py-8 text-white my-font-bold text-[20px] leading-[38px]  " >
             <div className=' absolute z-[1000] left-4 top-0 ' >
-            <Rating name="read-only" value={item.ratings}  precision={0.5} readOnly />
-            <p className='text-white leading-tight -mt-2 ' > {item.duration} </p>
+                <Rating name="read-only" value={item.ratings} precision={0.5} readOnly />
+                <p className='text-white leading-tight -mt-2 ' > {item.duration} </p>
             </div>
             <div className=" w-[100%] border-[0px] rounded-lg border-[#ABB2B9] h-[200px] relative flex items-center justify-center " >
                 <img
@@ -24,7 +25,7 @@ const Item = ({ item }) => {
             <h1 className=' scale-[1.05] ' >{item.type}</h1>
             <h1 className=' text-[15px] leading-tight border-white ' >{item.detail}</h1>
             <h1 className=' mt-2 ' >{item.price}</h1>
-            <img
+            {/* <img
                 className=" w-[200%] absolute bottom-[-20px] cursor-pointer "
                 src='/images/buttons/shopnow.png'
                 onClick={() => {
@@ -32,7 +33,14 @@ const Item = ({ item }) => {
                     dispatch(SetSelectedProduct(item))
                 }}
             >
-            </img>
+            </img> */}
+            <ProductButton
+                title={"SHOP NOW"}
+                onClick={() => {
+                    dispatch(ToogleModal(true));
+                    dispatch(SetSelectedProduct(item))
+                }}
+            />
         </div>
     )
 }

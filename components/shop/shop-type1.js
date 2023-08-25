@@ -2,6 +2,7 @@ import React from 'react'
 import Services from '../../data/shop1.json'
 import { useDispatch } from 'react-redux'
 import { ToogleModal, SetSelectedProduct } from '../../redux/action/product'
+import ProductButton from '../common/button'
 
 
 
@@ -18,7 +19,7 @@ const Item = ({ item }) => {
             </div>
             <h1>{item.type}</h1>
             <h1>{item.price}</h1>
-            <img
+            {/* <img
                 className=" w-[200%] absolute bottom-[-20px] cursor-pointer "
                 src='/images/buttons/shopnow.png'
                 onClick={() => {
@@ -26,7 +27,14 @@ const Item = ({ item }) => {
                     dispatch(SetSelectedProduct(item))
                 }}
             >
-            </img>
+            </img> */}
+            <ProductButton
+                title={"SHOP NOW"}
+                onClick={() => {
+                    dispatch(ToogleModal(true));
+                    dispatch(SetSelectedProduct(item))
+                }}
+            />
         </div>
     )
 }

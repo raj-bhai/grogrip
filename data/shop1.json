@@ -3,6 +3,7 @@
         "id": 11,
         "type": "Script",
         "price": "$7 - 11$",
+        "realPrice" : 11,
         "image": "https://res.cloudinary.com/drgvislmm/image/upload/v1692300276/WebsiteImages/serviceImages/scriptW_hb3nlj.png",
         "desc": [
             {
@@ -31,6 +32,7 @@
         "id": 12,
         "type": "Voice-Over",
         "price": "$9 - 15$",
+        "realPrice" : 15,
         "image": "https://res.cloudinary.com/drgvislmm/image/upload/v1692300276/WebsiteImages/serviceImages/voice-over_wwdt6u.png",
         "desc": [
             {
@@ -59,6 +61,7 @@
         "id": 13,
         "type": "Video Editing",
         "price": "$15 - 100$",
+        "realPrice" : 100,
         "image": "https://res.cloudinary.com/drgvislmm/image/upload/v1692300771/WebsiteImages/serviceImages/video_jlpfyt.png",
         "desc": [
             {
@@ -87,6 +90,7 @@
         "id": 14,
         "type": "Thumbnail",
         "price": "$15 - 100$",
+        "realPrice" : 100,
         "image": "https://res.cloudinary.com/drgvislmm/image/upload/v1692300771/WebsiteImages/serviceImages/thumbnail_m0y5et.png",
         "desc": [
             {

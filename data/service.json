@@ -3,36 +3,42 @@
         "id" : 1,
         "type" : "Script",
         "price" : "$7 - 11$",
+        "realPrice" : 11,
         "image" : "https://res.cloudinary.com/drgvislmm/image/upload/v1692300276/WebsiteImages/serviceImages/scriptW_hb3nlj.png"
     },
     {
         "id" : 2,
         "type" : "Voice-Over",
         "price" : "$9 - 15$",
+        "realPrice" : 15,
         "image" : "https://res.cloudinary.com/drgvislmm/image/upload/v1692300276/WebsiteImages/serviceImages/voice-over_wwdt6u.png"
     },
     {
         "id" : 3,
         "type" : "Video Editing",
         "price" : "$15 - 100$",
+        "realPrice" : 100,
         "image" : "https://res.cloudinary.com/drgvislmm/image/upload/v1692300771/WebsiteImages/serviceImages/video_jlpfyt.png"
     },
     {
         "id" : 4,
         "type" : "Thumbnail",
         "price" : "$15 - 100$",
+        "realPrice" : 100,
         "image" : "https://res.cloudinary.com/drgvislmm/image/upload/v1692300771/WebsiteImages/serviceImages/thumbnail_m0y5et.png"
     },
     {
         "id" : 5,
         "type" : "Channel Manager",
         "price" : "200$",
+        "realPrice" : 200,
         "image" : "https://res.cloudinary.com/drgvislmm/image/upload/v1692300769/WebsiteImages/serviceImages/channel_manager_i5my8l.png"
     },
     {
         "id" : 6,
         "type" : "SEO Search Engine",
         "price" : "Optimization 5$",
+        "realPrice" : 5,
         "image" : "https://res.cloudinary.com/drgvislmm/image/upload/v1692300770/WebsiteImages/serviceImages/seo_ko8758.png"
     }
 ]

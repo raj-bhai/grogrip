@@ -9,6 +9,9 @@ import Modal from '@mui/material/Modal';
 import ProductModal from "../components/shop/product-modal";
 import { ToogleModal, SetSelectedProduct } from "../redux/action/product";
 import { FetchData } from "../lib/utils";
+import Drawer from '@mui/material/Drawer';
+import DrawerItem from "../components/drawerItem";
+import CartDrawer from "../components/cart/drawer";
 
 
 const backgroundGradient = ' bg-gradient-to-r from-[#107840] via-[#107840] via-[#1F5025] via -[#28602E] to-[#107840]';
@@ -20,10 +23,12 @@ const Cart = () => {
     const [selectedHeader, setSelectedHeader] = useState(7);
     const Cart = useSelector(state => state.cart.CartData);
     const { openModal, SelectedProduct } = useSelector(state => state.product);
+    const [drawerOpen, setDrawerOpen] = useState(false)
 
     const handleClose = () => {
         dispatch(ToogleModal(false))
     }
+
 
     return (
         <div className={'w-full fade-in px-[0px] py-[0px] relative overflow-y-hidden overflow-x-hidden' + backgroundGradient} >
@@ -59,6 +64,16 @@ const Cart = () => {
                         })
                     }
                 </div>
+                {
+                    Cart?.length ?
+                        <div className=" w-full flex flex-col items-start px-[100px] " >
+                            <button className=" bg-white w-[350px] h-[50px] my-font cursor-pointer text-[#000] text-[20px] rounded-lg "
+                                onClick={() => setDrawerOpen(true)}
+                            >
+                                Proceed To Buy
+                            </button>
+                        </div> : null
+                }
             </div>
             <Footer />
             {
@@ -69,12 +84,22 @@ const Cart = () => {
                     aria-labelledby="modal-modal-title"
                     aria-describedby="modal-modal-description"
                 >
-                    <ProductModal 
-                    isUpdate={true}
+                    <ProductModal
+                        isUpdate={true}
                     />
                 </Modal>
 
             }
+            <Drawer
+                anchor="right"
+                open={drawerOpen}
+                onClose={() => setDrawerOpen(false)}
+            >
+                <CartDrawer
+                    money={100}
+                    onClose={() => setDrawerOpen(false)}
+                />
+            </Drawer>
         </div>
     )
 }

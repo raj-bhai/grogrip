@@ -29,7 +29,6 @@ const Shop = () => {
     }
 
 
-
     return (
         <div className={'w-full fade-in px-[0px] py-[0px] relative overflow-y-hidden overflow-x-hidden' + backgroundGradient} >
             <Header
