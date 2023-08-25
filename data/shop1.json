@@ -5,6 +5,7 @@
         "heading" : "WHAT SHOULD BE THE DURATION OF THE SCRIPT?",
         "price": "$7 - 11$",
         "image": "https://res.cloudinary.com/drgvislmm/image/upload/v1692300276/WebsiteImages/serviceImages/scriptW_hb3nlj.png",
+        "placeholder" : "Let us know your topic here",
         "desc": [],
         "options" : [
             {
@@ -31,6 +32,7 @@
         "price": "$9 - 15$",
         "showVoiceArtist" : true,
         "image": "https://res.cloudinary.com/drgvislmm/image/upload/v1692300276/WebsiteImages/serviceImages/voice-over_wwdt6u.png",
+        "placeholder" : "Upload Your Script Here",
         "desc": [],
         "options" : [
             {
@@ -55,6 +57,7 @@
         "type": "Video Editing",
         "price": "$17 - 25$",
         "image": "https://res.cloudinary.com/drgvislmm/image/upload/v1692300771/WebsiteImages/serviceImages/video_jlpfyt.png",
+        "placeholder" : "Upload your Files (script and voice-over here)",
         "desc": [],
         "options" : [
             {

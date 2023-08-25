@@ -442,6 +442,11 @@ const ProductModal = ({ isUpdate }) => {
                                 setQuantity(count)
                             }}
                         />
+                        {
+                            SelectedProduct?.placeholder &&
+                            <input className=" w-[600px] mt-4 h-[45px] border text-[#000] px-2 rounded-lg " placeholder={SelectedProduct.placeholder}  >
+                            </input>
+                        }
                     </div>
                 </div>
                 <div className=" w-[500px] h-[100%] flex justify-center " >
