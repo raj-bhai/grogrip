@@ -27,6 +27,7 @@ import { useSelector, useDispatch } from 'react-redux';
 import ProductModal from '../components/shop/product-modal';
 import { ToogleModal, SetSelectedProduct } from '../redux/action/product'
 import { FetchData } from "../lib/utils";
+import VideoPop from '../components/Home/video-popuo';
 
 
 
@@ -98,6 +99,9 @@ const Home = () => {
     const [SSopen, setSSOpen] = useState(false);
     const handleOpen = () => setSSOpen(true);
     const handleClose = () => setSSOpen(false);
+
+    const [videoVisible, setVideoVisible] = useState(false);
+    const [videoId, setVideoId] = useState('')
 
 
     const handleModalClose = () => {
@@ -269,7 +273,7 @@ const Home = () => {
 
     return (
         // domLoaded &&
-            typeof window !== 'undefined' ?
+        typeof window !== 'undefined' ?
             <div id="home" className={'w-full fade-in px-[0px] py-[0px] relative overflow-y-hidden overflow-x-hidden' + backgroundGradient}
             >
                 {
@@ -483,8 +487,8 @@ const Home = () => {
                 </div>
                 <div ref={AboutRef} className={`w-[100%] flex items-center jistify-center sm:h-[150px] sm:pt-[0px] sm:pb-[0px] sm:pb-[30px] relative ${localStorage.getItem('token') ? 'page-content' : 'page-content--blurred'} `} id='about'
                 >
-                    <div 
-                    className={`${localStorage.getItem('token') ? 'page-content' : 'page-content--blurred'} w-[100%] border-[0px] sm:py-[0px] gap-[50px] sm:flex-wrap sm:flex-row flex-col flex items-center justify-between sm:px-[20px] px-[10px] `}
+                    <div
+                        className={`${localStorage.getItem('token') ? 'page-content' : 'page-content--blurred'} w-[100%] border-[0px] sm:py-[0px] gap-[50px] sm:flex-wrap sm:flex-row flex-col flex items-center justify-between sm:px-[20px] px-[10px] `}
                     >
                         <div className='sm:w-[20%] w-[100%] border-[0px] align-bottom text-center ' >
                             <div className=' w-[100%] flex justify-center items-center ' >
@@ -605,95 +609,13 @@ const Home = () => {
                         <MdOpenInNew />
                     </btn>
                 </div>
-                <Testimonial />
+                <Testimonial
+                    setVideoVisible={(boolean) => setVideoVisible(boolean)}
+                    setVideoId={(text) => setVideoId(text)}
+                />
                 <Analytics />
                 <Contact />
-                {/* <div ref={ExtraRef1} id='demos' className={` ${localStorage.getItem('token') ? 'page-content' : 'page-content--blurred'}  w-[100%] border-[0px] flex items-center justify-center`}>
-                    <div className=' sm:w-[80%] w-[100%] border-[0px] mt-[100px] flex flex-col items-center sm:px-[0px] px-[10px]  ' >
-                        <div className=' flex items-center justify-center py-[5px] rounded ' >
-                            <h1 className=' text-[#fff] bg-gradient-to-r from-white via-yellow-100 to-green-100 text-transparent bg-clip-text text-center lg:text-[45px] text-[18px] font-bold ' >OUR LATEST PROJECTS</h1>
-                        </div>
-                        <div className=' w-[100%] flex flex-wrap mt-[50px] pb-[50px] border-[0px]' >
-                            <div className='w-[100%] flex flex-wrap justify-center lg:gap-x-[50px] gap-x-[10px] sm:pb-[50px] ' >
-                                {
-                                    ProjectTypes.map((item, index) => {
-                                        return (
-                                            <button type="button"
-                                                key={index}
-                                                className={` ${(index == 2) ? 'lg:w-[130px] w-[100px]' : 'lg:w-[120px] w-[80px]'} h-[35px] hover:bg-[#F2F4F4]  focus:text-[#fff] ny-font-bold focus:bg-green-600   drop-shadow-lg lg:text-[16px] lg:font-bold sm:text-[#000]  lg:border-[0px] rounded  lg:h-[40px] sm:mb-[0px] mb-[20px] cursor-pointer text-[13px] cursor-pointer ${(projectIndex == index) ? ' text-[#31FF52] bg-green-600' : ' text-[#fff] sm:bg-[#E5E7E9] '} `}
-                                                onClick={() => {
-                                                    setprojectIndex(index)
-                                                }}
-                                            >
-                                                {item}</button>
-                                        )
-                                    })
-                                }
-                            </div>
-                            <div className='w-[100%] flex flex-wrap border-[0px] gap-[20px] justify-center ' >
-                                {
-                                    selectedPortfolio.map((item, index) => {
-                                        return (
-                                            <Video
-                                                key={index}
-                                                thumbnail={item.thumbnail}
-                                                src={item.url}
-                                                projectIndex={projectIndex}
-                                            />
-                                        )
-                                    })
-                                }
-                            </div>
-                        </div>
-                    </div>
-                </div > */}
-
                 <Footer />
-
-
-
-
-                {/* <div ref={FooterRef} className={` ${localStorage.getItem('token') ? 'page-content' : 'page-content--blurred'} w-[100%] border-[0px] sm:px-[0px] px-[20px] flex items-center justify-center`} id="footer" >
-                    {
-                        typeof window !== 'undefined' &&
-                        <Footer />
-                    }
-                </div>
-                <div ref={BottomRef} className={` ${localStorage.getItem('token') ? 'page-content' : 'page-content--blurred'} w-[100%] border-[0px] h-[100px] flex items-center justify-center`} >
-                    <div className='sm:flex sm:w-[90%] h-[80%] border-[0px] items-center justify-between' >
-                        <div className=' w-[100%] sm:w-[400px] h-[50%] sm:mt-[0px] mt-[10px] border-[0px] flex items-center justify-center sm:justify-start sm:gap-[10px] gap-[5px]' >
-                            <h1 className='text-white text-[15px] sm-text-[18px] my-font ' >{`2022 ${`©`} All Rights Reserved`}</h1>
-                        </div>
-                        <div className='flex border-[0px] w-[400px] sm:w-[250px] h-[40px] items-center justify-center sm:gap-[10px] gap-[20px]' >
-                            <FaFacebookSquare
-                                color='white'
-                                className='text-[20px] sm:text-[30px] cursor-pointer '
-                                onClick={() => {
-                                    window?.open("https://www.facebook.com/profile.php?id=100087879190153")
-                                }}
-                            />
-                            <FaInstagram
-                                color='white'
-                                className='text-[20px] sm:text-[30px] cursor-pointer '
-                                onClick={() => {
-                                    window?.open("https://www.instagram.com/grogrip_media/")
-                                }}
-                            />
-                            <FaWhatsapp
-                                color='white'
-                                className='text-[20px] sm:text-[30px] cursor-pointer '
-                                onClick={() => {
-                                    window?.open("https://wa.me/918076455801")
-                                }}
-                            />
-                            <h1 className='text-white text-[15px] sm-text-[18px] my-font cursor-pointer'
-                                onClick={() => {
-                                    window?.open("https://wa.me/918076455801")
-                                }}
-                            >+91 8076455801</h1>
-                        </div>
-                    </div>
-                </div> */}
                 <Drawer
                     anchor="right"
                     open={drawerOpen}
@@ -715,6 +637,16 @@ const Home = () => {
                         <ProductModal />
                     </Modal>
 
+                }
+                {
+                    videoVisible &&
+                    <VideoPop
+                        videoId={videoId}
+                        onClose={() => {
+                            setVideoVisible(false);
+                            setVideoId('')
+                        }}
+                    />
                 }
             </div >
             : null

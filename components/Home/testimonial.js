@@ -1,7 +1,7 @@
 import React from "react";
 import { MdOpenInNew } from 'react-icons/md';
 
-const Testimonial = () => {
+const Testimonial = ({setVideoVisible, setVideoId}) => {
     return (
         <div
             className={` ${localStorage.getItem('token') ? 'page-content' : 'page-content--blurred'} w-full pt-16 flex flex-col items-center px-4 pb-8 `}
@@ -13,12 +13,20 @@ const Testimonial = () => {
                 <div className=' h-[100%] ' >
                     <img src='https://res.cloudinary.com/drgvislmm/image/upload/v1692970148/WebsiteImages/testimonial/testimonialLg_qi120e.png'
                         className='rounded-lg'
+                        onClick={() => {
+                            setVideoVisible(true);
+                            setVideoId('bSIj6ZGz6dI')
+                        }}
                     >
                     </img>
                 </div>
                 <div className=' h-[100%] ' >
                     <img src='https://res.cloudinary.com/drgvislmm/image/upload/v1692970151/WebsiteImages/testimonial/testimonialSM_uvx15j.png'
                         className='rounded-lg'
+                        onClick={() => {
+                            setVideoVisible(true);
+                            setVideoId('SXKzt0ucuL0')
+                        }}
                     >
                     </img>
                 </div>
@@ -27,6 +35,10 @@ const Testimonial = () => {
                 <div className=' h-[100%] ' >
                     <img src='https://res.cloudinary.com/drgvislmm/image/upload/v1692970148/WebsiteImages/testimonial/testimonialSM1_qnnqv2.png'
                         className='rounded-lg'
+                        onClick={() => {
+                            setVideoVisible(true);
+                            setVideoId('j9iQ392SgxA')
+                        }}
                     >
                     </img>
                 </div>
