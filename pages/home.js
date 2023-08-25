@@ -471,7 +471,7 @@ const Home = () => {
                                 {/* <Globe /> */}
                                 <iframe
                                     className="w-[100%] h-[100%] rounded-lg "
-                                    src={`https://www.youtube.com/embed/ERAfmohHuxE`}
+                                    src={`https://www.youtube.com/embed/g2ArcXDYmfg`}
                                     title="YouTube video player"
                                     frameborder="0"
                                     allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
