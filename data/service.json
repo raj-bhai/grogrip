@@ -1,41 +1,98 @@
 [
     {
-        "id" : 1,
-        "type" : "Script",
-        "price" : "$7 - 11$",
-        "realPrice" : 11,
-        "image" : "https://res.cloudinary.com/drgvislmm/image/upload/v1692300276/WebsiteImages/serviceImages/scriptW_hb3nlj.png"
+        "id": 11,
+        "type": "Script",
+        "heading" : "WHAT SHOULD BE THE DURATION OF THE SCRIPT?",
+        "price": "$7 - 11$",
+        "image": "https://res.cloudinary.com/drgvislmm/image/upload/v1692300276/WebsiteImages/serviceImages/scriptW_hb3nlj.png",
+        "placeholder" : "Let us know your topic here",
+        "desc": [],
+        "options" : [
+            {
+                "id" : "option1",
+                "value" : "A Professional Script of 4-5 min video",
+                "price" : 7
+            },
+            {
+                "id" : "option2",
+                "value" : "A Professional Script of 8-9 min video",
+                "price" : 11
+            },
+            {
+                "id" : "custom",
+                "value" : "Make You Custom Duration!",
+                "pricePerMin" : 1.5
+            }
+        ]
     },
     {
-        "id" : 2,
-        "type" : "Voice-Over",
-        "price" : "$9 - 15$",
-        "realPrice" : 15,
-        "image" : "https://res.cloudinary.com/drgvislmm/image/upload/v1692300276/WebsiteImages/serviceImages/voice-over_wwdt6u.png"
+        "id": 12,
+        "type": "Voice-Over",
+        "heading" : "WHAT SHOULD BE THE DURATION OF THE VOICE-OVER?",
+        "price": "$9 - 15$",
+        "showVoiceArtist" : true,
+        "image": "https://res.cloudinary.com/drgvislmm/image/upload/v1692300276/WebsiteImages/serviceImages/voice-over_wwdt6u.png",
+        "placeholder" : "Upload Your Script Here",
+        "desc": [],
+        "options" : [
+            {
+                "id" : "option1",
+                "value" : "A Professional human voice-over of 4-5 min",
+                "price" : 9
+            },
+            {
+                "id" : "option2",
+                "value" : "A Professional human voice-over of 8-9 min",
+                "price" : 15
+            },
+            {
+                "id" : "custom",
+                "value" : "Make You Custom Duration!",
+                "pricePerMin" : 1.8
+            }
+        ]
     },
     {
-        "id" : 3,
-        "type" : "Video Editing",
-        "price" : "$15 - 100$",
-        "realPrice" : 100,
-        "image" : "https://res.cloudinary.com/drgvislmm/image/upload/v1692300771/WebsiteImages/serviceImages/video_jlpfyt.png"
+        "id": 13,
+        "type": "Video Editing",
+        "price": "$17 - 25$",
+        "image": "https://res.cloudinary.com/drgvislmm/image/upload/v1692300771/WebsiteImages/serviceImages/video_jlpfyt.png",
+        "placeholder" : "Upload your Files (script and voice-over here)",
+        "desc": [],
+        "options" : [
+            {
+                "id" : "option1",
+                "value" : "A Professional Video of 4-5 min (With Effects, Overlays, Texts, Motion Graphics & Animations)" ,
+                "price" : 17
+            },
+            {
+                "id" : "option2",
+                "value" : "A Professional Video of 8-9 min (With Effects, Overlays, Texts, Motion Graphics & Animations)",
+                "price" : 25
+            },
+            {
+                "id" : "custom",
+                "value" : "Make You Custom Duration!",
+                "pricePerMin" : 3
+            }
+        ]
     },
     {
-        "id" : 4,
+        "id" : 14,
         "type" : "Thumbnail",
         "price" : "$15 - 100$",
         "realPrice" : 100,
         "image" : "https://res.cloudinary.com/drgvislmm/image/upload/v1692300771/WebsiteImages/serviceImages/thumbnail_m0y5et.png"
     },
     {
-        "id" : 5,
+        "id" : 24,
         "type" : "Channel Manager",
         "price" : "200$",
         "realPrice" : 200,
         "image" : "https://res.cloudinary.com/drgvislmm/image/upload/v1692300769/WebsiteImages/serviceImages/channel_manager_i5my8l.png"
     },
     {
-        "id" : 6,
+        "id" : 22,
         "type" : "SEO Search Engine",
         "price" : "Optimization 5$",
         "realPrice" : 5,
