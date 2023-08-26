@@ -12,6 +12,7 @@ import { ToastContainer, toast } from 'react-toastify';
 import { ToogleModal } from "../../redux/action/product";
 import ProductButton from "../common/button";
 import Options from "./options";
+import voices from '../../data/voices.json';
 
 import { AddToCart } from "../../redux/action/cart";
 
@@ -42,11 +43,11 @@ const VoiceDropdown = ({ setVoice }) => {
             setPlayingVoice(voice.name);
         }
     }
-    const voices = [
-        { name: "Artist 1", url: 'https://res.cloudinary.com/drgvislmm/video/upload/v1692293661/voiceOver/ggVoice_flhppl.mp3' },
-        { name: "Artist 2", url: 'https://res.cloudinary.com/drgvislmm/video/upload/v1692293661/voiceOver/ggVoice_flhppl.mp3' },
-        { name: "Artist 3", url: 'https://res.cloudinary.com/drgvislmm/video/upload/v1692293661/voiceOver/ggVoice_flhppl.mp3' },
-    ];
+    // const voices = [
+    //     { name: "Artist 1", url: 'https://res.cloudinary.com/drgvislmm/video/upload/v1692293661/voiceOver/ggVoice_flhppl.mp3' },
+    //     { name: "Artist 2", url: 'https://res.cloudinary.com/drgvislmm/video/upload/v1692293661/voiceOver/ggVoice_flhppl.mp3' },
+    //     { name: "Artist 3", url: 'https://res.cloudinary.com/drgvislmm/video/upload/v1692293661/voiceOver/ggVoice_flhppl.mp3' },
+    // ];
 
     useEffect(() => {
 
@@ -97,7 +98,7 @@ const VoiceDropdown = ({ setVoice }) => {
     }
 
     return (
-        <div ref={dropdownRef} className="w-[100%] mt-2 relative  "> {/* Set parent to position: relative */}
+        <div ref={dropdownRef} className="w-[450px] mt-2 relative  "> {/* Set parent to position: relative */}
             <h1 className="text-white my-font-bold py-1">Select Voice Artist</h1>
             <div className="w-[100%] h-[50px] border mt-2 rounded-md  bg-[#1b5a2c] text-white flex justify-between items-center px-2 cursor-pointer" onClick={() => setIsOpen(!isOpen)}>
                 <AiFillPlayCircle

@@ -1,9 +1,9 @@
 import React, { useState, useEffect, useRef } from "react";
 import { FaCheck } from "react-icons/fa";
 import { MdKeyboardArrowDown } from 'react-icons/md';
-import { AiFillPlayCircle, AiFillPauseCircle } from 'react-icons/ai'
+import { AiFillPlayCircle, AiFillPauseCircle } from 'react-icons/ai';
+import voices from '../../data/voices.json';
 
-// import gg from '../../voices/ggVoice.mp3'
 
 const unFocusedBG = ' bg-[#0FA152]'  //green
 const focusedBG = ' bg-[#fff]'  //white
@@ -52,11 +52,11 @@ const VoiceDropdown = () => {
             setPlayingVoice(voice.name);
         }
     }
-    const voices = [
-        { name: "Artist 1", url: 'https://res.cloudinary.com/drgvislmm/video/upload/v1692293661/voiceOver/ggVoice_flhppl.mp3' },
-        { name: "Artist 2", url: 'https://res.cloudinary.com/drgvislmm/video/upload/v1692293661/voiceOver/ggVoice_flhppl.mp3' },
-        { name: "Artist 3", url: 'https://res.cloudinary.com/drgvislmm/video/upload/v1692293661/voiceOver/ggVoice_flhppl.mp3' },
-    ];
+    // const voices = [
+    //     { name: "Artist 1", url: 'https://res.cloudinary.com/drgvislmm/video/upload/v1692293661/voiceOver/ggVoice_flhppl.mp3' },
+    //     { name: "Artist 2", url: 'https://res.cloudinary.com/drgvislmm/video/upload/v1692293661/voiceOver/ggVoice_flhppl.mp3' },
+    //     { name: "Artist 3", url: 'https://res.cloudinary.com/drgvislmm/video/upload/v1692293661/voiceOver/ggVoice_flhppl.mp3' },
+    // ];
 
     useEffect(() => {
 
