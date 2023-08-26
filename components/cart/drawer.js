@@ -93,24 +93,8 @@ const CartDrawer = ({ money, onClose }) => {
             </div>
             <div className="w-full border-[1px] border-[#000] text-gray text-lg rounded-[10px] mt-[50px] p-2 text-[#000] " >
                 <p>Total Amount : ${GetTotalPrice().total}</p>
-                <p>GST : ${GetTotalPrice().gst}</p>
-                <p>Amount To Pay : ${GetTotalPrice().subtotal}</p>
-                {/* <div className=" flex justify-between h-[50px] font-normal " >
-                    <p>Basic</p>
-                    <p>$35</p>
-                </div>
-                <div className="h-[50px] font-normal " >
-                    <p>5 min video I will best youtube cash cow video Editor</p>
-                </div>
-                <div className="flex justify-between items-center font-normal" >
-                    <p>Gig Quantity</p>
-                    <Counter
-                        quantity={quantity}
-                        onChange={(number) => {
-                            setQuantity(number)
-                        }}
-                    />
-                </div> */}
+                {/* <p>GST : ${GetTotalPrice().gst}</p>
+                <p>Amount To Pay : ${GetTotalPrice().subtotal}</p> */}
             </div>
 
             {/* <div className=" w-full border-[1px] border-[#000] rounded-[10px] mt-[50px] p-2 text-[#000] font-normal " >
@@ -132,9 +116,9 @@ const CartDrawer = ({ money, onClose }) => {
                 <p>$5</p>
             </div> */}
             <div className=" w-[90%] h-[40px] cursor-pointer bg-[#000] border-[1px] border-[#000] rounded-[10px] mt-[50px] p-2 text-[#fff] flex items-center justify-center absolute bottom-[20px] "
-                onClick={() => createOrder(GetTotalPrice().subtotal)}
+                onClick={() => createOrder(GetTotalPrice().total)}
             >
-                <p>{`Continue($${GetTotalPrice().subtotal})`}</p>
+                <p>{`Pay Now ($${GetTotalPrice().total})`}</p>
             </div>
         </div>
     )

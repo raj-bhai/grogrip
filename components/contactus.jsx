@@ -1,15 +1,24 @@
-import React, { useEffect } from "react";
+import React, { useEffect, useState } from "react";
 import Image from "next/image";
 import { useRouter } from "next/router";
 import grogrip from "../public/grogrip6.svg";
+import { FetchData } from "../lib/utils";
+import Header from "./Home/header";
 
 const ContactUs = () => {
    const backgroundGradient = " bg-gradient-to-r from-[#107840] via-[#107840] via-[#1F5025] via -[#28602E] to-[#107840]";
+   const fetchData = FetchData()
+   const [headerStyle, setHeaderStyle] = useState(' bg-gradient-to-r from-[#107840] via-[#107840] via-[#1F5025] via -[#28602E] to-[#107840]');
+   const [selectedHeader, setSelectedHeader] = useState(4);
 
    return (
       <>
          <section className={`w-full h-full transition ease-in-out delay-150 py-12  ${backgroundGradient}`}>
-            <div className="lg:flex lg:items-center lg:justify-between lg:mx-16 ">
+         <Header
+                className={headerStyle}
+                selectedHeader={selectedHeader}
+            />
+            <div className="lg:flex lg:items-center lg:justify-between lg:mx-16 mt-[100px] ">
                <div className="textCont lg:text-left lg:w-3/4 text-center px-4">
                   <h1 className="sc-bwzfXH dymLSH pb-4 text-shadow my-font-bold drop-shadow-lg text-yellow-200 sm:text-[50px] text-[25px] sm:leading-[50px] text-left font-semibold">
                      Contact

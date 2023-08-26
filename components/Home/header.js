@@ -116,6 +116,7 @@ const Header = (props) => {
                 </div>
                 <div className=" w-[80px] sm:h-[60px] sm:visible invisible border-[0px] flex items-center justify-center "
                     onClick={() => {
+                        router.push('/contact')
                         // props.onClickContact()
                     }}
                 >

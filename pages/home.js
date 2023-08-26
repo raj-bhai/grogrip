@@ -437,7 +437,7 @@ const Home = () => {
                                                                     onClick={() => {
                                                                         setBtn1Animate(true)
                                                                         setTimeout(() => {
-                                                                            document.getElementById('getStarted').scrollIntoView()
+                                                                            // document.getElementById('getStarted').scrollIntoView()
                                                                         }, 1500);
                                                                     }}
                                                                 >
@@ -456,7 +456,7 @@ const Home = () => {
                                                                         setBtn2Animate(true)
                                                                         setprojectIndex(0)
                                                                         setTimeout(() => {
-                                                                            document.getElementById('demos').scrollIntoView()
+                                                                            // document.getElementById('demos').scrollIntoView()
                                                                         }, 1500);
                                                                     }}
                                                                 >
