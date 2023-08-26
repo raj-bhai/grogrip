@@ -46,11 +46,11 @@ const Cart = () => {
                             <EmptyCart />
                             :
                             <div className=" w-full flex text-white my font px-4 text-[30px] justify-between " >
-                                <h1>Package Name</h1>
-                                <h1>Product Name</h1>
-                                <h1>Price</h1>
-                                <h1>Quantity</h1>
-                                <h1>Subtotal</h1>
+                                <h1 className=" w-[20%] min-w-[200px] text-center "  >Package Name</h1>
+                                <h1 className=" w-[20%] min-w-[200px] text-center " >Product Name</h1>
+                                <h1 className=" w-[20%] min-w-[200px] text-center " >Price</h1>
+                                <h1 className=" w-[20%] min-w-[200px] text-center " >Quantity</h1>
+                                <h1 className=" w-[20%] min-w-[200px] text-center " >Subtotal</h1>
                             </div>
                     }
                     {

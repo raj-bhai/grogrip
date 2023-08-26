@@ -43,12 +43,6 @@ const VoiceDropdown = ({ setVoice }) => {
             setPlayingVoice(voice.name);
         }
     }
-    // const voices = [
-    //     { name: "Artist 1", url: 'https://res.cloudinary.com/drgvislmm/video/upload/v1692293661/voiceOver/ggVoice_flhppl.mp3' },
-    //     { name: "Artist 2", url: 'https://res.cloudinary.com/drgvislmm/video/upload/v1692293661/voiceOver/ggVoice_flhppl.mp3' },
-    //     { name: "Artist 3", url: 'https://res.cloudinary.com/drgvislmm/video/upload/v1692293661/voiceOver/ggVoice_flhppl.mp3' },
-    // ];
-
     useEffect(() => {
 
         const handleOutsideClick = (event) => {
@@ -337,6 +331,8 @@ const ProductModal = ({ isUpdate }) => {
         //     setSubmitted(true)
         //     return
         // }
+        // console.log("payload :", payload);
+        // return
         setSubmitted(false)
         dispatch(AddToCart(payload))
         dispatch(ToogleModal(false))

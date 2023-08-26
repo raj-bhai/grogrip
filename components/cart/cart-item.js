@@ -8,7 +8,7 @@ import { ToogleModal, SetSelectedProduct, SetSelectedProductFromCart } from '../
 
 const Box = ({ children }) => {
     return (
-        <div className=' h-[100%] w-[20%] min-w-[300px] flex items-center justify-center ' >
+        <div className=' h-[100%]  w-[20%] min-w-[200px] flex items-center justify-center ' >
             {children}
         </div>
     )
@@ -65,12 +65,17 @@ const CartItem = ({ data }) => {
             </Box>
             <Box>
                 <div className={`${textContainer}`} >
+                    <h1>{data?.price}$</h1>
+                </div>
+            </Box>
+            <Box>
+                <div className={`${textContainer}`} >
                     <h1>{data?.quantity}</h1>
                 </div>
             </Box>
             <Box>
                 <div className={`${textContainer}`} >
-                    <h1>{data?.price}</h1>
+                    <h1>{data?.price * data?.quantity}$</h1>
                 </div>
             </Box>
 
