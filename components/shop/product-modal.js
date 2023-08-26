@@ -359,7 +359,7 @@ const ProductModal = ({ isUpdate }) => {
                             <input
                                 className=" w-[20px] h-[20px] "
                                 type="checkbox"
-                                value={thumbnailChecked}
+                                checked={thumbnailChecked}
                                 onChange={(e) => {
                                     setThumbnailChecked(e.target.checked)
                                     if (e.target.checked) {
