@@ -28,6 +28,7 @@ import ProductModal from '../components/shop/product-modal';
 import { ToogleModal, SetSelectedProduct } from '../redux/action/product'
 import { FetchData } from "../lib/utils";
 import VideoPop from '../components/Home/video-popuo';
+import Type3 from '../components/shop/shop-type3';
 
 
 
@@ -529,7 +530,8 @@ const Home = () => {
                     <btn className=' text-yellow-200 text-[50px] w-[700px] hover:border-yellow-200 hover:text-white cursor-pointer border flex items-center justify-center  border-white rounded-lg ml-8 my-font-bold  ' >
                         <p>Cashcow Packages</p>
                     </btn>
-                    <div className=' w-[90%] border-[0px] sm:mt-[50px] mt-[20px] flex sm:gap-[80px] gap-[20px] flex-wrap items-center justify-center ' >
+                    <Type3/>
+                    {/* <div className=' w-[90%] border-[0px] sm:mt-[50px] mt-[20px] flex sm:gap-[80px] gap-[20px] flex-wrap items-center justify-center ' >
                         <PricingCard
                             for="Short Videos (4-5 mins)"
                             type="Basic"
@@ -584,7 +586,7 @@ const Home = () => {
                                 // createOrder(100)
                             }}
                         />
-                    </div>
+                    </div> */}
                 </div>
                 <div className={` ${localStorage.getItem('token') ? 'page-content' : 'page-content--blurred'} w-full  pt-32 pb-8 px-8 flex flex-col items-center`} >
                     <btn className=' text-yellow-200 text-[50px] w-[700px] hover:border-yellow-200 hover:text-white cursor-pointer border flex items-center justify-center  border-white rounded-lg ml-8 my-font-bold  ' >
