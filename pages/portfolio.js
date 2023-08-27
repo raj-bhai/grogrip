@@ -56,7 +56,7 @@ const Portfolio = () => {
             />
             <div>
                 <div className={` ${localStorage.getItem('token') ? 'page-content' : 'page-content--blurred'}  w-[100%] border-[0px] flex items-center justify-center`}>
-                    <div className=' sm:w-[80%] w-[100%] border-[0px] mt-[100px] flex flex-col items-center sm:px-[0px] px-[10px]  ' >
+                    <div className=' sm:w-[80%] w-[100%] border-[0px] sm:mt-[100px] mt-[150px] flex flex-col items-center sm:px-[0px] px-[10px]  ' >
                         <div className=' flex items-center justify-center py-[5px] rounded ' >
                             <h1 className=' text-[#fff] bg-gradient-to-r from-white via-yellow-100 to-green-100 text-transparent bg-clip-text text-center lg:text-[45px] text-[18px] font-bold ' >OUR LATEST PROJECTS</h1>
                         </div>
