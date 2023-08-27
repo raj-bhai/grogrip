@@ -8,9 +8,8 @@ const Analytics = () => {
         >
             <btn className='text-yellow-200 text-[25px] sm:text-[50px] w-[95%] sm:w-[700px] hover:border-yellow-200 hover:text-white cursor-pointer border flex items-center justify-center  border-white rounded-lg sm:ml-8 my-font-bold '>
                 <p>Analytics/Proofs</p>
-                {/* <MdOpenInNew /> */}
             </btn>
-            <div className='w-[100%] gap-4 flex mt-8 items-center justify-center ' >
+            <div className='w-[100%] gap-4 flex sm:flex-row flex-col mt-8 items-center justify-center ' >
                 <div className=' h-[100%] ' >
                     <img src='/images/analytics1.png'
                         className='rounded-lg'
@@ -25,7 +24,7 @@ const Analytics = () => {
                     </img>
                 </div>
             </div>
-            <div className='w-[100%]  gap-4 mt-8 flex mt-4 items-center justify-center ' >
+            <div className='w-[100%] flex sm:flex-row flex-col  gap-4 mt-8 flex mt-4 items-center justify-center ' >
                 <div className=' h-[100%] ' >
                     <img src='/images/analytics1.png'
                         className='rounded-lg'
@@ -39,7 +38,7 @@ const Analytics = () => {
                     </img>
                 </div>
             </div>
-            <div className='w-[100%] gap-4 mt-8 flex mt-4 items-center justify-center ' >
+            <div className='w-[100%] flex sm:flex-row flex-col gap-4 mt-8 flex mt-4 items-center justify-center ' >
                 <div className=' h-[100%] ' >
                     <img src='/images/review1.png'
                         className='rounded-lg'

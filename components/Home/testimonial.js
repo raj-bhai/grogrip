@@ -9,7 +9,7 @@ const Testimonial = ({setVideoVisible, setVideoId}) => {
             <btn className='text-yellow-200 text-[25px] sm:text-[50px] w-[95%] sm:w-[700px] hover:border-yellow-200 hover:text-white cursor-pointer border flex items-center justify-center  border-white rounded-lg sm:ml-8 my-font-bold '>
                 <p>Clients Testimonial</p>
             </btn>
-            <div className='w-[100%] gap-4 flex mt-8 items-center justify-center ' >
+            <div className='w-[100%] gap-2 sm:gap-4 flex mt-8 items-center justify-center ' >
                 <div className=' h-[100%] ' >
                     <img src='https://res.cloudinary.com/drgvislmm/image/upload/v1692970148/WebsiteImages/testimonial/testimonialLg_qi120e.png'
                         className='rounded-lg'
@@ -31,7 +31,7 @@ const Testimonial = ({setVideoVisible, setVideoId}) => {
                     </img>
                 </div>
             </div>
-            <div className='w-[100%]  gap-4 mt-8 flex mt-4 items-center justify-center ' >
+            <div className='w-[100%] gap-2 sm:gap-4 mt-8 flex mt-2 sm:mt-4 items-center justify-center ' >
                 <div className=' h-[100%] ' >
                     <img src='https://res.cloudinary.com/drgvislmm/image/upload/v1692970148/WebsiteImages/testimonial/testimonialSM1_qnnqv2.png'
                         className='rounded-lg'
