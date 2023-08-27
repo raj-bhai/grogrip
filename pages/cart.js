@@ -37,20 +37,20 @@ const Cart = () => {
                 selectedHeader={selectedHeader}
             />
             <div className=" w-full py-8 mt-[100px] flex flex-col items-center gap-8 ">
-                <btn className=' text-yellow-200 gap-2 text-[50px] w-[700px] cursor-pointer border flex items-center justify-center  border-white rounded-lg ml-8 my-font-bold'>
+                <btn className=' text-yellow-200 gap-2 text-[30px] sm:text-[50px] w-[95%] sm:w-[700px] cursor-pointer border flex items-center justify-center  border-white rounded-lg sm:ml-8 my-font-bold'>
                     <p>CART</p>
                 </btn>
-                <div className=" w-full px-16 flex flex-col items-center" >
+                <div className=" w-full px-1 sm:px-16 flex flex-col items-center" >
                     {
                         !Cart?.length ?
                             <EmptyCart />
                             :
-                            <div className=" w-full flex text-white my font px-4 text-[30px] justify-between " >
-                                <h1 className=" w-[20%] min-w-[200px] text-center "  >Package Name</h1>
-                                <h1 className=" w-[20%] min-w-[200px] text-center " >Product Name</h1>
-                                <h1 className=" w-[20%] min-w-[200px] text-center " >Price</h1>
-                                <h1 className=" w-[20%] min-w-[200px] text-center " >Quantity</h1>
-                                <h1 className=" w-[20%] min-w-[200px] text-center " >Subtotal</h1>
+                            <div className=" w-full flex text-white my font sm:px-4 text-[15px] sm:text-[30px] justify-between " >
+                                <h1 className=" w-[20%] sm:min-w-[200px] text-center "  >Package Name</h1>
+                                <h1 className=" w-[20%] sm:min-w-[200px] text-center " >Product Name</h1>
+                                <h1 className=" w-[20%] sm:min-w-[200px] text-center " >Price</h1>
+                                <h1 className=" w-[20%] sm:min-w-[200px] text-center " >Quantity</h1>
+                                <h1 className=" w-[20%] sm:min-w-[200px] text-center " >Subtotal</h1>
                             </div>
                     }
                     {
@@ -66,7 +66,7 @@ const Cart = () => {
                 </div>
                 {
                     Cart?.length ?
-                        <div className=" w-full flex flex-col items-start px-[100px] " >
+                        <div className=" w-full flex flex-col items-center sm:items-start sm:px-[100px] " >
                             <button className=" bg-white w-[350px] h-[50px] my-font cursor-pointer text-[#000] text-[20px] rounded-lg "
                                 onClick={() => setDrawerOpen(true)}
                             >

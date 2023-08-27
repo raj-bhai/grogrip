@@ -8,13 +8,13 @@ import { ToogleModal, SetSelectedProduct, SetSelectedProductFromCart } from '../
 
 const Box = ({ children }) => {
     return (
-        <div className=' h-[100%]  w-[20%] min-w-[200px] flex items-center justify-center ' >
+        <div className=' h-[100%]  w-[20%] sm:min-w-[200px] flex items-center justify-center ' >
             {children}
         </div>
     )
 }
 
-const textContainer = ' text-[#000] my-font text-[22px] bg-white px-4 py-2 rounded-[40px] '
+const textContainer = ' text-[#000] my-font text-[10px] sm:text-[22px] bg-white px-1 sm:px-4 py-1 sm:py-2 rounded-[40px] '
 
 const CartItem = ({ data }) => {
 
@@ -23,7 +23,7 @@ const CartItem = ({ data }) => {
 
 
     return (
-        <div className=' w-full relative h-[220px] flex bg-green-600 rounded-[40px] mt-8 justify-between '
+        <div className=' w-full relative h-[150px] sm:h-[220px] flex bg-green-600 rounded-[40px] mt-8 justify-between '
             onMouseEnter={() => {
                 setFocused(true)
             }}
@@ -33,7 +33,7 @@ const CartItem = ({ data }) => {
         >
             {
                 focused &&
-                <div className=' w-[40px] h-[40px] border border-white absolute left-[50px] top-[10px] flex text-white items-center justify-center text-[30px] rounded-md hover:border-yellow-200 hover:text-yellow-200 hover:scale-[1.1] cursor-pointer  ' >
+                <div className=' sm:w-[40px] w-[20px] h-[20px] sm:h-[40px] border border-white absolute left-[50px] top-[10px] flex text-white items-center justify-center text-[30px] rounded-md hover:border-yellow-200 hover:text-yellow-200 hover:scale-[1.1] cursor-pointer  ' >
                     <AiOutlineClose
                         onClick={() => {
                             dispatch(RemoveFromCart(data?.id))
@@ -44,7 +44,7 @@ const CartItem = ({ data }) => {
 
             {
                 focused &&
-                <div className=' w-[40px] h-[40px] border border-white absolute right-[50px] flex bottom-[10px] text-white items-center justify-center text-[30px] rounded-md hover:border-yellow-200 hover:text-yellow-200 hover:scale-[1.1] cursor-pointer ' >
+                <div className=' sm:w-[40px] w-[25px] h-[25px] sm:h-[40px] border border-white absolute right-[50px] flex bottom-[10px] text-white items-center justify-center text-[30px] rounded-md hover:border-yellow-200 hover:text-yellow-200 hover:scale-[1.1] cursor-pointer ' >
                     <AiTwotoneEdit
                         onClick={() => {
                             dispatch(ToogleModal(true))
@@ -55,7 +55,7 @@ const CartItem = ({ data }) => {
                 </div>
             }
             <Box>
-                <img src={data?.Product?.image} className=' h-[80%] ' >
+                <img src={data?.Product?.image} className=' sm:h-[80%] ' >
                 </img>
             </Box>
             <Box>
