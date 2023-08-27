@@ -315,7 +315,7 @@ const Home = () => {
                         className=' absolute right-[0px] bottom-[-100px] sm:visible invisible '
                         alt="star" />
                     {
-                        <div className={`${localStorage.getItem('token') ? 'page-content' : 'page-content--blurred'} border-[0px] py-16 sm:py-2 flex flex-wrap items-center w-[100%] justify-center sm:mt-[100px] z-[100] `} >
+                        <div className={`${localStorage.getItem('token') ? 'page-content' : 'page-content--blurred'} border-[0px] py-16 sm:py-2 flex flex-wrap items-center w-[100%] justify-center mt-[50px] sm:mt-[100px] z-[100] `} >
                             <div className={` sm:w-[30%] w-[100%]  sm:mt-[-50px] sm:mr-[0px] mr-[10px] flex items-center justify-center sm:pl-[20px] sm:pt-[0px] pt-[10px] sm:pb-[0px] pb-[0px] pl-[0px] sm:min-w-[550px] `}
                             >
                                 <div className='sm:w-[600px]  w-[100%] h-[80%] border-[0px] sm:ml-[0px] ml-[10px] sm:mt-[80px] mt-[20px] flex relative ' >
