@@ -125,8 +125,8 @@ const Header = (props) => {
                     </input>
                 </div>
                 {
-                    !token?.length &&
-                    <div className=" sm:w-[200px] sm:h-[60px] border-[0px] absolute sm:right-[20px] right-[10px] sm:top-[15px] top-[15px] flex items-center justify-end gap-[10px] " >
+                    token?.length &&
+                    <div className=" sm:w-[200px] sm:h-[60px] border-[0px] absolute sm:right-[20px] right-[15px] sm:top-[15px] top-[15px] flex items-center justify-end gap-[10px] " >
                         <div className="relative" >
                             <AiOutlineShoppingCart
                                 color={(props.selectedHeader == 7) ? '#EED777' : "#fff"}
@@ -147,21 +147,24 @@ const Header = (props) => {
                 }
                 <ToastContainer
                 />
-                <div className=" w-[100px] block sm:hidden items-center justify-center flex h-[50px] absolute right-[10px] top-[15px] " >
-                    <input type="button"
-                        onClick={() => {
-                            if (token?.length) {
-                                localStorage.removeItem("token")
-                                successLogin("you are logged out !")
-                            } else {
-                                // localStorage.setItem("token", "ggg");
-                                router.push('/login')
-                            }
-                        }}
-                        value={token?.length ? "Logout" : "Login"}
-                        className={" text-[#fff] my-font   w-[80px] sm:h-[35px] border-[2px] border-[#83D0BE] flex items-center justify-center rounded-lg cursor-pointer " + hoverBtn} >
-                    </input>
-                </div>
+                {
+                   !token?.length && 
+                   <div className=" w-[100px] block sm:hidden items-center justify-center flex h-[50px] absolute right-[10px] top-[15px] " >
+                   <input type="button"
+                       onClick={() => {
+                           if (token?.length) {
+                               localStorage.removeItem("token")
+                               successLogin("you are logged out !")
+                           } else {
+                               // localStorage.setItem("token", "ggg");
+                               router.push('/login')
+                           }
+                       }}
+                       value={token?.length ? "Logout" : "Login"}
+                       className={" text-[#fff] my-font   w-[80px] sm:h-[35px] border-[2px] border-[#83D0BE] flex items-center justify-center rounded-lg cursor-pointer " + hoverBtn} >
+                   </input>
+               </div>
+                }
             </div>
         </>
 

@@ -7,7 +7,6 @@ import { AiFillPlayCircle, AiFillPauseCircle } from 'react-icons/ai'
 import { GoPlusCircle } from 'react-icons/go'
 import { HiOutlineMinusCircle, HiOutlinePlusCircle } from 'react-icons/hi'
 import Rating from '@mui/material/Rating';
-import TopicDetail from "./topic-detail";
 import { ToastContainer, toast } from 'react-toastify';
 import { ToogleModal } from "../../redux/action/product";
 import ProductButton from "../common/button";
@@ -92,7 +91,7 @@ const VoiceDropdown = ({ setVoice }) => {
     }
 
     return (
-        <div ref={dropdownRef} className="w-[450px] mt-2 relative  "> {/* Set parent to position: relative */}
+        <div ref={dropdownRef} className=" sm:w-[450px] w-full mt-2 relative  "> {/* Set parent to position: relative */}
             <h1 className="text-white my-font-bold py-1">Select Voice Artist</h1>
             <div className="w-[100%] h-[50px] border mt-2 rounded-md  bg-[#1b5a2c] text-white flex justify-between items-center px-2 cursor-pointer" onClick={() => setIsOpen(!isOpen)}>
                 <AiFillPlayCircle
@@ -143,9 +142,9 @@ const Counter = ({ updateCount }) => {
     }
 
     return (
-        <div className=" w-[450px] my-font h-[60px] mt-4 text-[20px] text-white bg-green-500 rounded-lg  flex items-center justify-between px-4 " >
+        <div className=" sm:w-[450px] w-[100%] my-font h-[60px] mt-4 text-[18px] sm:text-[20px] text-white bg-green-500 rounded-lg  flex items-center justify-between px-4 " >
             <p>QUANTITY</p>
-            <div className=" my-font w-[200px] h-[100%]  flex justify-between items-center text-[30px]  " >
+            <div className=" my-font w-[120px] sm:w-[200px] h-[100%]  flex justify-between items-center text-[20px] sm:text-[30px]  " >
                 <HiOutlineMinusCircle
                     size={40}
                     onClick={DecrementHandle}
@@ -177,9 +176,9 @@ const Duration = ({ updateCount }) => {
     }
 
     return (
-        <div className=" w-[450px] h-[60px] my-font mt-4 text-[21px] text-white bg-green-500 rounded-lg  flex items-center justify-between px-4 " >
+        <div className=" sm:w-[450px] h-[60px] my-font mt-4 text-[18px] sm:text-[21px] text-white bg-green-500 rounded-lg  flex items-center justify-between px-4 " >
             <p>Duration (in min)</p>
-            <div className=" w-[200px] h-[100%]  flex justify-between items-center text-[30px]  " >
+            <div className=" w-[120px] sm:w-[200px] h-[100%]  flex justify-between items-center text-[20px] sm:text-[30px]  " >
                 <HiOutlineMinusCircle
                     size={40}
                     onClick={DecrementHandle}
@@ -196,9 +195,8 @@ const Duration = ({ updateCount }) => {
 
 
 const Item = ({ item, onClick, price, quantity }) => {
-    // const dispatch = useDispatch()
     return (
-        <div className=" w-[300px] relative  h-[450px] hover:border-yellow-200 border-white border border-[2px] bg-[rgba(149,165,166,0.1)] rounded-lg flex flex-col items-center px-8 py-8 text-white my-font-bold text-[20px] leading-[38px]  " >
+        <div className=" sm:w-[300px] w-full relative h-[400px] sm:h-[450px] hover:border-yellow-200 border-white border border-[2px] bg-[rgba(149,165,166,0.1)] rounded-lg flex flex-col items-center px-2 py-2 sm:px-8 sm:py-8 text-white my-font-bold text-[20px] leading-[38px]  " >
             {
                 item.ratings &&
                 <div className=' my-font absolute z-[1000] left-4 top-0 ' >
@@ -206,7 +204,7 @@ const Item = ({ item, onClick, price, quantity }) => {
                     <p className='text-white leading-tight -mt-2 ' > {item.duration} </p>
                 </div>
             }
-            <div className=" w-[100%] border-[0px] rounded-lg border-[#ABB2B9] h-[200px] relative flex items-center justify-center " >
+            <div className=" w-[100%] rounded-lg border-[#ABB2B9] h-[200px] relative flex items-center justify-center " >
                 <img
                     src={item.image}
                     className=" absolute h-[100%] "
@@ -216,16 +214,6 @@ const Item = ({ item, onClick, price, quantity }) => {
             <h1 className=' my-font scale-[1.05] ' >{item.type}</h1>
             <h1 className=' my-font text-[15px] leading-tight border-white ' >{item.detail}</h1>
             <h1 className=' my-font mt-2 ' >{item.id == 23 ? 'Book With' : ''} {price * quantity}$</h1>
-            {/* <img
-                className=" w-[200%] absolute bottom-[-20px] cursor-pointer "
-                src='/images/buttons/shopnow.png'
-                onClick={() => {
-                    onClick()
-                    // dispatch(ToogleModal(true));
-                    // dispatch(SetSelectedProduct(item))
-                }}
-            >
-            </img> */}
             <ProductButton
                 title={"Add to Cart"}
                 onClick={() => {
@@ -260,7 +248,20 @@ const ProductModal = ({ isUpdate }) => {
     const [pricePerMin, setPricePerMin] = useState(0);
     const [thumbnailChecked, setThumbnailChecked] = useState(true);
 
+    useEffect(() => {
+        // Adding event listener for back button
+        window.addEventListener('popstate', handleBackButtonPress);
+    
+        // Cleanup: Removing the event listener when the component unmounts
+        return () => {
+          window.removeEventListener('popstate', handleBackButtonPress);
+        };
+      }, []);
 
+      const handleBackButtonPress = (e) => {
+        e.preventDefault();
+        dispatch(ToogleModal(false))
+      };
 
 
     useEffect(() => {
@@ -349,13 +350,13 @@ const ProductModal = ({ isUpdate }) => {
     }
 
     return (
-        <div style={style} className={` w-[90%] p-4 h-[700px] ${backgroundGradient}`} >
+        <div style={style} className={` sm:w-[95%] w-full sm:p-4 sm:h-[700px] h-screen ${backgroundGradient}`} >
             <ToastContainer />
-            <div className=" w-[100%] flex flex-wrap px-8 py-8 justify-between " >
-                <div className=" w-[690px] h-[100%] relative " >
+            <div className=" w-[100%] flex flex-wrap-reverse px-8 py-8 sm:justify-between justify-reverse " >
+                <div className=" sm:w-[690px] w-[100%] h-[100%] relative " >
                     {
                         SelectedProduct?.priceWithThumbnail &&
-                        <div className=" flex px-2 text-[20px] gap-2 items-center text-white h-[40px] absolute right-0 " >
+                        <div className=" flex px-2 text-[15px] sm:text-[20px] gap-1 sm:gap-2 items-center text-white h-[40px] absolute sm:top-0 top-4 right-[-20px] sm:right-0 " >
                             <input
                                 className=" w-[20px] h-[20px] "
                                 type="checkbox"
@@ -372,8 +373,8 @@ const ProductModal = ({ isUpdate }) => {
                             <p>Thumbnail</p>
                         </div>
                     }
-                    <h1 className=" my-font-bold text-yellow-200 text-[25px] leading-loose my-font " >{SelectedProduct?.type}</h1>
-                    <h2 className=" my-font-bold text-white text-[25px] leading-loose my-font " >{SelectedProduct?.heading}</h2>
+                    <h1 className=" my-font-bold text-yellow-200 mt-4 sm:mt-0 text-[20px] sm:text-[25px] leading-loose my-font " >{SelectedProduct?.type}</h1>
+                    <h2 className=" my-font-bold text-white text-[20px] sm:text-[25px] leading-loose my-font " >{SelectedProduct?.heading}</h2>
 
                     {
                         SelectedProduct?.id == 23 &&   //custom-package
@@ -383,9 +384,9 @@ const ProductModal = ({ isUpdate }) => {
                                 <input className=" w-[100%] h-[45px] border text-[#000] px-2 rounded-lg " placeholder="whatsapp/email"  >
                                 </input>
                             </div>
-                            <div className=" w-[600px] text-white my-font mt-4 " >
+                            <div className=" sm:w-[600px] w-full text-white my-font mt-4 " >
                                 <p>Let us know your custom package Details here & We will come up with a direct url with a payment *</p>
-                                <input className=" w-[100%] h-[45px] border text-[#000] px-2 rounded-lg " placeholder="enter drive link"  >
+                                <input className=" w-full h-[45px] border text-[#000] px-2 rounded-lg " placeholder="enter drive link"  >
                                 </input>
                             </div>
                         </>
@@ -441,7 +442,7 @@ const ProductModal = ({ isUpdate }) => {
                         />
                         {
                             SelectedProduct?.placeholder &&
-                            <input className=" w-[600px] mt-4 h-[45px] border text-[#000] px-2 rounded-lg " placeholder={SelectedProduct.placeholder}  >
+                            <input className=" w-full sm:w-[600px] mt-4 h-[45px] border text-[#000] px-2 rounded-lg " placeholder={SelectedProduct.placeholder}  >
                             </input>
                         }
                     </div>

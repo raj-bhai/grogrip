@@ -16,7 +16,7 @@ const Options = ({ data, onChange, customOpen }) => {
             {
                 data.map((option, index) => {
                     return (
-                        <div key={option.id} className='w-full text-white text-[25px] flex items-start'>
+                        <div key={option.id} className='w-full text-white text-[20px] sm:text-[25px] flex items-start'>
                             <div className='flex items-center'>
                                 <input
                                     type="checkbox"
