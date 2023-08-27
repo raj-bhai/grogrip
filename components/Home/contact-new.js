@@ -14,9 +14,9 @@ const InputBox = ({ onChange, label, placeholder }) => {
 const Contact = () => {
     return (
         <div 
-        className={`${localStorage.getItem('token') ? 'page-content' : 'page-content--blurred'} w-full flex-wrap justify-center sm:gap-4 flex px-8 py-16 `}
+        className={`${localStorage.getItem('token') ? 'page-content' : 'page-content--blurred'} w-full flex-wrap justify-center sm:gap-4 flex px-2 sm:px-8 sm:py-16 `}
         >
-            <div className="w-[400px] h-[200px] sm:h-[500px] relative flex justify-center " >
+            <div className="w-[400px] invisible sm:visible sm:h-[200px] sm:h-[500px] border relative flex justify-center " >
                 <img
                     src="/images/Logo/logo-main2.png"
                     className=" absolute lg:top-1/4 lg:scale-[1.8] "
@@ -25,7 +25,7 @@ const Contact = () => {
                     style={{ clipPath: 'polygon(0 0, 100% 0, 100% 50%, 0 100%, 0 0, 0 0)' }}
                 />
             </div>
-            <div className="w-[550px] z-[1000] bg-green-600 h-[100%] text-white text-[25px] my-font rounded-lg p-4 sm:p-8 leading-tight " >
+            <div className=" w-[100%]  sm:w-[550px] z-[1000] bg-green-600 h-[100%] text-white text-[25px] my-font rounded-lg p-4 sm:p-8 leading-tight " >
                 <h1 className=" my-font-bold text-[30px] text-yellow-200 leading-loose " >Contact Us</h1>
                 <p className="sm:mb-8" >Leave a message and our team will get back to you in 12 hours</p>
                 <InputBox

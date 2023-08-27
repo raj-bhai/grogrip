@@ -51,7 +51,7 @@ const Type3 = () => {
             {/* <btn className='text-yellow-200 gap-2 text-[50px] w-[700px] cursor-pointer border flex items-center justify-center  border-white rounded-lg ml-8 my-font-bold'>
                 <p>SHOP</p>
             </btn> */}
-            <div className=' w-full flex flex-wrap gap-2 justify-evenly mt-16  ' >
+            <div className=' w-full flex flex-wrap gap-2 justify-evenly sm:mt-16  ' >
                 {
                     Services.map((item, index) => {
                         return (

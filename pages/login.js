@@ -1,4 +1,4 @@
-import React from "react"; 
+import React, { useEffect } from "react"; 
 import Image from "next/image";
 import axios from "axios";
 import url from "../constants/url";
@@ -15,6 +15,7 @@ const Login = () => {
   const router = useRouter()
   const backgroundGradient = " bg-gradient-to-r from-[#107840] via-[#107840] via-[#1F5025] via -[#28602E] to-[#107840]";
   const clientId = "1036453217553-382m7c1vsrsuqt0o08fkrsngjfi39bhh.apps.googleusercontent.com";
+
 
 
   const Login = (name, email, number, type, isAdmin, fbId, googleId) => {

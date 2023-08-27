@@ -76,7 +76,7 @@ const Header = (props) => {
         //     animate={{ x: 0, y: 0 }}
         //     transition={{ duration: 2 }}
         // >
-        <div className={`w-[100%] border-[0px] sm:h-[150px] md:h-[80px] h-[50px] justify-between flex flex-wrap  fixed z-[2000] top-0` + props.className} >
+        <div className={`w-[100%] border-[0px] sm:h-[150px] md:h-[80px] h-[60px] justify-between flex flex-wrap  fixed z-[2000] top-0` + props.className} >
             {
                 localStorage.getItem('token') ?
                     null : <LoginButton />
@@ -143,12 +143,12 @@ const Header = (props) => {
                     className={" text-[#fff] sm:visible invisible my-font  w-[80px] sm:h-[35px] border-[2px] border-[#83D0BE] flex mt-[10px] items-center justify-center rounded-lg cursor-pointer " + hoverBtn} >
                 </input>
             </div>
-            <div className=" sm:w-[200px] sm:h-[60px] border-[0px] absolute sm:right-[20px] right-[10px] sm:top-[15px] top-[10px] flex items-center justify-end gap-[10px] " >
+            <div className=" sm:w-[200px] sm:h-[60px] border-[0px] absolute sm:right-[20px] right-[10px] sm:top-[15px] top-[15px] flex items-center justify-end gap-[10px] " >
                 <div className="relative" >
                     <AiOutlineShoppingCart
                         color= {(props.selectedHeader == 7)? '#EED777' : "#fff"} 
-                        size={50}
-                        className=" cursor-pointer "
+                        // size={50}
+                        className=" cursor-pointer w-[40px] h-[40px] sm:w-[50px] sm:h-[50px] "
                         onClick={() => {
                             router.push('/cart')
                         }}

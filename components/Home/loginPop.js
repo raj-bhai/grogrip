@@ -13,7 +13,7 @@ const Loginpop = () => {
                         router.push('/login')
                     }}
                 >
-                    <h2 class=" text-[25px] sm:text-[40px] md:text-[50px] lg:text-[60px] text-white my-font-bold font-bold mb-4"
+                    <h2 class=" text-[25px] sm:text-[40px] md:text-[50px] cursor-pointer lg:text-[60px] text-white my-font-bold font-bold mb-4"
                     >Please Login to Continue</h2>
                 </div>
             </div>

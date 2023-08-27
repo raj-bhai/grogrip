@@ -53,6 +53,7 @@ const style = {
 
 
 
+
 const Home = () => {
 
     const router = useRouter()
@@ -245,24 +246,6 @@ const Home = () => {
                 }
             }
 
-            if (window.pageYOffset > HomeRef.current?.clientHeight + 100) {
-                // if (window.pageYOffset > HomeRef.current?.clientHeight + AboutRef.current?.clientHeight + GlobeRef.current?.clientHeight + ServicesRef.current?.clientHeight - 100) {
-                //     if (window.pageYOffset > HomeRef.current?.clientHeight + AboutRef.current?.clientHeight + GlobeRef.current?.clientHeight + ServicesRef.current?.clientHeight + PortfolioRef.current?.clientHeight + PricingRef.current?.clientHeight + ExtraRef.current?.clientHeight + CustomPlanRef.current.clientHeight + ExtraRef1.current?.clientHeight + ExtraRef2.current?.clientHeight) {
-                //         if (window.pageYOffset > HomeRef.current?.clientHeight + AboutRef.current?.clientHeight + GlobeRef.current?.clientHeight + ServicesRef.current?.clientHeight + PortfolioRef.current?.clientHeight + PricingRef.current?.clientHeight + ExtraRef.current?.clientHeight + CustomPlanRef.current.clientHeight + ExtraRef1.current?.clientHeight + ExtraRef2.current?.clientHeight + ContactRef.current?.clientHeight - 200) {
-                //             setSelectedHeader(5)
-                //         } else {
-                //             setSelectedHeader(4)
-                //         }
-                //     } else {
-                //         setSelectedHeader(3)
-                //     }
-                // } else {
-                //     setSelectedHeader(2)
-                // }
-            } else {
-                setSelectedHeader(1)
-            }
-
         } else {
             setShowArrowUp(false);
             setHeaderStyle(' bg-gradient-to-r from-[#107840] via-[#107840] via-[#1F5025] via -[#28602E] to-[#107840]');
@@ -273,7 +256,6 @@ const Home = () => {
 
 
     return (
-        // domLoaded &&
         typeof window !== 'undefined' ?
             <div id="home" className={'w-full fade-in px-[0px] py-[0px] relative overflow-y-hidden overflow-x-hidden' + backgroundGradient}
             >
@@ -316,14 +298,12 @@ const Home = () => {
                             setSelectedHeader(5)
                         }}
                     />
-                    {/* AroowUpIcon */}
                     {
                         showArrowUp &&
                         <div id="goToTop" className='fixed border-[0px] z-[1000] w-[80px] bottom-[30px] right-[30px] h-[80px] flex items-center justify-center '
                         >
                             <FaAngleDoubleUp
                                 onClick={() => {
-                                    //  console.log("ok mf")
                                     document.getElementById('home').scrollIntoView()
                                 }}
                                 className='text-white sm:text-[40px] text-[25px] hover:text-[#F0F3F4] cursor-pointer hover:animate-bounce'
@@ -336,8 +316,7 @@ const Home = () => {
                         alt="star" />
                     {
                         <div className={`${localStorage.getItem('token') ? 'page-content' : 'page-content--blurred'} border-[0px] py-16 sm:py-2 flex flex-wrap items-center w-[100%] justify-center sm:mt-[100px] z-[100] `} >
-
-                            <div className={` sm:w-[30%] w-[100%]  sm:mt-[-50px] sm:mr-[0px] mr-[10px] flex items-center justify-center sm:pl-[20px] sm:pt-[0px] pt-[10px] sm:pb-[0px] pb-[10px] pl-[0px] sm:min-w-[550px] `}
+                            <div className={` sm:w-[30%] w-[100%]  sm:mt-[-50px] sm:mr-[0px] mr-[10px] flex items-center justify-center sm:pl-[20px] sm:pt-[0px] pt-[10px] sm:pb-[0px] pb-[0px] pl-[0px] sm:min-w-[550px] `}
                             >
                                 <div className='sm:w-[600px]  w-[100%] h-[80%] border-[0px] sm:ml-[0px] ml-[10px] sm:mt-[80px] mt-[20px] flex relative ' >
                                     <img
@@ -358,7 +337,7 @@ const Home = () => {
                                             >
                                                 {`Expert YouTube Service  and Support`}
                                             </MovingText>
-                                            <div className='lg:mt-[28px] flex mt-[0px] border-[0px] lg:mt-0 mt-[50px] lg:h-[100px]' >
+                                            <div className='lg:mt-[28px] flex mt-[0px] border-[0px] lg:mt-0 mt-0 lg:h-[100px]' >
                                                 {
                                                     showText2 &&
                                                     <MovingText
@@ -395,7 +374,7 @@ const Home = () => {
                                                     className=' ml-[10px] sm:mt-[-30px] mt-[10px] '
                                                     alt="star" />
                                             </div>
-                                            <div className='  w-[100%] h-[50px] border-[0px] sm:mt-[-10px] mt-[10px]  ' >
+                                            <div className='  w-[100%] h-[50px] sm:mt-[-10px] mt-[5px]  ' >
                                                 {
                                                     showText3 &&
                                                     <MovingText
@@ -413,7 +392,7 @@ const Home = () => {
                                                     </MovingText>
                                                 }
                                             </div>
-                                            <div className=' w-[100%] lg:mt-[30px] mt-[50px] lg:mb-0 mb-[50px]' >
+                                            <div className=' w-[100%] lg:mt-[30px] mt-[20px] lg:mb-0' >
                                                 {
                                                     showText4 &&
                                                     <MovingText
@@ -471,7 +450,7 @@ const Home = () => {
                                     </div>
                                 </div>
                             </div>
-                            <div className=' w-[95%] sm:w-[60%] p-2 sm:p-4 h-[200px] sm:h-[500px] border-[0px] sm:mr-[25px] flex rounded-lg lg:justify-end video-background justify-center   '
+                            <div className=' w-[95%] sm:w-[60%] p-2 sm:p-4 h-[300px] sm:h-[500px] border-[0px] sm:mr-[25px] flex rounded-lg lg:justify-end video-background justify-center   '
                             >
                                 {/* <Globe /> */}
                                 <iframe
@@ -489,7 +468,7 @@ const Home = () => {
                 <div ref={AboutRef} className={`w-[100%] flex items-center jistify-center sm:h-[150px] sm:pt-[0px] sm:pb-[0px] sm:pb-[30px] relative ${localStorage.getItem('token') ? 'page-content' : 'page-content--blurred'} `} id='about'
                 >
                     <div
-                        className={`${localStorage.getItem('token') ? 'page-content' : 'page-content--blurred'} w-[100%] border-[0px] sm:py-[0px] gap-[50px] sm:flex-wrap sm:flex-row flex-col flex items-center justify-between sm:px-[20px] px-[10px] `}
+                        className={`${localStorage.getItem('token') ? 'page-content' : 'page-content--blurred'} w-[100%] sm:py-[0px] gap-[50px] sm:flex-wrap sm:flex-row flex-col flex items-center justify-between sm:px-[20px] px-[10px] `}
                     >
                         <div className='sm:w-[20%] w-[100%] border-[0px] align-bottom text-center ' >
                             <div className=' w-[100%] flex justify-center items-center ' >
@@ -527,7 +506,9 @@ const Home = () => {
                     </div>
                 </div>
                 <div id="pricing" ref={PricingRef} className={`${localStorage.getItem('token') ? 'page-content' : 'page-content--blurred'}  w-[100%] pt-[50px] flex flex-col items-center justify-center`} >
-                    <btn className=' text-yellow-200 text-[50px] w-[700px] hover:border-yellow-200 hover:text-white cursor-pointer border flex items-center justify-center  border-white rounded-lg ml-8 my-font-bold  ' >
+                    <btn 
+                    className= "text-yellow-200 text-[25px] sm:text-[50px] w-[95%] sm:w-[700px] hover:border-yellow-200 hover:text-white cursor-pointer border flex items-center justify-center  border-white rounded-lg sm:ml-8 my-font-bold " 
+                    >
                         <p>Cashcow Packages</p>
                     </btn>
                     <Type3/>
@@ -588,8 +569,11 @@ const Home = () => {
                         />
                     </div> */}
                 </div>
-                <div className={` ${localStorage.getItem('token') ? 'page-content' : 'page-content--blurred'} w-full  pt-32 pb-8 px-8 flex flex-col items-center`} >
-                    <btn className=' text-yellow-200 text-[50px] w-[700px] hover:border-yellow-200 hover:text-white cursor-pointer border flex items-center justify-center  border-white rounded-lg ml-8 my-font-bold  ' >
+                <div className={` ${localStorage.getItem('token') ? 'page-content' : 'page-content--blurred'} w-full pt-2 sm:pt-32 pb-8 px-8 flex flex-col items-center`} >
+                    <btn 
+                    className="text-yellow-200 text-[25px] sm:text-[50px] w-[95%] sm:w-[700px] hover:border-yellow-200 hover:text-white cursor-pointer border flex items-center justify-center  border-white rounded-lg sm:ml-8 my-font-bold "
+                    
+                    >
                         <p>INDIVIDUAL SERVICES</p>
                     </btn>
                     <div className=' w-[100%] flex mt-8 flex-wrap gap-8 justify-center  ' >
@@ -606,7 +590,8 @@ const Home = () => {
                     </div>
                 </div>
                 <div className={` ${localStorage.getItem('token') ? 'page-content' : 'page-content--blurred'}  w-full h-[100px] flex flex-col items-center`} >
-                    <btn className='text-yellow-200 gap-2 text-[50px] w-[700px] cursor-pointer border flex items-center justify-center  border-white rounded-lg ml-8 my-font-bold animated-button'
+                    <btn 
+                    className='text-yellow-200 text-[25px] sm:text-[50px] w-[95%] sm:w-[700px] hover:border-yellow-200 hover:text-white cursor-pointer border flex items-center justify-center  border-white rounded-lg sm:ml-8 my-font-bold '
                     onClick={() => {
                         router.push('/portfolio')
                     }}

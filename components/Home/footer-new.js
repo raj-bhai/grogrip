@@ -3,11 +3,11 @@ import { FaFacebookSquare, FaInstagram, FaWhatsapp } from "react-icons/fa";
 
 const Footer = () => {
 
-    const containerText =  'w-[300px] flex flex-col items-start px-8'
+    const containerText =  'sm:w-[300px] w-full flex flex-col items-center sm:items-start sm:px-8'
     const headingText = 'text-yellow-200 my-font-bold text-[25px] leading-loose '
     const nornalText = ' text white my-font text-[18px] text-white '
     return (
-        <div className="w-full  flex justify-evenly flex-wrap py-16 " >
+        <div className="w-full flex justify-evenly flex-wrap py-16 " >
             <div className={containerText} >
                 <h1 className={headingText} >COMPANY</h1>
                 <p className={nornalText} >About Us</p>
@@ -30,7 +30,7 @@ const Footer = () => {
             </div>
             <div className={containerText} >
                 <h1 className={headingText} >FOLLOW US ON</h1>
-                <div className="w-full h-[70px] flex items-center justify-start text-white text-[40px] gap-4 " >
+                <div className="w-full h-[70px] flex items-center justify-center sm:justify-start text-white text-[40px] gap-4 " >
                 <FaFacebookSquare
                                 color='white'
                                 // className='text-[20px] sm:text-[30px] cursor-pointer '

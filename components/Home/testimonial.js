@@ -4,9 +4,9 @@ import { MdOpenInNew } from 'react-icons/md';
 const Testimonial = ({setVideoVisible, setVideoId}) => {
     return (
         <div
-            className={` ${localStorage.getItem('token') ? 'page-content' : 'page-content--blurred'} w-full pt-16 flex flex-col items-center px-4 pb-8 `}
+            className={` ${localStorage.getItem('token') ? 'page-content' : 'page-content--blurred'} w-full sm:pt-16 flex flex-col items-center px-4 pb-8 `}
         >
-            <btn className='text-yellow-200 gap-2 text-[50px] w-[700px] cursor-pointer border flex items-center justify-center  border-white rounded-lg ml-8 my-font-bold'>
+            <btn className='text-yellow-200 text-[25px] sm:text-[50px] w-[95%] sm:w-[700px] hover:border-yellow-200 hover:text-white cursor-pointer border flex items-center justify-center  border-white rounded-lg sm:ml-8 my-font-bold '>
                 <p>Clients Testimonial</p>
             </btn>
             <div className='w-[100%] gap-4 flex mt-8 items-center justify-center ' >
