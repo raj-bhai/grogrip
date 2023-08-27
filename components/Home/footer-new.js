@@ -16,7 +16,11 @@ const Footer = () => {
                 <p className={nornalText}
                     onClick={() => router.push('/contact')}
                 >Contact Us</p>
-                <p className={nornalText} >Book a Call</p>
+                <p className={nornalText}
+                onClick={() => {
+                    window.open('https://calendly.com/grogrip-media/15min')
+                }}
+                >Book a Call</p>
                 <p className={nornalText} >Login</p>
             </div>
             <div className={containerText} >
