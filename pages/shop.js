@@ -22,8 +22,6 @@ const Shop = () => {
     const { openModal, SelectedProduct } = useSelector(state => state.product);
 
 
-    console.log("openModal :", openModal)
-
     const handleClose = () => {
         dispatch(ToogleModal(false))
     }

@@ -105,7 +105,7 @@ const Header = (props) => {
                     </div>
                     <div className=" w-[80px] sm:h-[60px] border-[0px] flex items-center justify-center "
                         onClick={() => {
-                            // props.onClickAbout()
+                            router.push('/about')
                         }}
                     >
                         <h1 className={selectedHeader == 5 ? textSelectedStyle : textStyle} >About</h1>
