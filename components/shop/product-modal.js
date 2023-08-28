@@ -12,6 +12,7 @@ import { ToogleModal } from "../../redux/action/product";
 import ProductButton from "../common/button";
 import Options from "./options";
 import voices from '../../data/voices.json';
+import { AiOutlineClose } from 'react-icons/ai'
 
 import { AddToCart } from "../../redux/action/cart";
 
@@ -83,11 +84,8 @@ const VoiceDropdown = ({ setVoice }) => {
     }
 
     const playVoiceSample = (voiceUrl) => {
-        console.log("hello mf");
-        console.log("url :", voiceUrl)
         const audio = new Audio(voiceUrl);
         audio.play();
-        // Logic to play a voice sample for the selected voice
     }
 
     return (
@@ -246,22 +244,22 @@ const ProductModal = ({ isUpdate }) => {
     const [quantity, setQuantity] = useState(1);
     const [customOpen, setCustomOpen] = useState(false);
     const [pricePerMin, setPricePerMin] = useState(0);
-    const [thumbnailChecked, setThumbnailChecked] = useState(true);
+    const [thumbnailChecked, setThumbnailChecked] = useState(false);
 
     useEffect(() => {
         // Adding event listener for back button
         window.addEventListener('popstate', handleBackButtonPress);
-    
+
         // Cleanup: Removing the event listener when the component unmounts
         return () => {
-          window.removeEventListener('popstate', handleBackButtonPress);
+            window.removeEventListener('popstate', handleBackButtonPress);
         };
-      }, []);
+    }, []);
 
-      const handleBackButtonPress = (e) => {
+    const handleBackButtonPress = (e) => {
         e.preventDefault();
         dispatch(ToogleModal(false))
-      };
+    };
 
 
     useEffect(() => {
@@ -274,7 +272,6 @@ const ProductModal = ({ isUpdate }) => {
                     Product: SelectedProduct,
                     quantity: 1,
                     id: SelectedProduct?.id,
-                    // price: SelectedProduct?.realPrice
                 }));
             }
             const customOption = SelectedProduct?.options?.find(option => option.pricePerMin !== undefined);
@@ -288,7 +285,7 @@ const ProductModal = ({ isUpdate }) => {
                 setPrice(SelectedProduct.realPrice)
             }
             if (SelectedProduct.priceWithThumbnail) {
-                setPrice(SelectedProduct.priceWithThumbnail)
+                setPrice(SelectedProduct.priceWithThumbnail - SelectedProduct.thumbnailPrice)
             }
         }
     }, [SelectedProduct])
@@ -350,13 +347,22 @@ const ProductModal = ({ isUpdate }) => {
     }
 
     return (
-        <div style={style} className={` sm:w-[95%] w-full sm:p-4 sm:h-[700px] h-screen ${backgroundGradient}`} >
+        <div style={style} className={` sm:w-[95%] relative w-full sm:p-4 sm:h-[700px] h-screen ${backgroundGradient}`} >
             <ToastContainer />
-            <div className=" w-[100%] flex flex-wrap-reverse px-8 py-8 sm:justify-between justify-reverse " >
+            <div className="w-[50px] h-[50px] text-white flex items-center justify-center absolute right-2 top-2 sm:right-4 sm:top-4 " >
+                <AiOutlineClose
+                    size={30}
+                    onClick={() => {
+                        dispatch(ToogleModal(false))
+                    }}
+                    className="cursor-pointer"
+                />
+            </div>
+            <div className=" w-[100%] flex flex-wrap-reverse px-8 py-16 sm:py-8 sm:justify-between justify-reverse " >
                 <div className=" sm:w-[690px] w-[100%] h-[100%] relative " >
-                    {
+                    {/* {
                         SelectedProduct?.priceWithThumbnail &&
-                        <div className=" flex px-2 text-[15px] sm:text-[20px] gap-1 sm:gap-2 items-center text-white h-[40px] absolute sm:top-0 top-4 right-[-20px] sm:right-0 " >
+                        <div className=" flex px-2 text-[15px] border sm:text-[20px] gap-1 sm:gap-2 items-center text-white h-[40px] absolute sm:top-0 top-4 right-[-20px] sm:right-0 " >
                             <input
                                 className=" w-[20px] h-[20px] "
                                 type="checkbox"
@@ -370,9 +376,9 @@ const ProductModal = ({ isUpdate }) => {
                                     }
                                 }}
                             />
-                            <p>Thumbnail</p>
+                            <p>SEO</p>
                         </div>
-                    }
+                    } */}
                     <h1 className=" my-font-bold text-yellow-200 mt-4 sm:mt-0 text-[20px] sm:text-[25px] leading-loose my-font " >{SelectedProduct?.type}</h1>
                     <h2 className=" my-font-bold text-white text-[20px] sm:text-[25px] leading-loose my-font " >{SelectedProduct?.heading}</h2>
 
@@ -397,6 +403,25 @@ const ProductModal = ({ isUpdate }) => {
                                 <p className=" my-font text-white flex items-center text-[20px] " > <BsDot /> {product.value}</p>
                             )
                         })
+                    }
+                                        {
+                        SelectedProduct?.priceWithThumbnail &&
+                        <div className=" flex px-2 text-[15px] sm:text-[20px] gap-1 sm:gap-2 items-center text-white h-[40px] " >
+                            <input
+                                className=" w-[20px] h-[20px] "
+                                type="checkbox"
+                                checked={thumbnailChecked}
+                                onChange={(e) => {
+                                    setThumbnailChecked(e.target.checked)
+                                    if (e.target.checked) {
+                                        setPrice(SelectedProduct?.priceWithThumbnail)
+                                    } else {
+                                        setPrice(SelectedProduct?.priceWithThumbnail - SelectedProduct?.thumbnailPrice)
+                                    }
+                                }}
+                            />
+                            <p>SEO</p>
+                        </div>
                     }
                     <div>
                         {

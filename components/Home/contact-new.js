@@ -16,7 +16,7 @@ const Contact = () => {
         <div 
         className={`${localStorage.getItem('token') ? 'page-content' : 'page-content--blurred'} w-full flex-wrap justify-center sm:gap-4 flex px-2 sm:px-8 sm:py-16 `}
         >
-            <div className="w-[400px] invisible sm:visible sm:h-[200px] sm:h-[500px] border relative flex justify-center " >
+            <div className="w-[400px] invisible sm:visible sm:h-[200px] sm:h-[500px] relative flex justify-center " >
                 <img
                     src="/images/Logo/logo-main2.png"
                     className=" absolute lg:top-1/4 lg:scale-[1.8] "
