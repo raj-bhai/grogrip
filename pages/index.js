@@ -9,11 +9,14 @@ export default function Home() {
   useEffect(() => {
 
     function sayHello() {
-      router.push('./home')
-      // console.log();
+      if (localStorage.getItem('token')) {
+        router.push('./home')
+      } else {
+        router.push('/login')
+      }
     }
 
-    setTimeout(sayHello, 1050);
+    setTimeout(sayHello, 500);
   }, [])
 
   return (

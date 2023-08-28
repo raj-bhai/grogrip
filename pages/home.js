@@ -110,6 +110,13 @@ const Home = () => {
         dispatch(ToogleModal(false))
     }
 
+    useEffect(() => {
+          if (localStorage.getItem('token')) {
+          } else {
+            router.push('/login')
+          }
+      }, [])
+
 
 
 
