@@ -7,19 +7,21 @@ const Footer = () => {
     const router = useRouter()
     const containerText = 'sm:w-[300px] w-full flex flex-col items-center sm:items-start sm:px-8'
     const headingText = 'text-yellow-200 my-font-bold text-[25px] leading-loose '
-    const nornalText = ' text white my-font text-[18px] text-white '
+    const nornalText = ' text white my-font text-[18px] text-white cursor-pointer '
     return (
         <div className="w-full flex justify-evenly flex-wrap py-16 " >
             <div className={containerText} >
                 <h1 className={headingText} >COMPANY</h1>
-                <p className={nornalText} >About Us</p>
+                <p className={nornalText}
+                    onClick={() => router.push('/about')}
+                >About Us</p>
                 <p className={nornalText}
                     onClick={() => router.push('/contact')}
                 >Contact Us</p>
                 <p className={nornalText}
-                onClick={() => {
-                    window.open('https://calendly.com/grogrip-media/15min')
-                }}
+                    onClick={() => {
+                        window.open('https://calendly.com/grogrip-media/15min')
+                    }}
                 >Book a Call</p>
                 <p className={nornalText} >Login</p>
             </div>
@@ -35,13 +37,17 @@ const Footer = () => {
                     onClick={() => router.push('/shop')}
                 >Single Packages</p>
                 <p className={nornalText}
-                    // onClick={() => router.push('/shop')}
+                // onClick={() => router.push('/shop')}
                 >Clients Testimonial</p>
             </div>
             <div className={containerText} >
                 <h1 className={headingText} >GET STARTED</h1>
-                <p className={nornalText} >Terms and Conditions</p>
-                <p className={nornalText} >Privacy Ploicy</p>
+                <p className={nornalText}
+                    onClick={() => router.push('/terms')}
+                >Terms and Conditions</p>
+                <p className={nornalText}
+                    onClick={() => router.push('/privacy')}
+                >Privacy Ploicy</p>
                 <p className={nornalText} >My Account</p>
             </div>
             <div className={containerText} >
