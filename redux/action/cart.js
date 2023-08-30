@@ -78,3 +78,27 @@ export const AddToCart = (obj) => {
             });
     }
 }
+
+export const PlaceOrder = (obj) => {
+    return dispatch => {
+
+        const token = localStorage.getItem('token') // usually comes from your authentication process
+
+        axios({
+            method: 'post',
+            url: `${url.apiRoot}/grogrip/createOrder`,
+            data: obj,
+            headers: {
+                'Authorization': `Bearer ${token}`, // or 'Basic ' + encodedCredentials for Basic Auth
+                'Content-Type': 'application/json'
+            }
+        })
+            .then((response) => {
+                // dispatch({ type: ADDTOCART, data: response.data.data })
+                // console.log(response.data);
+            })
+            .catch((error) => {
+                console.error('There was an error!', error);
+            });
+    }
+}

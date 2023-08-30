@@ -6,44 +6,11 @@ import url from "../../constants/url";
 import axios from "axios";
 import { useRouter } from "next/router";
 import { useSelector, useDispatch } from "react-redux";
+import { PlaceOrder } from "../../redux/action/cart";
 
-const label = { inputProps: { 'aria-label': 'Checkbox demo' } };
-
-const circleStyle = ' border w-[26px] h-[26px] rounded-[13px] flex justify-center items-center cursor-pointer font-normal '
-const thumbnailPrice = 5
-
-const Counter = ({ quantity, onChange }) => {
-    const [count, setCount] = useState(quantity)
-
-    const Increment = () => {
-        setCount(count + 1)
-        onChange(count + 1)
-    }
-    const Decrement = () => {
-        if (count > 1) {
-            setCount(count - 1)
-            onChange(count - 1)
-        }
-    }
-
-    return (
-        <div className=" w-[100px] h-[40px] border rounded-lg flex justify-between items-center px-1 " >
-            <div className={`${circleStyle}`}
-                onClick={Decrement}
-            >
-                <AiOutlineMinus />
-            </div>
-            <p>{count}</p>
-            <div className={`${circleStyle}`}
-                onClick={Increment}
-            >
-                <AiOutlinePlus />
-            </div>
-        </div>
-    )
-}
 
 const CartDrawer = ({ money, onClose }) => {
+    const dispatch = useDispatch()
     const [price, setPrice] = useState(money)
     const router = useRouter();
     const [thumbnailChecked, setThumbnailChecked] = useState(true);
@@ -51,11 +18,7 @@ const CartDrawer = ({ money, onClose }) => {
     const Cart = useSelector(state => state.cart.CartData);
 
 
-
-
-
     const GetTotalPrice = () => {
-        console.log("Length :", Cart)
         let total = 0
         for (let i = 0; i < Cart.length; i++) {
             total = total + ( Number(Cart[i].price) * Number(Cart[i].quantity))
@@ -72,6 +35,11 @@ const CartDrawer = ({ money, onClose }) => {
     }
 
     const createOrder = async (amount) => {
+        // const payload = {
+        //     cart: Cart,
+        //     orderValue : GetTotalPrice().total
+        // }
+        // dispatch(PlaceOrder(payload))
         const result = await axios.post(`${url.apiRoot}/payment/createOrder`, {
             amount: amount * 100,
         });
@@ -93,28 +61,7 @@ const CartDrawer = ({ money, onClose }) => {
             </div>
             <div className="w-full border-[1px] border-[#000] text-gray text-lg rounded-[10px] mt-[50px] p-2 text-[#000] " >
                 <p>Total Amount : ${GetTotalPrice().total}</p>
-                {/* <p>GST : ${GetTotalPrice().gst}</p>
-                <p>Amount To Pay : ${GetTotalPrice().subtotal}</p> */}
             </div>
-
-            {/* <div className=" w-full border-[1px] border-[#000] rounded-[10px] mt-[50px] p-2 text-[#000] font-normal " >
-                <div className="flex justify-between items-center " >
-                    <p className="flex" >Thumbnail included</p>
-                    <Checkbox {...label}
-                        checked={thumbnailChecked}
-                        onClick={() => {
-                            if (thumbnailChecked) {
-                                setPrice(price - thumbnailPrice)
-                            } else {
-                                setPrice(price + thumbnailPrice)
-                            }
-                            setThumbnailChecked(!thumbnailChecked)
-                        }}
-                    />
-                </div>
-                <p>The seller will provide Thumbnail for your video</p>
-                <p>$5</p>
-            </div> */}
             <div className=" w-[90%] h-[40px] cursor-pointer bg-[#000] border-[1px] border-[#000] rounded-[10px] mt-[50px] p-2 text-[#fff] flex items-center justify-center absolute bottom-[20px] "
                 onClick={() => createOrder(GetTotalPrice().total)}
             >

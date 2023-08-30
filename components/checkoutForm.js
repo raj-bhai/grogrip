@@ -1,52 +1,99 @@
 import React from 'react';
 import { ElementsConsumer, PaymentElement, PaymentRequestButtonElement } from '@stripe/react-stripe-js';
+import { useSelector, useDispatch } from 'react-redux';
+import { PlaceOrder } from '../redux/action/cart';
 
-class CheckoutForm extends React.Component {
 
-  handleSubmit = async (event) => {
-    // We don't want to let default form submission happen here,
-    // which would refresh the page.
-    event.preventDefault();
+const CheckoutForm = ({ stripe, elements }) => {
+  const dispatch = useDispatch()
+  const Cart = useSelector(state => state.cart.CartData);
 
-    const { stripe, elements } = this.props;
-
-    if (!stripe || !elements) {
-      // Stripe.js has not yet loaded.
-      // Make sure to disable form submission until Stripe.js has loaded.
-      return;
+  const GetTotalPrice = () => {
+    let total = 0
+    for (let i = 0; i < Cart.length; i++) {
+      total = total + (Number(Cart[i].price) * Number(Cart[i].quantity))
     }
 
+    const gst = total * 18 / 100
+    const subtotal = total + gst
+
+    return {
+      total: total,
+      gst: gst,
+      subtotal: subtotal
+    }
+  }
+
+
+  const handleSubmit = async (event) => {
+    event.preventDefault();
+    if (!stripe || !elements) {
+      return;
+    }
     const result = await stripe.confirmPayment({
-      //`Elements` instance that was used to create the Payment Element
       elements,
       confirmParams: {
-        return_url: "https://example.com/order/123/complete",
+        return_url: "https://grogrip.com/home",
       },
     });
 
     if (result.error) {
-      // Show error to your customer (for example, payment details incomplete)
       console.log(result.error.message);
     } else {
-      // Your customer will be redirected to your `return_url`. For some payment
-      // methods like iDEAL, your customer will be redirected to an intermediate
-      // site first to authorize the payment, then redirected to the `return_url`.
+      const payload = {
+        cart: Cart,
+        orderValue: GetTotalPrice().total
+      }
+      dispatch(PlaceOrder(payload))
     }
   };
 
-
-  render() {
-    return (
-      <form className='flex flex-col h-screen items-center justify-center navbarbg' onSubmit={this.handleSubmit}>
-        <div className='bg-white flex flex-col items-center p-[50px] rounded-lg' >
-          <PaymentElement
-          />
-          <button className='bg-green-500 text-white font-semibold px-[10px] py-[5px] rounded-md  mt-[20px] '  disabled={!this.props.stripe}>Submit</button>
-        </div>
-      </form>
-    );
-  }
+  return (
+    <form className='flex flex-col h-screen items-center justify-center navbarbg' onSubmit={handleSubmit}>
+      <div className='bg-white flex flex-col items-center p-[50px] rounded-lg' >
+        <PaymentElement
+        />
+        <button className='bg-green-500 text-white font-semibold px-[10px] py-[5px] rounded-md  mt-[20px] ' disabled={!stripe}>Submit</button>
+      </div>
+    </form>
+  )
 }
+
+// class CheckoutForm extends React.Component {
+
+//   handleSubmit = async (event) => {
+//     event.preventDefault();
+//     const { stripe, elements } = this.props;
+//     if (!stripe || !elements) {
+//       return;
+//     }
+//     const result = await stripe.confirmPayment({
+//       elements,
+//       confirmParams: {
+//         return_url: "https://example.com/order/123/complete",
+//       },
+//     });
+
+//     if (result.error) {
+//       console.log(result.error.message);
+//     } else {
+
+//     }
+//   };
+
+
+//   render() {
+//     return (
+//       <form className='flex flex-col h-screen items-center justify-center navbarbg' onSubmit={this.handleSubmit}>
+//         <div className='bg-white flex flex-col items-center p-[50px] rounded-lg' >
+//           <PaymentElement
+//           />
+//           <button className='bg-green-500 text-white font-semibold px-[10px] py-[5px] rounded-md  mt-[20px] '  disabled={!this.props.stripe}>Submit</button>
+//         </div>
+//       </form>
+//     );
+//   }
+// }
 
 export default function InjectedCheckoutForm() {
 
