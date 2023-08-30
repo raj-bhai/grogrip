@@ -38,6 +38,7 @@ const CheckoutForm = ({ stripe, elements }) => {
     });
 
     if (result.error) {
+      alert(result.error.message)
       console.log(result.error.message);
     } else {
       const payload = {
