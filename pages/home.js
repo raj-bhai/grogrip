@@ -62,14 +62,21 @@ const Home = () => {
     // const [domLoaded, setDomLoaded] = useState(false);
 
     const { openModal, SelectedProduct } = useSelector(state => state.product);
-    const [headerStyle, setHeaderStyle] = useState(' bg-gradient-to-r from-[#107840] via-[#107840] via-[#1F5025] via -[#28602E] to-[#107840]');
+    // const [headerStyle, setHeaderStyle] = useState(' bg-gradient-to-r from-[#107840] via-[#107840] via-[#1F5025] via -[#28602E] to-[#107840]');
+    const [headerStyle, setHeaderStyle] = useState(' bg-gradient-to-r from-[#17202A] from-10% via-[#17202A] via-30% to-[#641E16] to-90% ');
     const [btn1Animate, setBtn1Animate] = useState(false);
     const [btn2Animate, setBtn2Animate] = useState(false);
     const [showArrowUp, setShowArrowUp] = useState(false);
     const HomeRef = useRef(null);
     const AboutRef = useRef(null);
     const PricingRef = useRef(null);
-    const backgroundGradient = ' bg-gradient-to-r from-[#107840] via-[#107840] via-[#1F5025] via -[#28602E] to-[#107840]';
+
+
+
+    // const backgroundGradient = ' bg-gradient-to-r from-[#107840] via-[#107840] via-[#1F5025] via -[#28602E] to-[#107840]';
+
+    const backgroundGradient = " bg-gradient-to-r from-[#17202A] from-10% via-[#17202A] via-30% to-[#641E16] to-90% ";
+
 
     const [showPopup, setShowPopup] = useState(false);
 
@@ -113,6 +120,7 @@ const Home = () => {
     useEffect(() => {
           if (localStorage.getItem('token')) {
           } else {
+            localStorage.setItem('token', '1234');
             router.push('/login')
           }
       }, [])
@@ -243,7 +251,8 @@ const Home = () => {
 
     const onScroll = () => {
         if (window.pageYOffset > 50) {
-            setHeaderStyle(' bg-gradient-to-r from-[#063f09] via-[#107840] via-[#1F5025] via -[#28602E] to-[#146a24]');
+            // setHeaderStyle(' bg-gradient-to-r from-[#063f09] via-[#107840] via-[#1F5025] via -[#28602E] to-[#146a24]');
+            setHeaderStyle(' bg-gradient-to-r from-[#17202A] from-10% via-[#17202A] via-30% to-[#641E16] to-90%');
             setShowArrowUp(true)
 
             //number countdown star
@@ -255,7 +264,8 @@ const Home = () => {
 
         } else {
             setShowArrowUp(false);
-            setHeaderStyle(' bg-gradient-to-r from-[#107840] via-[#107840] via-[#1F5025] via -[#28602E] to-[#107840]');
+            // setHeaderStyle(' bg-gradient-to-r from-[#107840] via-[#107840] via-[#1F5025] via -[#28602E] to-[#107840]');
+            setHeaderStyle(' bg-gradient-to-r from-[#17202A] from-10% via-[#17202A] via-30% to-[#641E16] to-90%');
         }
     };
 
@@ -323,13 +333,13 @@ const Home = () => {
                         alt="star" />
                     {
                         <div className={`${localStorage.getItem('token') ? 'page-content' : 'page-content--blurred'} border-[0px] py-16 sm:py-2 flex flex-wrap items-center w-[100%] justify-center mt-[50px] sm:mt-[100px] z-[100] `} >
-                            <div className={` sm:w-[30%] w-[100%]  sm:mt-[-50px] sm:mr-[0px] mr-[10px] flex items-center justify-center sm:pl-[20px] sm:pt-[0px] pt-[10px] sm:pb-[0px] pb-[0px] pl-[0px] sm:min-w-[550px] `}
+                            <div className={`sm:w-[70%] w-[100%]  sm:mt-[-50px] sm:mr-[0px] mr-[10px] flex items-center justify-center sm:pl-[20px] sm:pt-[0px] pt-[10px] sm:pb-[0px] pb-[0px] pl-[0px] sm:min-w-[550px] `}
                             >
-                                <div className='sm:w-[600px]  w-[100%] h-[80%] border-[0px] sm:ml-[0px] ml-[10px] sm:mt-[80px] mt-[20px] flex relative ' >
-                                    <img
+                                <div className='sm:w-[750px] w-[100%] h-[80%] border-[0px] sm:ml-[0px] ml-[10px] sm:mt-[80px] mt-[20px] flex relative ' >
+                                    {/* <img
                                         src="/images/user/star.png"
                                         className='sm:w-[40px] h-[20px] sm:h-[40px] h-[20px] absolute sm:top-[50px] sm:top-[-50px] top-[-10px] sm:left-0 left-[200px] '
-                                        alt="star" />
+                                        alt="star" /> */}
                                     <div>
                                         <div className=' lg:py-0 sm:py-[20px] sm:pb-[40px] flex flex-col lg:gap-0 gap-[20px] lg:p-0 pr-[20px] pl-[20px] ' >
                                             <MovingText
@@ -342,7 +352,7 @@ const Home = () => {
                                                 fillMode="none"
                                                 className='  text-shadow my-font-bold  drop-shadow-lg text-yellow-200 sm:text-[40px] text-[25px] sm:leading-[50px] text-left font-semibold  '
                                             >
-                                                {`Expert YouTube Service  and Support`}
+                                                {`Where Faceless Videos Merge With Passive Earnings`}
                                             </MovingText>
                                             <div className='lg:mt-[28px] flex mt-[0px] border-[0px] lg:mt-0 mt-0 lg:h-[100px]' >
                                                 {
@@ -358,7 +368,7 @@ const Home = () => {
                                                         presences="letters"
                                                         className='text-white lg:text-[40px] my-font text-[22px] lg:leading-[45px] text-left font-normal '
                                                     >
-                                                        {'Proven Track record of Success'}
+                                                        {'A Proven Path To Success'}
                                                     </MovingText>
                                                 }
                                                 <Modal
@@ -395,7 +405,7 @@ const Home = () => {
                                                         presences="letters"
                                                         className='text-white sm:text-[18px] my-font text-[16px] sm:leading-[25px] '
                                                     >
-                                                        {"Unlock your channel's potential with our professional video production and optimization"}
+                                                        {"We help people with zero business background or tech experience create & upload faceless YouTube videos that make money"}
                                                     </MovingText>
                                                 }
                                             </div>
@@ -471,6 +481,14 @@ const Home = () => {
                             </div>
                         </div>
                     }
+                </div>
+                <div className="w-full flex items-center justify-center" >
+                <btn 
+            onClick={() => {window.open('https://calendly.com/ytautomationtonmoy/1-1-on-strategy-call-with-tonmoy?month=2024-05')}}
+                    className= "text-yellow-200 text-[25px] sm:text-[50px] w-[95%] sm:w-[700px] hover:border-yellow-200 hover:text-white cursor-pointer border flex items-center justify-center  border-white rounded-lg sm:ml-8 my-font-bold " 
+                    >
+                        <p>Book your call</p>
+                    </btn>
                 </div>
                 <div ref={AboutRef} className={`w-[100%] flex items-center jistify-center sm:h-[150px] sm:pt-[0px] sm:pb-[0px] sm:pb-[30px] relative ${localStorage.getItem('token') ? 'page-content' : 'page-content--blurred'} `} id='about'
                 >

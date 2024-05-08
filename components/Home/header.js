@@ -64,13 +64,14 @@ const Header = (props) => {
                     localStorage.getItem('token') ?
                         null : <LoginButton />
                 }
-                <div className="sm:w-[350px]   w-[100%] relative sm:h-[70px] h-[50px] flex items-center justify-center sm:mt-[8px] mt-[5px] " >
-                    <img
+                <div className="sm:w-[350px] w-[100%] relative sm:h-[70px] h-[50px] flex items-center justify-center sm:mt-[8px] mt-[5px] " >
+                    {/* <img
                         src="/images/Logo/logo-main2.png"
                         className=' absolute z-[100]   rounded-lg resize-y sm:w-[100%] sm:left-[0px] sm:top-[-80px] top-[-100px] sm:left-[-50px] left-[-80px] '
                         alt="grogrip"
                         style={{ clipPath: 'polygon(0 0, 100% 0, 100% 50%, 0 100%, 0 0, 0 0)' }}
-                    />
+                    /> */}
+                    <h1 className=" text-white font-[18px] font-bold " >YT AUTOMATION</h1>
                 </div>
                 <div className="flex sm:mt-[19.5px] z-[1000] sm:w-[750px] w-full  sm:mr-[220px] pr-[10px] justify-evenly sm:gap-[50px]  " >
                     <div className=" w-[80px] sm:h-[60px]  flex items-center justify-center "

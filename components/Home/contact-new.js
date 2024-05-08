@@ -74,7 +74,7 @@ const Contact = () => {
                     style={{ clipPath: 'polygon(0 0, 100% 0, 100% 50%, 0 100%, 0 0, 0 0)' }}
                 />
             </div>
-            <div className=" w-[100%]  sm:w-[550px] z-[1000] bg-green-600 h-[100%] text-white text-[25px] my-font rounded-lg p-4 sm:p-8 leading-tight " >
+            <div className=" w-[100%]  sm:w-[550px] z-[1000] bg-[#566573] h-[100%] text-white text-[25px] my-font rounded-lg p-4 sm:p-8 leading-tight " >
                 <h1 className=" my-font-bold text-[30px] text-yellow-200 leading-loose " >Contact Us</h1>
                 <p className="sm:mb-8" >Leave a message and our team will get back to you in 12 hours</p>
                 <InputBox
