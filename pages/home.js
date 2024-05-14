@@ -29,6 +29,8 @@ import { ToogleModal, SetSelectedProduct } from '../redux/action/product'
 import { FetchData } from "../lib/utils";
 import VideoPop from '../components/Home/video-popuo';
 import Type3 from '../components/shop/shop-type3';
+import QnASection from '../components/Home/qna';
+import TestimonialCarousel from '../components/Home/testimonialCarousal';
 
 
 
@@ -50,6 +52,35 @@ const style = {
     bgcolor: 'background.paper',
     p: 4,
 };
+
+
+const testimonials = [
+    {
+      image: 'https://res.cloudinary.com/drgvislmm/image/upload/v1692970148/WebsiteImages/testimonial/testimonialLg_qi120e.png',
+    },
+    {
+      image: 'https://res.cloudinary.com/drgvislmm/image/upload/v1692970151/WebsiteImages/testimonial/testimonialSM_uvx15j.png',
+    },
+    {
+      image: 'https://res.cloudinary.com/drgvislmm/image/upload/v1692970148/WebsiteImages/testimonial/testimonialSM1_qnnqv2.png',
+    },
+    {
+        image: 'https://res.cloudinary.com/drgvislmm/image/upload/v1692970146/WebsiteImages/testimonial/testimonialLg1_vhhsvq.png',
+      },
+      {
+        image: 'https://res.cloudinary.com/drgvislmm/image/upload/v1692970148/WebsiteImages/testimonial/testimonialLg_qi120e.png',
+      },
+      {
+        image: 'https://res.cloudinary.com/drgvislmm/image/upload/v1692970151/WebsiteImages/testimonial/testimonialSM_uvx15j.png',
+      },
+      {
+        image: 'https://res.cloudinary.com/drgvislmm/image/upload/v1692970148/WebsiteImages/testimonial/testimonialSM1_qnnqv2.png',
+      },
+      {
+          image: 'https://res.cloudinary.com/drgvislmm/image/upload/v1692970146/WebsiteImages/testimonial/testimonialLg1_vhhsvq.png',
+        },
+    // Add more testimonials as needed
+  ];
 
 
 
@@ -625,11 +656,14 @@ const Home = () => {
                         <MdOpenInNew />
                     </btn>
                 </div>
+
+                <TestimonialCarousel testimonials={testimonials} />
                 <Testimonial
                     setVideoVisible={(boolean) => setVideoVisible(boolean)}
                     setVideoId={(text) => setVideoId(text)}
                 />
                 <Analytics />
+                <QnASection/>
                 <Contact />
                 <Footer />
                 <Drawer
