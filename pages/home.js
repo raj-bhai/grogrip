@@ -29,6 +29,7 @@ import VideoPop from "../components/Home/video-popuo";
 import Type3 from "../components/shop/shop-type3";
 import QnASection from "../components/Home/qna";
 import TestimonialCarousel from "../components/Home/testimonialCarousal";
+import SampleVideos from "../components/Home/sample-videos";
 
 const ProjectTypes = [
   "ALL",
@@ -725,6 +726,7 @@ const Home = () => {
         </btn>
       </div>
       <TestimonialCarousel testimonials={testimonials} />
+      <SampleVideos/>
       {/* <Testimonial
                     setVideoVisible={(boolean) => setVideoVisible(boolean)}
                     setVideoId={(text) => setVideoId(text)}

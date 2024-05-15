@@ -532,14 +532,15 @@
   }
   
   .my-carousel-item {
-    border-width: 1px;
-    /* max-width: 350px; */
-    /* width: 350px; */
-    /* height: 200px; */
+    border-width: 0px;
     margin-left: 20px;
   }
   
   .my-testimonial-slider {
 
   }
+
+  
+  
+  
     
