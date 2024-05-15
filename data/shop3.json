@@ -2,9 +2,9 @@
     {
         "id": 31,
         "type": "BASIC PACKAGE",
-        "duration": "4-5 min",
+        "duration": "8-10 min",
         "detail": "INCLUDING EVERYTHING",
-        "price": "$29 - 35$",
+        "price": "$ 60",
         "showVoiceArtist" : true,
         "priceWithThumbnail" : 35,
         "thumbnailPrice" : 5,
@@ -35,11 +35,11 @@
     },
     {
         "id": 32,
-        "type": "STANDARD",
+        "type": "PREMIUM",
         "duration": "8-10 min",
         "detail": "INCLUDING EVERYTHING",
         "showVoiceArtist" : true,
-        "price": "$55 - 60$",
+        "price": "$ 90",
         "priceWithThumbnail" : 60,
         "thumbnailPrice" : 5,
         "ratings": 4.5,
@@ -69,11 +69,11 @@
     },
     {
         "id": 33,
-        "type": "WEEKLY PACKAGE",
-        "duration": "8-10 min",
+        "type": "SUPER PREMIUM",
+        "duration": "12-13 min",
         "detail": "INCLUDING EVERYTHING",
         "showVoiceArtist" : true,
-        "price": "$385 - $420",
+        "price": "$100",
         "priceWithThumbnail" : 420,
         "thumbnailPrice" : 35,
         "ratings": 5,
@@ -103,11 +103,46 @@
     },
     {
         "id": 34,
-        "type": "MONTHLY PACKAGE",
-        "duration": "8-10 min",
+        "type": "ULTRA PREMIUM",
+        "duration": "12-13 min",
         "detail": "INCLUDING EVERYTHING",
         "showVoiceArtist" : true,
-        "price": "$1650 - $1800",
+        "price": "$130",
+        "priceWithThumbnail" : 1800,
+        "thumbnailPrice" : 150,
+        "ratings": 5,
+        "image": "https://res.cloudinary.com/drgvislmm/image/upload/v1692540059/WebsiteImages/serviceImages/MONTHLY_dyuiei.png",
+        "desc": [
+            {
+                "key": "",
+                "value": "30x premium Script of 1500-1600 words."
+            },
+            {
+                "key": "",
+                "value": "30x Voice-Over artist from your choice."
+            },
+            {
+                "key": "",
+                "value": "30x (8-10 min) Premium Video."
+            },
+            {
+                "key": "",
+                "value": "30x Eye-Catching Thumbnail."
+            },
+            {
+                "key": "",
+                "value": "3x Revisions."
+            }
+        ]
+    },
+
+    {
+        "id": 35,
+        "type": "PRE MONETISED",
+        "duration": "12-13 min",
+        "detail": "INCLUDING EVERYTHING",
+        "showVoiceArtist" : true,
+        "price": "$ 400",
         "priceWithThumbnail" : 1800,
         "thumbnailPrice" : 150,
         "ratings": 5,

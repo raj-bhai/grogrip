@@ -527,29 +527,19 @@
     overflow: hidden;
   }
   
-  .testimonial-carousel {
-    position: relative;
-    overflow: hidden;
+  .my-carousel-container {
+    padding: auto;
   }
   
-  .testimonial-wrapper {
-    display: flex;
-    transform: translateX(calc(100vw));
-    animation: animateContainer 10s linear forwards infinite;
-    animation-play-state: paused;
+  .my-carousel-item {
+    border-width: 1px;
+    /* max-width: 350px; */
+    /* width: 350px; */
+    /* height: 200px; */
+    margin-left: 20px;
   }
   
-  .testimonial {
-    flex: 0 0 25%; /* Adjust width to show 4 testimonials at once */
+  .my-testimonial-slider {
+
   }
-  
-  @keyframes animateContainer {
-    from {
-      transform: translateX(calc(100vw));
-    }
-    to {
-      transform: translateX(calc(-100%));
-    }
-  }
-  
-  
+    

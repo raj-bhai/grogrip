@@ -90,13 +90,13 @@ const Header = (props) => {
                     >
                         <h1 className={selectedHeader == 2 ? textSelectedStyle : textStyle} >Shop</h1>
                     </div>
-                    <div className=" w-[90px] sm:w-[80px] sm:h-[60px]  flex items-center justify-center "
+                    {/* <div className=" w-[90px] sm:w-[80px] sm:h-[60px]  flex items-center justify-center "
                         onClick={() => {
                             router.push('/portfolio')
                         }}
                     >
                         <h1 className={selectedHeader == 3 ? textSelectedStyle : textStyle} >Portfolio</h1>
-                    </div>
+                    </div> */}
                     <div className=" w-[80px] sm:h-[60px] border-[0px] flex items-center justify-center "
                         onClick={() => {
                             router.push('/contact')
