@@ -27,12 +27,14 @@ const TestimonialCarousel = ({ testimonials }) => {
     <Carousel
       responsive={responsive}
       autoPlay={true}
-      infinite={true} // Ensure the carousel loops infinitely
+     // infinite={true} // Ensure the carousel loops infinitely
       itemClass="my-carousel-item"
       containerClass="my-carousel-container"
       sliderClass="my-testimonial-slider"
       removeArrowOnDeviceType={["tablet", "mobile"]}
       autoPlaySpeed={0}
+      rewind={true}
+      // rewindWithAnimation={true}
       transitionDuration={5000}
       customTransition="transform 5000ms linear"
       arrows={false}

@@ -104,7 +104,7 @@ const SampleVideos = () => {
     <Carousel
       responsive={responsive}
       autoPlay={true}
-      infinite={true} // Ensure the carousel loops infinitely
+      // infinite={true} // Ensure the carousel loops infinitely
       itemClass="my-carousel-item  p-2 flex flex-col items-start text-left text-[#fff] "
       containerClass="my-carousel-container border-0 mb-8 bg-null text-left "
       sliderClass="my-testimonial-slider border-0"
@@ -113,6 +113,7 @@ const SampleVideos = () => {
       transitionDuration={5000}
       customTransition="transform 5000ms linear"
       arrows={false}
+      rewind={true}
     >
       {testimonials.map((testimonial, index) => (
         <div
