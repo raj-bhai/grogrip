@@ -45,7 +45,7 @@ const TestimonialCarousel = ({ testimonials }) => {
           <img
             src={testimonial.image}
             alt={`Testimonial ${index + 1}`}
-            className="w-full "
+            className="w-full rounded-[20px] "
           />
         </div>
       ))}

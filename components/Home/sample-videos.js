@@ -117,14 +117,14 @@ const SampleVideos = () => {
       {testimonials.map((testimonial, index) => (
         <div
           key={index}
-          className=" text-white items-center justify-start text-left flex flex-col my-font "
+          className=" text-white items-start justify-start text-left flex flex-col my-font "
         >
           <img
             src={testimonial.image}
             alt={`Testimonial ${index + 1}`}
-            className="w-full "
+            className="w-full sm:rounded-[30px] rounded-[10px] elevation-4 "
           />
-          <h1>{testimonial.title}</h1>
+          <h1 className=" mt-[10px] sm:ml-[20px] ml-[10px] " >{testimonial.title}</h1>
         </div>
       ))}
     </Carousel>
