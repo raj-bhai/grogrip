@@ -3,19 +3,24 @@ import React, { useState } from "react";
 const QnASection = () => {
   const faqs = [
     {
-      question: "What is Lorem Ipsum?",
+      question: "What is a YouTube Automation Channel?",
       answer:
-        "Lorem Ipsum is simply dummy text of the printing and typesetting industry.",
+        "A YouTube Automation channel is nothing else but a faceless YouTube channel, where instead of doing all the work ourselves, we outsource it to other people (online freelancers).",
     },
     {
-      question: "Why do we use it?",
+      question: "How much money does it cost to start?",
       answer:
-        "It is a long established fact that a reader will be distracted by the readable content of a page when looking at its layout.",
+        "If you are looking to outsource all the work and turn your channel into a passive income stream, you will need a couple hundred dollars per month for content creation costs*.",
     },
     {
-      question: "Where does it come from?",
+      question: "Do I need to have any tech or business experience?",
       answer:
-        "Contrary to popular belief, Lorem Ipsum is not simply random text.",
+        "No. In fact, most of our successful students joined Grow Channels as complete beginners with no previous knowledge or experience. We will provide you all the information and tools you need.",
+    },
+    {
+      question: "How much time does it take to do this?",
+      answer:
+        "While the answer is different for every person, our programs are structured to make YouTube Automation accessible for everyday people who can only dedicate a couple of hours per week to it.",
     },
     // Add more FAQs as needed
   ];

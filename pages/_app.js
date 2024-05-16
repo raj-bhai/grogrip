@@ -13,8 +13,8 @@ import { useRouter } from 'next/router';
 function MyApp({ Component, pageProps }) {
   const router = useRouter()
   const [domLoaded, setDomLoaded] = useState(false)
-  const title = "Grogrip Power up Your YouTube Success - Automation, SEO, Content Mastery!"
-  const description = "Boost YouTube growth with Grogrip: automation, SEO, content creation. Enhance online presence, drive targeted traffic. Expert strategies for success"
+  const title = "YTgrowthsecrets Power up Your YouTube Success - Automation, SEO, Content Mastery!"
+  const description = "Boost YouTube growth with YTgrowthsecrets: automation, SEO, content creation. Enhance online presence, drive targeted traffic. Expert strategies for success"
   const keywords = "Grogrip, Grogrip Media, growgrip,#grogrip, #grogrip_media, #Grogrip, Youtube Automation, SEO, Script Writing, Content Writing"
   const ogImage = './favicon.ico'
 
