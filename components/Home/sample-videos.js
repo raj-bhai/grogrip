@@ -122,7 +122,7 @@ const SampleVideos = () => {
           <img
             src={testimonial.image}
             alt={`Testimonial ${index + 1}`}
-            className="h-full "
+            className="w-full "
           />
           <h1>{testimonial.title}</h1>
         </div>
